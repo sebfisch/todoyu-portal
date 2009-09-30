@@ -1,0 +1,20 @@
+{extends "core/view/base.tmpl"}
+
+{* left panel with widgets *}
+{block "panel"}
+	{$panelWidgets}
+{/block}
+
+{block "content"}
+	{* portal tabs, default: selection, feedbacks, to dos, appointments, invoices *}
+
+	{$portalTabs}
+
+	{* actual content, over here: list of tasks/ appointments/ invoices *}
+
+	<div id="portal-tabcontent-{$tab.id}" class="portal-tabcontent {$tab.class}">
+		{$tabContent}
+	</div>
+
+	{$tabContainers}
+{/block}

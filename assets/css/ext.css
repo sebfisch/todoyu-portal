@@ -1,0 +1,105 @@
+/* ------------------------------------------------------------
+	tabs
+   ------------------------------------------------------------ */
+
+#portal-tabs {
+	z-index: 2;
+}
+
+#portal-tabs.tabs span.icon {
+	background-image:url('../img/icons.png');
+	background-repeat:no-repeat;
+	background-position:0 0;
+}
+
+#portal-tabs.tabs .filtered     span.icon {background-position: 0 4px; padding:0 0 0 1px;}
+#portal-tabs.tabs .todos        span.icon {background-position: 0 -49px; padding:0 0 0 3px;}
+#portal-tabs.tabs .appointments span.icon {background-position: 0 -77px; padding:0 0 0 2px;}
+#portal-tabs.tabs .invoices     span.icon {background-position: 0 -105px; padding:0 0 0 2px;}
+#portal-tabs.tabs .feedback     span.icon {background-position: 0 -21px;  padding:0 0 0 1px;}
+
+/* ------------------------------------------------------------
+	list
+   ------------------------------------------------------------ */
+.portalTaskList h1 .taskDate,
+.portalTaskList h3 .taskDate {
+	width: 62px;
+}
+
+.portalTaskList h1 .customer,
+.portalTaskList h3 .customer {
+	width: 90px;
+}
+
+.portalTaskList h1 .projectName,
+.portalTaskList h3 .projectName {
+	width: 380px;
+}
+
+.portalTaskList h1 .taskName,
+.portalTaskList h3 .taskName {
+	display:none;
+}
+/*
+.portalTaskList h1 .taskName,
+.portalTaskList h3 .taskName {
+	width: 270px !important;
+}
+*/
+
+.portalTaskList h3 .additionalStuff {
+	height:30px !important;
+	width:40px;
+}
+
+#taskList h1 span.customer,
+#taskList h3 span.customer,
+#taskList h1 span.invoice_customer,
+#taskList h3 span.invoice_customer {
+	max-width: 80px;
+	width: 80px;
+}
+
+.expanded #taskList h1 span.customer,
+.expanded #taskList h3 span.customer
+/*
+.expanded #taskList h1 span.invoice_customer,
+.expanded #taskList h3 span.invoice_customer
+*/{
+	width: 140px;
+}
+
+#taskList h1 span.taskEndtime span {
+	margin-right: 0px;
+}
+
+#taskList h1 span.taskNumber {
+	width: 45px;
+}
+
+
+
+
+
+.taskTabs .timetracking span.icon{
+	background: transparent url(../img/icons.png) no-repeat 4px -175px;
+}
+
+.taskTabs .comment span.icon{
+	background: transparent url(../img/icons.png) no-repeat 2px -205px;
+}
+
+.taskTabs .assets span.icon{
+	background: transparent url(../img/icons.png) no-repeat 1px -235px;
+}
+
+/* buttons */
+	form.formQuicktask button span.iconAddQuicktask {
+		background-position:8px -810px;
+	}
+
+	form.formQuicktask fieldset.buttons button.buttonSave {
+		margin-left:185px;
+	}
+
+

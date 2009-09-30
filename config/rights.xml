@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rights labels="ext/portal/locale/rights.xml">
+	<section key="general">
+	</section>
+	<section key="panelwidgets">
+		<allow right="PanelWidgetQuicktaskWizard" comment="can see quicktaskwizard" />
+		<allow right="PanelWidgetFilterPresetList"	comment="can see filter preset list" />
+	</section>
+</rights>

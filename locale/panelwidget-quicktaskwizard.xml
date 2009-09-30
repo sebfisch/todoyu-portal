@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locallang>
+	<labels lang="en">
+		<label index="title">Quicktask Wizard</label>
+		<label index="popup.title">Create quicktask</label>
+		<label index="addQuicktask">Add Quicktask</label>
+		<label index="workload_tracked.label">Workload</label>
+		<label index="workload_chargeable.label">Chargeable</label>
+	</labels>
+	<labels lang="de">
+		<label index="title">Quicktasks erstellen</label>
+		<label index="popup.title">Quicktask erstellen</label>
+		<label index="addQuicktask">Quicktask erstellen</label>
+		<label index="workload_tracked.label">Effektive Zeit</label>
+		<label index="workload_chargeable.label">Verrechenbar</label>
+	</labels>
+</locallang>
