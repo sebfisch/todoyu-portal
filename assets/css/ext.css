@@ -1,6 +1,6 @@
-/* ------------------------------------------------------------
+/* -----------------
 	tabs
-   ------------------------------------------------------------ */
+   ----------------- */
 
 #portal-tabs {
 	z-index: 2;
@@ -18,9 +18,9 @@
 #portal-tabs.tabs .invoices     span.icon {background-position: 0 -105px; padding:0 0 0 2px;}
 #portal-tabs.tabs .feedback     span.icon {background-position: 0 -21px;  padding:0 0 0 1px;}
 
-/* ------------------------------------------------------------
+/* -----------------
 	list
-   ------------------------------------------------------------ */
+   ----------------- */
 .portalTaskList h1 .taskDate,
 .portalTaskList h3 .taskDate {
 	width: 62px;
@@ -77,10 +77,6 @@
 	width: 45px;
 }
 
-
-
-
-
 .taskTabs .timetracking span.icon{
 	background: transparent url(../img/icons.png) no-repeat 4px -175px;
 }
@@ -93,7 +89,10 @@
 	background: transparent url(../img/icons.png) no-repeat 1px -235px;
 }
 
-/* buttons */
+/* ----------------
+	buttons
+   ---------------- */
+
 	form.formQuicktask button span.iconAddQuicktask {
 		background-position:8px -810px;
 	}
@@ -101,5 +100,3 @@
 	form.formQuicktask fieldset.buttons button.buttonSave {
 		margin-left:185px;
 	}
-
-
