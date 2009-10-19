@@ -135,7 +135,7 @@ class TodoyuPortalPreferences {
 
 
 	public static function saveFilterTabFiltersetIDs(array $filtersetIDs) {
-		$filtersetIDs	= TodoyuDiv::intvalArray($filtersetIDs, true);
+		$filtersetIDs	= TodoyuArray::intval($filtersetIDs, true);
 		$prefValue		= implode(',', $filtersetIDs);
 
 		self::savePref('filtersets', $prefValue, 0, true);

@@ -11,7 +11,7 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	
 	public function filtersetsAction(array $params) {
 		$filtersetIDs	= explode(',', $params['value']);
-		$filtersetIDs	= TodoyuDiv::intvalArray($filtersetIDs, true, true);
+		$filtersetIDs	= TodoyuArray::intval($filtersetIDs, true, true);
 		
 		TodoyuPortalPreferences::saveFilterTabFiltersetIDs($filtersetIDs);
 	}
