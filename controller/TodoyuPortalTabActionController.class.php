@@ -1,11 +1,11 @@
 <?php
 
 class TodoyuPortalTabActionController extends TodoyuActionController {
-	
-	public function init() {
-		
+
+	protected function hasActionAccess($action) {
+		return true;
 	}
-	
+
 	public function updateAction(array $params) {
 		$idTab	= intval($params['tab']);
 
@@ -13,21 +13,21 @@ class TodoyuPortalTabActionController extends TodoyuActionController {
 
 		return TodoyuPortalRenderer::renderTabContent($idTab);
 	}
-	
+
 	public function updateTabHeadAction(array $params) {
 		$idTab	= intval($params['tab']);
-		
+
 		return TodoyuPortalRenderer::updateTabHead($idTab);
 	}
-	
+
 	public function saveActiveAction(array $params) {
 		$idTab	= intval($params['tab']);
-		
+
 		TodoyuPortalPreferences::saveActiveTab($idTab);
-		
+
 		return TodoyuPortalRenderer::renderTabContent($idTab);
 	}
-	
+
 }
 
 ?>
