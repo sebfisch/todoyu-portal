@@ -29,33 +29,29 @@
 if( ! defined('TODOYU') ) die('NO ACCESS');
 
 
-	// declare ext ID, path
+
+	// Declare ext ID, path
 define('EXTID_PORTAL',	111);
 define('PATH_EXT_PORTAL', PATH_EXT . '/portal');
 
-	// request configurations, dwoo plugins
-require_once( PATH_EXT_PORTAL . '/config/constants.php' );
-require_once( PATH_EXT_PORTAL . '/config/extension.php' );
-require_once( PATH_EXT_PORTAL . '/config/panelwidgets.php' );
-
-require_once( PATH_EXT_PORTAL . '/model/dwoo-plugins.php');
-
-	// register localization files
+	// Register module locales
 TodoyuLocale::register('portal', PATH_EXT_PORTAL . '/locale/ext.xml');
-
-	// register implied widgets' localization files
 TodoyuLocale::register('panelwidget-filterpresetlist', PATH_EXT_PORTAL . '/locale/panelwidget-filterpresetlist.xml');
 TodoyuLocale::register('panelwidget-quicktaskwizard', PATH_EXT_PORTAL . '/locale/panelwidget-quicktaskwizard.xml');
 
-	// add extension assets
+	// Request configurations
+require_once( PATH_EXT_PORTAL . '/config/constants.php' );
+require_once( PATH_EXT_PORTAL . '/config/extension.php' );
+require_once( PATH_EXT_PORTAL . '/config/panelwidgets.php' );
+require_once( PATH_EXT_PORTAL . '/model/dwoo-plugins.php');
+
+	// Add assets
 TodoyuPage::addExtAssets('portal', 'public');
 
-
+	// Add menu entries
 if( TodoyuAuth::isLoggedIn() ) {
-		// add menu entry
 	TodoyuFrontend::setDefaultTab('portal');
 	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.tab', '?ext=portal', 10);
 }
-
 
 ?>
