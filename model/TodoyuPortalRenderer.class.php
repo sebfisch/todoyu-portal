@@ -155,7 +155,6 @@ class TodoyuPortalRenderer {
 	 */
 	public static function renderTask($idTask) {
 		$idTask	= intval($idTask);
-		$task 	= TodoyuTaskManager::getTask($idTask);
 
 				// Get some task information
 		$isExpanded	= self::isTaskExpanded($idTask);
@@ -220,16 +219,14 @@ class TodoyuPortalRenderer {
 	 */
 	public static function updateTabHead($idTab) {
 		$tabConfig = TodoyuPortalManager::getTab($idTab);
-		$tabConfig['id'] 		= 'portal-tabhead-' . $idTab;
-//		$tabConfig['classKey']	= $idTab;
-
+		$tabConfig['id'] 			= 'portal-tabhead-' . $idTab;
+//		$tabConfig['classKey']		= $idTab;
 		$tabTasks 					= Portal::getTaskIDs($idTab);
 		$tabConfig['tasksamount']	= count($tabTasks);
 		$tabConfig['hasIcon']		= 1;
-
 		$tabConfig['tasksamount']	= TodoyuPortalManager::getTasksAmount($idTab);
 
-		return TodoyuTabheadRenderer::renderTab($tabConfig['id'], $tabConfig['key'], $typeConfig['class'], $tabConfig['classKey'], $idTab, TodoyuLocale::getLabel($tabConfig['label']), $tabConfig['position'], $tabConfig['hasIcon'], $tabConfig['tasksamount']);
+		return TodoyuTabheadRenderer::renderTab($tabConfig['id'], $tabConfig['key'], $tabConfig['class'], $tabConfig['classKey'], $idTab, TodoyuLocale::getLabel($tabConfig['label']), $tabConfig['position'], $tabConfig['hasIcon'], $tabConfig['tasksamount']);
 	}
 
 }
