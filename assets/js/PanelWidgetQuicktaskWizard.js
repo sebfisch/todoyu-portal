@@ -22,11 +22,11 @@
  * Panel widget: Quick task wizard
  */
 Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
-	
+
 	ext: Todoyu.Ext.portal,
-	
+
 	fieldStart: 'quicktask-field-start-tracking',
-	
+
 	fieldDone: 'quicktask-field-task-done',
 
 
@@ -38,10 +38,10 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 		var options	= {
 			'parameters': {
 				'cmd': 'popup'
-			}			
+			}
 		};
 
-		Todoyu.Popup.openWindow('popupCreateEvent', 'Quicktask wizard', 420, 390, 810, 200, url, options);
+		Todoyu.Popup.openWindow('popupCreateEvent', 'Quicktask wizard', 420, 390, url, options);
 	},
 
 
@@ -63,23 +63,23 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 
 		return false;
 	},
-	
+
 	onSaved: function(form, response) {
 		var error = response.getTodoyuHeader('error') == 1;
 		var start = response.getTodoyuHeader('start') == 1;
-		
+
 		if( error ) {
 			$(form).replace(response.responseText);
 		} else {
 			Todoyu.Popup.close();
-			
+
 			if( start ) {
 				var idTask= response.getTodoyuHeader('idTask');
 				Todoyu.Ext.timetracking.Task.start(idTask);
 			}
 		}
 	},
-	
+
 	preventStartDone: function(key, field) {
 		if( key === 'start' ) {
 			if( $(this.fieldDone).checked ) {
@@ -92,7 +92,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 			}
 		}
 	},
-	
+
 	/**
 	 *	Disable checkbox 'task done'
 	 *
