@@ -71,7 +71,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 		if( error ) {
 			$(form).replace(response.responseText);
 		} else {
-			Todoyu.Popup.close();
+			Todoyu.Popup.close('popupCreateEvent');
 
 			if( start ) {
 				var idTask= response.getTodoyuHeader('idTask');
