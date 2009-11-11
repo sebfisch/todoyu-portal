@@ -352,7 +352,7 @@ class TodoyuPortalManager {
 
 			if ($conjunction == 'OR') {
 					// OR conjunction
-				$taskIDs	= TodoyuDiv::mergeSubArrays($taskIDsOfSets);
+				$taskIDs	= TodoyuArray::mergeSubArrays($taskIDsOfSets);
 			} else {
 					// AND conjunction
 				$taskIDs	= TodoyuArray::intersectSubArrays($taskIDsOfSets);
