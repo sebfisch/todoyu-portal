@@ -84,6 +84,7 @@ Todoyu.Ext.portal.Tab = {
 	displayActiveTab: function(tabKey) {
 		$$('.portal-tabcontent').invoke('hide');
 		$('portal-tabcontent-' + tabKey).show();
+		$('portal-tabcontent-' + tabKey).removeClassName('hidden');
 		Todoyu.Tabs.setActive('portal-tabhead-' + tabKey);
 	},
 
