@@ -1,8 +1,8 @@
 #panelwidget-filterpresetlist h1 .title {
-	background: transparent url(../img/icons.png) no-repeat 5px -324px;
+	background:transparent url(../img/icons.png) no-repeat 5px -324px;
 }
 
 #panelwidget-filterpresetlist button span.editFiltersButton {
-	background-position: 6px -902px;
-	padding: 0 0 0 35px;
+	background-position:6px -902px;
+	padding:0 0 0 35px;
 }

@@ -1,24 +1,24 @@
 #panelwidget-quicktaskWizard h1 .title {
-	background: transparent url('../img/icons.png') no-repeat 5px -295px;
+	background:transparent url('../img/icons.png') no-repeat 5px -295px;
 }
 
 #panelwidget-quicktaskWizard button span.iconAddQuicktask {
-	background-position: 8px -810px;
+	background-position:8px -810px;
 }
 
 #panelwidget-quicktaskWizard .icon {
-	background: url('../img/icons.png') no-repeat 0 -132px;
+	background:url('../img/icons.png') no-repeat 0 -132px;
 }
 
 #quicktaskForm {
-	padding: 6px 0 6px 5px;
+	padding:6px 0 6px 5px;
 }
 
 #quicktaskForm {
-	height: auto !important;
-	height: 1%;
-	width: auto;
-	z-index: 100;
+	height:auto !important;
+	height:1%;
+	width:auto;
+	z-index:100;
 	overflow:hidden !important;
 	overflow:visible;
 }
