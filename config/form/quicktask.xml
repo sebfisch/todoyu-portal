@@ -23,7 +23,7 @@
 						<acListener>
 							<ext>project</ext>
 							<controller>project</controller>
-							<cmd>autocompletion</cmd>
+							<action>autocompletion</action>
 						</acListener>
 						<acLabelField>title</acLabelField>
 					</config>

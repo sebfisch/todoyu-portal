@@ -94,11 +94,11 @@ Todoyu.Ext.portal = {
 	/**
 	 *	Save portal preferences
 	 *
-	 *	@param	String	cmd
+	 *	@param	String	action
 	 *	@param	Integer	idItem
 	 *	@param	String	onComplete
 	 */
-	savePref: function(cmd, value, idItem, onComplete) {
-		Todoyu.Pref.save('portal', cmd, value, idItem, onComplete);
+	savePref: function(action, value, idItem, onComplete) {
+		Todoyu.Pref.save('portal', action, value, idItem, onComplete);
 	}
 };

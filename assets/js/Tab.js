@@ -99,7 +99,7 @@ Todoyu.Ext.portal.Tab = {
 		var url		= Todoyu.getUrl('portal', 'tab');
 		var options	= {
 			'parameters': {
-				'cmd': 'update',
+				'action': 'update',
 				'tab': tabKey
 			}
 		};
@@ -121,7 +121,7 @@ Todoyu.Ext.portal.Tab = {
 		var options = {
 			'parameters': {
 				'tab': idTab,
-				'cmd': 'updateTabHead'
+				'action': 'updateTabHead'
 			}
 		};
 		Todoyu.Ui.replace('portal-tabhead-' + idTab, url, options);

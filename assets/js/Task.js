@@ -35,7 +35,7 @@ Todoyu.Ext.portal.Task = {
 		var options	= {
 			'parameters': {
 				'task': idTask,
-				'cmd': 'setstatus',
+				'action': 'setstatus',
 				'status': status
 			},
 			'onComplete': this.refresh.bind(this, idTask)
@@ -57,7 +57,7 @@ Todoyu.Ext.portal.Task = {
 		var url		= Todoyu.getUrl('portal', 'task');
 		var options	= {
 			'parameters': {
-				'cmd': 'get',
+				'action': 'get',
 				'task': idTask
 			},
 			'onComplete': function(idTask, response) {

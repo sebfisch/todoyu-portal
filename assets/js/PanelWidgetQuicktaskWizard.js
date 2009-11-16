@@ -37,7 +37,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 		var url		= Todoyu.getUrl('portal', 'quicktaskwizard');
 		var options	= {
 			'parameters': {
-				'cmd': 'popup'
+				'action': 'popup'
 			}
 		};
 
@@ -56,7 +56,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 
 		$(form).request({
 			'parameters': {
-				'cmd': 'save'
+				'action': 'save'
 			},
 			'onComplete': this.onSaved.bind(this, form)
 		});
