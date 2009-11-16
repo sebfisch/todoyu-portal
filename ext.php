@@ -52,10 +52,12 @@ TodoyuPage::addExtAssets('portal', 'public');
 if( TodoyuAuth::isLoggedIn() ) {
 	TodoyuFrontend::setDefaultTab('portal');
 	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.tab', '?ext=portal', 10);
-	TodoyuFrontend::addSubmenuEntry('portal', 'portal', 'LLL:portal.submenuentry.selection', '?ext=portal&tab=' . PORTAL_TABID_SELECTION, 50);
-	TodoyuFrontend::addSubmenuEntry('portal', 'portal', 'LLL:portal.submenuentry.todos', '?ext=portal&tab=' . PORTAL_TABID_TODOS, 55);
-	TodoyuFrontend::addSubmenuEntry('portal', 'portal', 'LLL:portal.submenuentry.feedbacks', '?ext=portal&tab=' . PORTAL_TABID_FEEDBACKS, 60);
-	TodoyuFrontend::addSubmenuEntry('portal', 'portal', 'LLL:portal.submenuentry.appointments', '?ext=portal&tab=' . PORTAL_TABID_APPOINTMENTS, 65);
+
+
+	$portalTabs	= TodoyuPortalManager::getTabs();
+	foreach($portalTabs as $idTab => $tabData) {
+		TodoyuFrontend::addSubmenuEntry('portal', 'portal', $tabData['title'], '?ext=portal&tab=' . $idTab, 50 + $idTab);
+	}
 }
 
 ?>
