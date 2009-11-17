@@ -56,7 +56,7 @@ if( TodoyuAuth::isLoggedIn() ) {
 
 	$portalTabs	= TodoyuPortalManager::getTabs();
 	foreach($portalTabs as $idTab => $tabData) {
-		TodoyuFrontend::addSubmenuEntry('portal', 'portal', $tabData['title'], '?ext=portal&tab=' . $idTab, 50 + $idTab);
+		TodoyuFrontend::addSubmenuEntry('portal', 'portal', $tabData['title'], '?ext=portal&tab=' . $idTab, 50 + $idTab, $idTab);
 	}
 }
 

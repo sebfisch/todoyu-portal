@@ -1,0 +1,31 @@
+/* --------------------------
+	Metamenu entries
+   -------------------------- */
+
+ul.navilist li .itemportal a {
+	padding-left: 30px !important;
+}
+
+ul.navilist li .itemportal a:hover {
+	background-color: #EFF3E5 !important;
+}
+
+	/* Selection */
+a.linkportal0 {
+	background:url('../img/icons.png') no-repeat 6px 5px !important;
+}
+
+	/* Todos */
+a.linkportal1 {
+	background:url('../img/icons.png') no-repeat 6px -48px !important;
+}
+
+	/* Feedbacks */
+a.linkportal2 {
+	background:url('../img/icons.png') no-repeat 6px -20px !important;
+}
+
+	/* Appointments */
+a.linkportal3 {
+	background:url('../img/icons.png') no-repeat 6px -76px !important;
+}
