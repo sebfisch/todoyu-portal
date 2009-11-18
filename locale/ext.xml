@@ -37,40 +37,5 @@
 		<label index="submenuentry.feedbacks">Portal > Feedbacks</label>
 		<label index="submenuentry.appointments">Portal > Appointments</label>
 	</labels>
-	<labels lang="de">
-		<label index="pagetitle">Portal</label>
-		<label index="tab">Portal</label>
-		<label index="panelWidgetFilterPresetList.title">Filter Presets</label>
-		<label index="panelWidgetFilterPresetList.manage">Filter verwalten</label>
-		<label index="panelWidgetFilterPresetList.amount">Anzahl</label>
-		<label index="tab.selection">Selektion</label>
-		<label index="tab.feedbacks">Feedbacks</label>
-		<label index="tab.todos">To Dos</label>
-		<label index="tab.appointments">Termine</label>
-		<label index="tab.invoices">Rechnungen</label>
-		<label index="tasktree.header.date">Datum</label>
-		<label index="tasktree.header.customer">Kunde</label>
-		<label index="tasktree.header.project">Projekt</label>
-		<label index="tasktree.header.task">Task</label>
-		<label index="tasktree.header.number">Nr.</label>
-		<label index="tasktree.header.tasknumber">TaskNr.</label>
-		<label index="task.title.deadline">Deadline</label>
-		<label index="task.title.deadline_short">D</label>
-		<label index="task.title.begin">Beginn</label>
-		<label index="task.title.begin_short">B</label>
-		<label index="task.title.customer">Kunde</label>
-		<label index="task.title.projecttitle">Projektname</label>
-		<label index="task.title.tasktitle">Task title</label>
-		<label index="task.title.jump">Springen</label>
-		<label index="task.title.tasknumber">Tasknr.</label>
-		<label index="tab.todos">Todos</label>
-		<label index="tab.feedbacks">Feedbacks</label>
-		<label index="panelwidget-taskbookmarks.title">Task Bookmarks</label>
-		<label index="date.start.short">B</label>
-		<label index="selection.noTasksFound">Keine Tasks zur gewählten Filter-Kombination gefunden.</label>
-		<label index="submenuentry.selection">Portal > Selektion</label>
-		<label index="submenuentry.todos">Portal > Todos</label>
-		<label index="submenuentry.feedbacks">Portal > Feedbacks</label>
-		<label index="submenuentry.appointments">Portal > Termine</label>
-	</labels>
+	<labels lang="de"></labels>
 </locallang>

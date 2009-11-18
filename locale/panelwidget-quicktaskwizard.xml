@@ -7,11 +7,5 @@
 		<label index="workload_tracked.label">Workload</label>
 		<label index="workload_chargeable.label">Chargeable</label>
 	</labels>
-	<labels lang="de">
-		<label index="title">Quicktasks erstellen</label>
-		<label index="popup.title">Quicktask erstellen</label>
-		<label index="addQuicktask">Quicktask erstellen</label>
-		<label index="workload_tracked.label">Effektive Zeit</label>
-		<label index="workload_chargeable.label">Verrechenbar</label>
-	</labels>
+	<labels lang="de"></labels>
 </locallang>

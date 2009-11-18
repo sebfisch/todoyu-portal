@@ -2,22 +2,13 @@
 <locallang>
 	<labels lang="en">
 		<label index="section.general">General</label>
-		
-		
 		<label index="section.actions">Actions</label>
 		<label index="right.action:ext:default">Portal default view</label>
 		<label index="right.controller:preference">Save preferences</label>
 		<label index="right.controller:tab">Tab controller</label>
-		
-		
 		<label index="section.panelwidgets">Panel widgets</label>
 		<label index="right.PanelWidgetQuicktaskWizard">See quicktask wizard</label>
 		<label index="right.PanelWidgetFilterPresetList">See filter wizard</label>
 	</labels>
-	<labels lang="de">
-		<label index="section.general">Generell</label>
-		<label index="section.panelwidgets">Panel widgets</label>
-		<label index="right.PanelWidgetQuicktaskWizard">Quicktask Wizard (anzeigen)</label>
-		<label index="right.PanelWidgetFilterPresetList">Filter Liste (anzeigen)</label>
-	</labels>
+	<labels lang="de"></labels>
 </locallang>

@@ -3,7 +3,5 @@
 	<labels lang="en">
 		<label index="title">Filters</label>
 	</labels>
-	<labels lang="de">
-		<label index="title">Filter</label>
-	</labels>
+	<labels lang="de"></labels>
 </locallang>
