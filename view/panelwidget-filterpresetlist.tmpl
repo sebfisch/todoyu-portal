@@ -1,19 +1,24 @@
-{* inner widget content *}
 <div id="filterPresetsBox">
 	<div id="filterTarget">
 		<div class="filter">
 			<span class="field">
 				<span class="selectScrollbarHide">
 				<select size="{sizeof($filtersets)}" id="panelwidget-{$id}-list" multiple="multiple">
-				{* ----- list all filter presets as options ----- *}{foreach $filtersets filterset}
-					<option value="{$filterset.id}" class="{cycle values="odd,even"}{if $filterset.selected == 1} selected{/if}" {if $filterset.selected == 1}selected="selected"{/if}>{$filterset.title} ({$filterset.amount})</option>
+				
+				{* ---------- List all filter presets as options ---------- *}
+				{foreach $filtersets filterset}
+					<option value="{$filterset.id}" class="{cycle values="odd,even"}{if $filterset.selected == 1} selected{/if}" {if $filterset.selected == 1}selected="selected"{/if}>
+						{$filterset.title} ({$filterset.amount})
+					</option>
 				{/foreach}
 				</select>
 				</span>
 			</span>
 		</div>
 	</div>
-	<br/>{* ----- manage filter presets button ----- *}
+	<br/>
+	
+	{* ---------- Manage filter presets button ---------- *}
 	<button onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()">
 		<span class="hasIcon editFiltersButton">{Label portal.panelWidgetFilterPresetList.manage}</span>
 		<span class="rgt"/>
