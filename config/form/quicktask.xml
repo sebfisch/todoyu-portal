@@ -18,7 +18,7 @@
 				</field>
 				
 				<field type="textinputAC" name="id_project">
-					<label>LLL:project.task.project</label>
+					<label>LLL:core.project</label>
 					<config>
 						<acListener>
 							<ext>project</ext>
@@ -40,7 +40,7 @@
 				</field>
 				
 				<field type="select" name="id_worktype">
-					<label>LLL:project.task.worktype</label>
+					<label>LLL:task.worktype</label>
 					<source type="sql">
 						<fields>id,title</fields>
 						<tables>ext_project_worktype</tables>
@@ -57,13 +57,13 @@
 				</field>
 				
 				<field type="checkbox" name="start_tracking">
-					<label>LLL:project.task.start_tracking</label>
+					<label>LLL:project.task.startTracking</label>
 					<default>1</default>
 					<onchange>Todoyu.Ext.portal.PanelWidget.QuicktaskWizard.preventStartDone('start', this)</onchange>
 				</field>
 				
 				<field type="checkbox" name="task_done">
-					<label>LLL:project.task.task_done</label>
+					<label>LLL:task.taskDone</label>
 					<onchange>Todoyu.Ext.portal.PanelWidget.QuicktaskWizard.preventStartDone('done', this)</onchange>
 				</field>
 
