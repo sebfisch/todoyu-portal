@@ -19,8 +19,6 @@
 		<label index="task.title.begin">Begin</label>
 		<label index="task.title.begin_short">B</label>
 		<label index="task.title.customer">Customer</label>
-		<label index="task.title.projecttitle">Project title</label>
-		<label index="task.title.tasktitle">Task title</label>
 		<label index="task.title.jump">Jump</label>
 		<label index="task.title.tasknumber">Taskno.</label>
 		<label index="panelWidgetQuicktaskWizard.title">Create Quicktask</label>
