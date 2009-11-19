@@ -9,7 +9,6 @@
 	<fieldsets>
 		<fieldset name="left">
 			<legend>Left form column</legend>
-			<class>left noneFloatingInput</class>
 			<elements>
 
 				<field type="textinput" name="title">

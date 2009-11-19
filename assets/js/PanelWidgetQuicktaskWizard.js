@@ -41,7 +41,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 			}
 		};
 
-		Todoyu.Popup.openWindow('popupCreateTask', 'Quicktask wizard', 420, 390, url, options);
+		Todoyu.Popup.openWindow('popupCreateTask', 'Quicktask wizard', 420, 310, url, options);
 	},
 
 
