@@ -29,8 +29,14 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	}
 
 
+
+	/**
+	 *	General panelWidget action, saves collapse status
+	 *
+	 *	@param	Array	$params
+	 */
 	public function pwidgetAction(array $params) {
-		$idWidget	= intval($params['item']);
+		$idWidget	= $params['item'];
 		$value		= $params['value'];
 
 		TodoyuPanelWidgetManager::saveCollapsedStatus(EXTID_PORTAL, $idWidget, $value);
