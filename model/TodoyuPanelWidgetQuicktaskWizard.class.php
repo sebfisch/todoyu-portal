@@ -90,8 +90,7 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 	public function renderForm()	{
 			// Construct form object
 		$xmlPath	= 'ext/portal/config/form/quicktask.xml';
-		$form		= new TodoyuForm($xmlPath);
-		$form		= TodoyuFormHook::callBuildForm($xmlPath, $form, 0);
+		$form		= TodoyuFormManager::getForm($xmlPath);
 
 			// Preset (empty) form data
 		$formData	= array();
@@ -111,12 +110,11 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 	public static function handleQuicktaskForm($formData)	{
 		$jsonResponse = new stdClass;
 
+		$idTask	= 0;
+
 			// Construct form object
 		$xmlPath	= 'ext/portal/config/form/quicktask.xml';
-		$form		= new TodoyuForm($xmlPath);
-
-		$idTask	= 0;
-		$form		= TodoyuFormHook::callBuildForm($xmlPath, $form, $idTask);
+		$form		= TodoyuFormManager::getForm($xmlPath, $idTask);
 
 			// Evoke load form data/ modification hooks
 		$formData	= TodoyuFormHook::callLoadData($xmlPath, $formData, $idTask);
