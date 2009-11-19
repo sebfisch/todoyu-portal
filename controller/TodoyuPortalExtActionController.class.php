@@ -8,7 +8,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 
 			// Setup page to be rendered
 		TodoyuPage::init('ext/portal/view/ext.tmpl');
-		TodoyuPage::setTitle('LLL:portal.pagetitle');
+		TodoyuPage::setTitle('LLL:portal.page.title');
 
 			// Panel widgets
 		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();

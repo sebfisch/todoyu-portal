@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="pagetitle">Portal</label>
+		<label index="ext.title">Portal</label>
+		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
 		<label index="panelWidgetFilterPresetList.title">Filter Presets</label>
 		<label index="panelWidgetFilterPresetList.manage">Manage Filters</label>
