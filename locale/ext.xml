@@ -13,8 +13,6 @@
 		<label index="tab.invoices">Invoices</label>
 		<label index="tasktree.header.date">Date</label>
 		<label index="tasktree.header.customer">Customer</label>
-		<label index="tasktree.header.project">Project</label>
-		<label index="tasktree.header.task">Task</label>
 		<label index="tasktree.header.number">No.</label>
 		<label index="tasktree.header.tasknumber">Task</label>
 		<label index="task.title.deadline">Deadline</label>
