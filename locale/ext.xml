@@ -28,10 +28,10 @@
 		<label index="panelwidget-taskbookmarks.title">Task Bookmarks</label>
 		<label index="date.start.short">B</label>
 		<label index="selection.noTasksFound">There are no tasks suiting this filter combination.</label>
-		<label index="submenuentry.selection">Portal > Selection</label>
-		<label index="submenuentry.todos">Portal > Todos</label>
-		<label index="submenuentry.feedbacks">Portal > Feedbacks</label>
-		<label index="submenuentry.appointments">Portal > Appointments</label>
+		<label index="subMenuEntry.selection">Portal > Selection</label>
+		<label index="subMenuEntry.todos">Portal > Todos</label>
+		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
+		<label index="subMenuEntry.appointments">Portal > Appointments</label>
 	</labels>
 	<labels lang="de"></labels>
 </locallang>
