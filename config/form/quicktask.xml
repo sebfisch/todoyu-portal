@@ -11,12 +11,12 @@
 			<legend>Left form column</legend>
 			<class>left noneFloatingInput</class>
 			<elements>
-			
+
 				<field type="textinput" name="title">
 					<label>LLL:core.title</label>
 					<required>1</required>
 				</field>
-				
+
 				<field type="textinputAC" name="id_project">
 					<label>LLL:core.project</label>
 					<config>
@@ -29,7 +29,7 @@
 					</config>
 					<required>1</required>
 				</field>
-				
+
 				<field type="RTE" name="description">
 					<label>LLL:core.description</label>
 					<tinymce>
@@ -38,7 +38,7 @@
 						<height>80px</height>
 					</tinymce>
 				</field>
-				
+
 				<field type="select" name="id_worktype">
 					<label>LLL:task.worktype</label>
 					<source type="sql">
@@ -46,22 +46,22 @@
 						<tables>ext_project_worktype</tables>
 						<where>deleted = 0</where>
 						<order>title</order>
-						<label>LLL:core.title</label>
+						<label>title</label>
 						<value>id</value>
 					</source>
 					<required>1</required>
 				</field>
-				
+
 				<field type="timeinput" name="workload_tracked">
-					<label>LLL:panelwidget-quicktaskwizard.workload_tracked.label</label>
+					<label>LLL:panelwidget-quicktaskwizard.workloadTracked.label</label>
 				</field>
-				
+
 				<field type="checkbox" name="start_tracking">
-					<label>LLL:project.task.startTracking</label>
+					<label>LLL:panelwidget-quicktaskwizard.startTracking.label</label>
 					<default>1</default>
 					<onchange>Todoyu.Ext.portal.PanelWidget.QuicktaskWizard.preventStartDone('start', this)</onchange>
 				</field>
-				
+
 				<field type="checkbox" name="task_done">
 					<label>LLL:task.taskDone</label>
 					<onchange>Todoyu.Ext.portal.PanelWidget.QuicktaskWizard.preventStartDone('done', this)</onchange>
@@ -85,7 +85,7 @@
 						<type>button</type>
 						<class>buttonCancel</class>
 						<hasIcon>1</hasIcon>
-						<onclick>Todoyu.Popup.close();</onclick>
+						<onclick>Todoyu.Popup.close('popupCreateTask');</onclick>
 					</field>
 				</elements>
 		</fieldset>

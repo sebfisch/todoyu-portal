@@ -45,7 +45,7 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 			$params,									// widget params
 			$idArea										// area ID
 		);
-		
+
 			// Add public and widget assets
 		TodoyuPage::addExtAssets('portal', 'public');
 		TodoyuPage::addExtAssets('portal', 'panelwidget-quicktaskwizard');
@@ -53,17 +53,17 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 		$this->addHasIconClass();
 	}
 
-	
+
 	public function renderContent() {
 		$tmpl	= 'ext/portal/view/panelwidget-quicktaskwizard.tmpl';
 		$data	= array(
 			'id'	=> $this->getID()
 		);
-		
+
 		$content	= render($tmpl, $data);
-		
+
 		$this->setContent($content);
-		
+
 		return $content;
 	}
 
@@ -92,8 +92,6 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 		$xmlPath	= 'ext/portal/config/form/quicktask.xml';
 		$form		= new TodoyuForm($xmlPath);
 		$form		= TodoyuFormHook::callBuildForm($xmlPath, $form, 0);
-		
-		$form->setUseRecordID(false);
 
 			// Preset (empty) form data
 		$formData	= array();
@@ -146,9 +144,9 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 
 		return $jsonResponse;
 	}
-	
-	
-	
+
+
+
 	public static function saveQuicktask(array $formData) {
 		$data	= array(
 			'title'				=> $formData['title'],
@@ -164,42 +162,42 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 			'type'				=> TASK_TYPE_TASK,
 			'estimated_workload'=> TodoyuTime::SECONDS_HOUR
 		);
-		
+
 			// If task already done
 		if( intval($formData['task_done']) === 1 ) {
 			$data['status'] 	= STATUS_DONE;
 			$data['date_end']	= NOW;
 			$data['date_finish']= NOW;
 		}
-		
+
 			// Start tracking
 		if( intval($formData['start_tracking']) === 1 ) {
 			$data['status'] = STATUS_PROGRESS;
 		}
-		
+
 			// Save task
 		$idTask = TodoyuTaskManager::saveTask(0, $data);
-		
+
 			// If already tracked workload set
 		if( intval($formData['workload_tracked']) > 0 ) {
 			self::addTrackedWorkload($idTask, $formData['workload_tracked']);
 		}
-		
+
 		return $idTask;
 	}
-	
-	
+
+
 	protected static function addTrackedWorkload($idTask, $workload) {
 		$idTask		= intval($idTask);
 		$workload	= intval($workload);
-		
+
 		$data	= array(
 			'id_user'			=> TodoyuAuth::getUserID(),
 			'id_task'			=> $idTask,
 			'date_create'		=> NOW,
 			'workload_tracked'	=> $workload
 		);
-		
+
 		TodoyuTimetrackingManager::saveWorkloadRecord($data);
 	}
 

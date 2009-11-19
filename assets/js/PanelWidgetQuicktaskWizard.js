@@ -25,9 +25,9 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 
 	ext: Todoyu.Ext.portal,
 
-	fieldStart: 'quicktask-field-start-tracking',
+	fieldStart: 'quicktask-0-field-start-tracking',
 
-	fieldDone: 'quicktask-field-task-done',
+	fieldDone: 'quicktask-0-field-task-done',
 
 
 	/**
@@ -41,7 +41,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 			}
 		};
 
-		Todoyu.Popup.openWindow('popupCreateEvent', 'Quicktask wizard', 420, 390, url, options);
+		Todoyu.Popup.openWindow('popupCreateTask', 'Quicktask wizard', 420, 390, url, options);
 	},
 
 
@@ -71,7 +71,7 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 		if( error ) {
 			$(form).replace(response.responseText);
 		} else {
-			Todoyu.Popup.close('popupCreateEvent');
+			Todoyu.Popup.close('popupCreateTask');
 
 			if( start ) {
 				var idTask= response.getTodoyuHeader('idTask');
@@ -100,9 +100,9 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 	 */
 	disableCheckboxTaskDone: function(input)	{
 		if(input.getValue() == 1)	{
-			$('quicktask-0-field-is-task-done').disabled = true;
+			$(this.fieldDone).disabled = true;
 		} else {
-			$('quicktask-0-field-is-task-done').disabled = false;
+			$(this.fieldDone).disabled = false;
 		}
 	},
 
@@ -115,9 +115,9 @@ Todoyu.Ext.portal.PanelWidget.QuicktaskWizard = {
 	 */
 	disableCheckboxStartWorkload: function(input)	{
 		if(input.getValue() == 1)	{
-			$('quicktask-0-field-start-workload').disabled = true;
+			$(this.fieldStart).disabled = true;
 		} else {
-			$('quicktask-0-field-start-workload').disabled = false;
+			$(this.fieldStart).disabled = false;
 		}
 	}
 };
