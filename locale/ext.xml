@@ -10,7 +10,6 @@
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="tab.todos">To Dos</label>
 		<label index="tab.appointments">Appointments</label>
-		<label index="tab.invoices">Invoices</label>
 		<label index="tasktree.header.date">Date</label>
 		<label index="tasktree.header.customer">Customer</label>
 		<label index="tasktree.header.number">No.</label>
