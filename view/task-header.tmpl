@@ -7,7 +7,7 @@
 		<span class="customer">
 			{if $task.customer.shortname}{$task.customer.shortname}{else}{$task.customer.name}{/if}
 		</span>
-		<span class="projectName" title="{Label core.project}: {$task.project.title} (ID: {$task.project.id}) / {Label core.task}: {$task.title}">
+		<span class="projectName" title="{Label project.project}: {$task.project.title} (ID: {$task.project.id}) / {Label task.task}: {$task.title}">
 			{htmlencode $task.project.title|truncate:45} - {htmlencode $task.title|truncate:45}
 		</span>
 	{if $task.infoIcons}

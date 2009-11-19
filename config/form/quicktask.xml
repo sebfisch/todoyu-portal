@@ -17,7 +17,7 @@
 				</field>
 
 				<field type="textinputAC" name="id_project">
-					<label>LLL:core.project</label>
+					<label>LLL:project.project</label>
 					<config>
 						<acListener>
 							<ext>project</ext>
