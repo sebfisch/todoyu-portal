@@ -108,8 +108,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 *	@param	Element	elFilterSelector
 	 */
 	changeAndActivateSelectionFiltersets: function(elFilterSelector) {
-	var filtersets = this.getSelectedFiltersets(elFilterSelector);
-	filtersets = filtersets.join(',');
+		var filtersets = this.getSelectedFiltersets(elFilterSelector);
+		filtersets = filtersets.join(',');
 
 		var url 	= Todoyu.getUrl('portal', 'preference');	// ext, action
 		var options = {
