@@ -9,6 +9,7 @@
 		<label index="section.panelwidgets">Panel widgets</label>
 		<label index="right.PanelWidgetQuicktaskWizard">See quicktask wizard</label>
 		<label index="right.PanelWidgetFilterPresetList">See filter wizard</label>
+<!--  ......................................... added after 20091122 -->
 	</labels>
 	<labels lang="de"></labels>
 </locallang>

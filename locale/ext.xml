@@ -32,6 +32,7 @@
 		<label index="subMenuEntry.todos">Portal > Todos</label>
 		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
 		<label index="subMenuEntry.appointments">Portal > Appointments</label>
+<!--  ......................................... added after 20091122 -->
 	</labels>
 	<labels lang="de"></labels>
 </locallang>

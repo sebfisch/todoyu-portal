@@ -7,6 +7,7 @@
 		<label index="workloadTracked.label">Workload</label>
 		<label index="startTracking.label">Start Tracking</label>
 		<label index="workload_chargeable.label">Chargeable</label>
+<!--  ......................................... added after 20091122 -->
 	</labels>
 	<labels lang="de"></labels>
 </locallang>
