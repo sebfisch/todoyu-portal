@@ -1,0 +1,11 @@
+#panelwidget-quicktask h1 .title {
+	background:transparent url('../img/icons.png') no-repeat 5px -295px;
+}
+
+#panelwidget-quicktask .content {
+	padding:5px;	
+}
+
+#panelwidget-quicktask button.addQuicktask .icon {
+	background:url('../img/icons.png') no-repeat 0 -133px;
+}

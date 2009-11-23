@@ -20,11 +20,11 @@
 ***************************************************************/
 
 /**
- * Panel widget: quicktask wizard
+ * Panel widget: quicktask
  *
  */
 
-class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
+class TodoyuPanelWidgetQuicktask extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
 
 	private $expandedProjects 	= array();
 
@@ -38,24 +38,24 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 	public function __construct(array $config, array $params = array(), $idArea = 0) {
 			// construct PanelWidget (init basic configuration)
 		parent::__construct(
-			'portal',									// ext key
-			'quicktaskWizard',							// panel widget ID
-			'LLL:panelwidget-quicktaskwizard.title',	// widget title text
-			$config,									// widget config array
-			$params,									// widget params
-			$idArea										// area ID
+			'portal',							// ext key
+			'quicktask',						// panel widget ID
+			'LLL:panelwidget-quicktask.title',	// widget title text
+			$config,							// widget config array
+			$params,							// widget params
+			$idArea								// area ID
 		);
 
 			// Add public and widget assets
 		TodoyuPage::addExtAssets('portal', 'public');
-		TodoyuPage::addExtAssets('portal', 'panelwidget-quicktaskwizard');
+		TodoyuPage::addExtAssets('portal', 'panelwidget-quicktask');
 
 		$this->addHasIconClass();
 	}
 
 
 	public function renderContent() {
-		$tmpl	= 'ext/portal/view/panelwidget-quicktaskwizard.tmpl';
+		$tmpl	= 'ext/portal/view/panelwidget-quicktask.tmpl';
 		$data	= array(
 			'id'	=> $this->getID()
 		);
@@ -75,7 +75,6 @@ class TodoyuPanelWidgetQuicktaskWizard extends TodoyuPanelWidget implements Todo
 	 */
 	public function render() {
 		$this->renderContent();
-		//$this->setContent( render('ext/portal/view/panelwidget-quicktaskwizard.tmpl', array() ) );
 
 		return parent::render();
 	}

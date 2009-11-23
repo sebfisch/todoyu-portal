@@ -1,4 +1,3 @@
-<?php
 /***************************************************************
 *  Copyright notice
 *
@@ -20,15 +19,17 @@
 ***************************************************************/
 
 /**
- * Configure panel widgets to be shown in Portal area
+ * Panel widget: Quick task
  */
+Todoyu.Ext.portal.PanelWidget.QuickTask = {
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
+	ext: Todoyu.Ext.portal,
 
+	add: function() {
+		Todoyu.Ext.project.QuickTask.openPopup(this.onAdded.bind(this));
+	},
 
-TodoyuPanelWidgetManager::addDefaultPanelWidget('portal', 'TodoyuPanelWidgetFilterPresetList', 10);
-TodoyuPanelWidgetManager::addDefaultPanelWidget('portal', 'TodoyuPanelWidgetQuickTask', 20);
-
-
-
-?>
+	onAdded: function(idTask, idProject, started) {
+		console.log('added: ' + idTask);
+	}
+};
