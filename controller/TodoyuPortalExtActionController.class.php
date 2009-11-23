@@ -25,6 +25,9 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 			// Activate FE tab
 		TodoyuFrontend::setActiveTab('portal');
 
+			// Add assets
+		TodoyuPage::addExtAssets('portal', 'public');
+
 			// Setup page to be rendered
 		TodoyuPage::init('ext/portal/view/ext.tmpl');
 		TodoyuPage::setTitle('LLL:portal.page.title');

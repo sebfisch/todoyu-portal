@@ -21,10 +21,6 @@
 
 class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
-	protected function hasActionAccess($action) {
-		return $this->hasControllerAccess();
-	}
-
 	public function tabAction(array $params) {
 		$idTab	= intval($params['value']);
 

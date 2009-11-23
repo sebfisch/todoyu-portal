@@ -21,10 +21,6 @@
 
 class TodoyuPortalTaskActionController extends TodoyuActionController {
 
-	public function hasActionAccess($action) {
-		return true;
-	}
-
 	public function getAction(array $params) {
 		$idTask	= intval($params['task']);
 

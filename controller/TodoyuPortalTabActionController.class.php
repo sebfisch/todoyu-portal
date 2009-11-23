@@ -21,10 +21,6 @@
 
 class TodoyuPortalTabActionController extends TodoyuActionController {
 
-	protected function hasActionAccess($action) {
-		return true;
-	}
-
 	public function updateAction(array $params) {
 		$idTab	= intval($params['tab']);
 

@@ -45,19 +45,4 @@ require_once( PATH_EXT_PORTAL . '/config/extension.php' );
 require_once( PATH_EXT_PORTAL . '/config/panelwidgets.php' );
 require_once( PATH_EXT_PORTAL . '/model/dwoo-plugins.php');
 
-	// Add assets
-TodoyuPage::addExtAssets('portal', 'public');
-
-	// Add menu entries
-if( TodoyuAuth::isLoggedIn() ) {
-	TodoyuFrontend::setDefaultTab('portal');
-	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.tab', '?ext=portal', 10);
-
-
-	$portalTabs	= TodoyuPortalManager::getTabs();
-	foreach($portalTabs as $idTab => $tabData) {
-		TodoyuFrontend::addSubmenuEntry('portal', 'portal', $tabData['title'], '?ext=portal&tab=' . $idTab, 50 + $idTab, $idTab);
-	}
-}
-
 ?>
