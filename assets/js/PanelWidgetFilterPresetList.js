@@ -114,8 +114,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 		var url 	= Todoyu.getUrl('portal', 'preference');	// ext, action
 		var options = {
 			'parameters': {
-				'name': 'tabFiltersets',
-				'value': filtersets
+				'name':		'tabFiltersets',
+				'value':	filtersets
 			},
 			'onComplete': function(response) {
 					// Refresh task list of 'Selection' tab and have the tab refreshed/ activated

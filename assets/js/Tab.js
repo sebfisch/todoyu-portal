@@ -99,8 +99,8 @@ Todoyu.Ext.portal.Tab = {
 		var url		= Todoyu.getUrl('portal', 'tab');
 		var options	= {
 			'parameters': {
-				'action': 'update',
-				'tab': tabKey
+				'action':	'update',
+				'tab':		tabKey
 			}
 		};
 		var target	= 'portal-tabcontent-' + tabKey;
