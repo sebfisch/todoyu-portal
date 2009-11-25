@@ -7,9 +7,12 @@
 		<label index="right.controller:preference">Save preferences</label>
 		<label index="right.controller:tab">Tab controller</label>
 		<label index="section.panelwidgets">Panel widgets</label>
-		<label index="right.PanelWidgetQuicktaskWizard">See quicktask wizard</label>
-		<label index="right.PanelWidgetFilterPresetList">See filter wizard</label>
+		<label index="right.panelwidget:quicktaskWizard">Show quickTask</label>
+		<label index="right.panelwidget:filterPresetList">Show filterPresetList</label>
 <!--  ......................................... added after 20091122 -->
+		<label index="right.use">Use portal</label>
+		<label index="section.panelwidgetFilterPresetList">Panelwidget FilterPresetList</label>
+		<label index="right.panelwidget:filterPresetList:manageFilters">Manage filter button</label>
 	</labels>
 	<labels lang="de"></labels>
 </locallang>

@@ -116,7 +116,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 *
 	 * @return	String
 	 */
-	function render() {
+	public function render() {
 		TodoyuPage::addExtAssets('portal', 'public');
 		TodoyuPage::addExtAssets('portal', 'panelwidget-filterpresetlist');
 
@@ -125,6 +125,11 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 		$this->renderContent();
 
 		return parent::render();
+	}
+
+
+	public static function isAllowed() {
+		return allowed('portal', 'panelwidget:filterPresetList');
 	}
 
 }
