@@ -61,7 +61,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::addExtAssets('portal');
 
 			// Context menu
-		TodoyuPage::addJsInlines('Todoyu.Ext.project.ContextMenuTask.attach();');
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.project.ContextMenuTask.attach.bind(Todoyu.Ext.project.ContextMenuTask)');
 
 			// Display output
 		return TodoyuPage::render();
