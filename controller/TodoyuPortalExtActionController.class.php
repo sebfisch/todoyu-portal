@@ -34,15 +34,20 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::init('ext/portal/view/ext.tmpl');
 		TodoyuPage::setTitle('LLL:portal.page.title');
 
+			// Get active tab
+		$activeTab	= intval($params['tab']);
+		if( $activeTab === 0 ) {
+			$activeTab = TodoyuPortalPreferences::getActiveTab();
+		} else {
+			TodoyuPortalPreferences::saveActiveTab($activeTab);
+		}
+
 			// Panel widgets
 		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();
 		TodoyuPage::set('panelWidgets', $panelWidgets);
 
-		$idActiveTab	= isset($params['tab']) ? $params['tab'] : TodoyuPortalPreferences::getActiveTab();
 
-		TodoyuPortalPreferences::saveActiveTab($idActiveTab);
-
-		//render Tabhead
+			// Tabheads
 		$portalTabs		= TodoyuPortalRenderer::renderTabHeads();
 		$tabContainers	= TodoyuPortalRenderer::renderEmptyTabContainers();
 
@@ -50,8 +55,8 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('tabContainers', $tabContainers);
 
 		// Render active tab, tab content
-		$tab			= TodoyuPortalManager::getTab($idActiveTab);
-		$tabContent		= TodoyuPortalRenderer::renderTabContent($idActiveTab);
+		$tab			= TodoyuPortalManager::getTab($activeTab);
+		$tabContent		= TodoyuPortalRenderer::renderTabContent($activeTab);
 
 		TodoyuPage::set('tab', 			$tab);
 		TodoyuPage::set('tabContent', 	$tabContent);

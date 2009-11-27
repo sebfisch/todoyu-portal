@@ -21,6 +21,8 @@
 Todoyu.Ext.portal.Tab = {
 
 	ext: Todoyu.Ext.portal,
+	
+	cache: {},
 
 
 
@@ -43,6 +45,8 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	Boolean	refresh
 	 */
 	showTab: function(tabKey, refresh) {
+		this.moveActiveTabContentToCache();
+		
 		if( ! this.isTabLoaded(tabKey) || refresh === true ) {
 			this.updateTabContent(tabKey);
 		} else {
@@ -50,6 +54,18 @@ Todoyu.Ext.portal.Tab = {
 		}
 
 		this.displayActiveTab(tabKey);
+	},
+	
+	
+	moveActiveTabContentToCache: function() {
+		var activeTab	= Todoyu.Tabs.getActive('portal-tabs');
+		var idTab		= activeTab.id.split('-').last();
+		
+			// Move content to cache
+		this.cache[idTab] = $('portal-tabcontent-' + idTab).innerHTML;
+		
+			// Clear content
+		$('portal-tabcontent-' + idTab).update('');
 	},
 
 
@@ -60,7 +76,9 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	String	tabKey
 	 */
 	isTabLoaded: function(tabKey) {
-		return $('portal-tabcontent-' + tabKey).empty() === false;
+		return Object.isUndefined(this.cache[tabKey]) === false;
+		//console.log(typeof(this.cache[tabKey]));
+		//return $('portal-tabcontent-' + tabKey).empty() === false;
 	},
 
 
@@ -82,10 +100,15 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	String	tabKey
 	 */
 	displayActiveTab: function(tabKey) {
+		console.log(tabKey);
+			// Hide all tabs
 		$$('.portal-tabcontent').invoke('hide');
+			// Update new active tab with content from cache
+		$('portal-tabcontent-' + tabKey).update(this.cache[tabKey]);
+			// Show new active tab
 		$('portal-tabcontent-' + tabKey).show();
-		$('portal-tabcontent-' + tabKey).removeClassName('hidden');
-		Todoyu.Tabs.setActive('portal-tabhead-' + tabKey);
+		
+		Todoyu.Ext.project.ContextMenuTask.reattach();		
 	},
 
 
@@ -101,12 +124,20 @@ Todoyu.Ext.portal.Tab = {
 			'parameters': {
 				'action':	'update',
 				'tab':		tabKey
-			}
+			},
+			'onComplete': this.onTabContentUpdated.bind(this, tabKey)
 		};
 		var target	= 'portal-tabcontent-' + tabKey;
 
 		Todoyu.Ui.update(target, url, options);
+	},
+	
+	onTabContentUpdated: function(tabKey, response) {
+		this.cache[tabKey] = response.responseText;
 	}
+
+
+
 
 
 

@@ -65,7 +65,7 @@ class TodoyuPortalRenderer {
 		$content= '';
 
 		foreach($taskIDs as $idTask) {
-			$content .= TodoyuPortalRenderer::renderTask($idTask);
+			$content .= self::renderTask($idTask);
 		}
 
 		$tmpl	= 'ext/portal/view/tasklist.tmpl';
@@ -150,11 +150,11 @@ class TodoyuPortalRenderer {
 	/**
 	 * Render task
 	 *
-	 * @param	Integer	$idTask
+	 * @param	Integer		$idTask
 	 * @return	String
 	 */
 	public static function renderTask($idTask) {
-		$idTask	= intval($idTask);
+		$idTask		= intval($idTask);
 
 				// Get some task information
 		$isExpanded	= self::isTaskExpanded($idTask);
@@ -162,8 +162,8 @@ class TodoyuPortalRenderer {
 
 			// Prepare data array for template
 		$data = array(
-			'task'				=> $taskData,
-			'isExpanded'		=> $isExpanded
+			'task'			=> $taskData,
+			'isExpanded'	=> $isExpanded
 		);
 
 			// Render details if task is expanded

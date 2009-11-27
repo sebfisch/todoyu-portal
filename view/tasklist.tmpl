@@ -2,14 +2,13 @@
 
 {* ---------- Header with column titles ---------- *}
 	{include file="tasklist-header.tmpl"}
-	
+
 {* ---------- The actual list of tasks ---------- *}
 	<div class="tasks" id="tasks">
 		{$taskHTML}
-{if strlen($taskHTML) == 0}
-		<br/>
-		<span class="contentMessage">{Label portal.selection.noTasksFound}</span>
-{/if}
+		{if strlen($taskHTML) == 0}
+			<br/><span class="contentMessage">{Label portal.selection.noTasksFound}</span>
+		{/if}
 	</div>
 </div>
 <script type="text/javascript">
