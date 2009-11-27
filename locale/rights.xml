@@ -13,14 +13,14 @@
 		<label index="section.panelwidgetFilterPresetList">Panelwidget FilterPresetList</label>
 		<label index="right.panelwidget:filterPresetList:manageFilters">Manage filter button</label>
 	</labels>	<labels lang="de">
-		<label index="section.general">Generell</label>
+		<label index="section.general">Allgemein</label>
 		<label index="section.actions">Aktionen</label>
 		<label index="right.action:ext:default">Portal Standard-Ansicht</label>
 		<label index="right.controller:preference">Einstellungen speichern</label>
-		<label index="right.controller:tab">Tab Kontroller</label>
+		<label index="right.controller:tab">Reiter-Steuerung</label>
 		<label index="section.panelwidgets">Steuerelemente</label>
 		<label index="right.PanelWidgetQuicktaskWizard">Sieht Kurz-Aufgabe Anleitung</label>
-		<label index="right.PanelWidgetFilterPresetList">Sieht Filter Anleitung</label>
+		<label index="right.PanelWidgetFilterPresetList">Sieht Filter-Vorgabenlisten Element</label>
 				<label index="right.use">Portal Verwenden</label>
 		<label index="section.panelwidgetFilterPresetList">Filtervorgaben Element</label>
 		<label index="right.panelwidget:filterPresetList:manageFilters">Filter Verwalten Knopf</label>

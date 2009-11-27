@@ -37,7 +37,7 @@
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
-		<label index="panelWidgetFilterPresetList.title">Standard Filer</label>
+		<label index="panelWidgetFilterPresetList.title">Standard Filter</label>
 		<label index="panelWidgetFilterPresetList.manage">Filter bearbeiten</label>
 		<label index="panelWidgetFilterPresetList.amount">Menge</label>
 		<label index="tab.selection">Auswahl</label>
@@ -54,13 +54,13 @@
 		<label index="task.title.begin_short">S</label>
 		<label index="task.title.customer">Kunde</label>
 		<label index="task.title.jump">Springen</label>
-		<label index="task.title.tasknumber">Aufgaben-nr</label>
+		<label index="task.title.tasknumber">Aufgaben-Nr</label>
 		<label index="panelWidgetQuicktaskWizard.title">Kurz-Aufgabe</label>
 		<label index="tab.todos">Aufgaben</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="panelwidget-taskbookmarks.title">Aufgaben-Favoriten</label>
 		<label index="date.start.short">S</label>
-		<label index="selection.noTasksFound">Es gibt keine Tasks mit dieser Filterauswahl</label>
+		<label index="selection.noTasksFound">Es gibt keine Aufgaben zu dieser Filterauswahl</label>
 		<label index="subMenuEntry.selection">Portal > Auswahl</label>
 		<label index="subMenuEntry.todos">Portal > Aufgaben</label>
 		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>

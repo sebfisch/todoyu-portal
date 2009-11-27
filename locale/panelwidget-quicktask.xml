@@ -7,7 +7,13 @@
 		<label index="workloadTracked.label">Workload</label>
 		<label index="startTracking.label">Start Tracking</label>
 		<label index="workload_chargeable.label">Chargeable</label>
-<!--  ......................................... added after 20091122 -->
 	</labels>
-	<labels lang="de"></labels>
+	<labels lang="de">
+		<label index="title">Schnell-Aufgaben Assistent</label>
+		<label index="popup.title">Schnell-Aufgabe erzeugen</label>
+		<label index="addQuicktask">Schnell-Aufgabe hinzufügen</label>
+		<label index="workloadTracked.label">Arbeitspensum</label>
+		<label index="startTracking.label">Zeiterfassung starten</label>
+		<label index="workload_chargeable.label">Anrechenbar</label>
+	</labels>
 </locallang>
