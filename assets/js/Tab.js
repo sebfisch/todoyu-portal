@@ -100,7 +100,6 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	String	tabKey
 	 */
 	displayActiveTab: function(tabKey) {
-		console.log(tabKey);
 			// Hide all tabs
 		$$('.portal-tabcontent').invoke('hide');
 			// Update new active tab with content from cache
