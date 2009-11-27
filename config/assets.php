@@ -26,7 +26,7 @@
  * @subpackage	Portal
  */
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
+
 
 
 $CONFIG['EXT']['portal']['assets'] = array(

@@ -23,7 +23,7 @@
  * Configure panel widgets to be shown in Portal area
  */
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
+
 
 
 TodoyuPanelWidgetManager::addDefaultPanelWidget('portal', 'TodoyuPanelWidgetFilterPresetList', 10);

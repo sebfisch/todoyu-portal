@@ -27,7 +27,7 @@
  */
 
 
-if( ! defined('TODOYU') ) die('NO ACCESS');
+
 
 
 $CONFIG['EXT']['portal']['renderer']['panel'][]		= 'TodoyuPortalRenderer::renderPanelWidgets';
