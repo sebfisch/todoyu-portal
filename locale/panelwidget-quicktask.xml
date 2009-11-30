@@ -11,7 +11,7 @@
 	<labels lang="de">
 		<label index="title">Schnell-Aufgaben Assistent</label>
 		<label index="popup.title">Schnell-Aufgabe erzeugen</label>
-		<label index="addQuicktask">Schnell-Aufgabe hinzufügen</label>
+		<label index="addQuicktask">Aufgaben-Assisten</label>
 		<label index="workloadTracked.label">Arbeitspensum</label>
 		<label index="startTracking.label">Zeiterfassung starten</label>
 		<label index="workload_chargeable.label">Anrechenbar</label>
