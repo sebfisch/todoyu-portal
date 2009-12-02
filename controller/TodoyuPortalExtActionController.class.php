@@ -21,6 +21,12 @@
 
 class TodoyuPortalExtActionController extends TodoyuActionController {
 
+	/**
+	 * Portal default action: render portal view
+	 *
+	 *	@param	Array	$params
+	 *	@return	String
+	 */
 	public function defaultAction(array $params) {
 		restrict('portal', 'use');
 
@@ -46,7 +52,6 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();
 		TodoyuPage::set('panelWidgets', $panelWidgets);
 
-
 			// Tabheads
 		$portalTabs		= TodoyuPortalRenderer::renderTabHeads();
 		$tabContainers	= TodoyuPortalRenderer::renderEmptyTabContainers();
@@ -54,7 +59,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('portalTabs', 	$portalTabs);
 		TodoyuPage::set('tabContainers', $tabContainers);
 
-		// Render active tab, tab content
+			// Render active tab, tab content
 		$tab			= TodoyuPortalManager::getTab($activeTab);
 		$tabContent		= TodoyuPortalRenderer::renderTabContent($activeTab);
 
@@ -73,6 +78,5 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 	}
 
 }
-
 
 ?>

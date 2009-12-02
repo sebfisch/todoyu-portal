@@ -36,6 +36,14 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	}
 
 
+	/**
+	 * Save task being expanded / collapsed.
+	 * $params contains task ID and expand-state.
+	 * 		task id:	$params['item'],
+	 * 		expanded:	$params['value'] === 1
+	 *
+	 *	@param array $params
+	 */
 	public function taskOpenAction(array $params) {
 		$idTask		= intval($params['item']);
 		$isExpanded	= intval($params['value']) === 1;
@@ -46,7 +54,7 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 
 	/**
-	 *	General panelWidget action, saves collapse status
+	 * General panelWidget action, saves collapse status
 	 *
 	 *	@param	Array	$params
 	 */
@@ -56,7 +64,6 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 		TodoyuPanelWidgetManager::saveCollapsedStatus(EXTID_PORTAL, $idWidget, $value);
 	}
-
 
 }
 
