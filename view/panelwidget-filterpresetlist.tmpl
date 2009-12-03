@@ -3,21 +3,19 @@
 		<div class="filter">
 			<span class="field">
 				<span class="selectScrollbarHide">
-				<select size="{sizeof($filtersets)}" id="panelwidget-{$id}-list" multiple="multiple">
-
-				{* ---------- List all filter presets as options ---------- *}
-				{foreach $filtersets filterset}
-					<option value="{$filterset.id}" class="{cycle values="odd,even"}{if $filterset.selected == 1} selected{/if}" {if $filterset.selected == 1}selected="selected"{/if}>
-						{$filterset.title} ({$filterset.amount})
-					</option>
-				{/foreach}
-				</select>
+					<select size="{sizeof($filtersets)}" id="panelwidget-{$id}-list" multiple="multiple">
+					{* ---------- List all filter presets as options ---------- *}
+					{foreach $filtersets filterset}
+						<option title="{htmlencode $filterset.title}" value="{$filterset.id}" class="{cycle values="odd,even"}{if $filterset.selected == 1} selected{/if}" {if $filterset.selected == 1}selected="selected"{/if}>
+							{htmlencode $filterset.title|truncate:46} ({$filterset.amount})
+						</option>
+					{/foreach}
+					</select>
 				</span>
 			</span>
 		</div>
 	</div>
 	<br/>
-
 	{* ---------- Manage filter presets button ---------- *}
 	{restrict 'portal' 'panelwidget:filterPresetList:manageFilters'}
 	{Button label="portal.panelWidgetFilterPresetList.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
