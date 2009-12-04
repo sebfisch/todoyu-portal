@@ -10,3 +10,7 @@
 	width:22px;
 	background:url(../../../search/assets/img/icons.png) no-repeat 0 -479px;
 }
+
+#panelwidget-filterpresetlist select option {
+	cursor: pointer;
+}
