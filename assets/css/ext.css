@@ -2,21 +2,21 @@
 	Tabs
    ----------------- */
 
-#portal-tabs {
-	z-index:2;
+#portal-tabs li.selection span.icon {
+	background:url(../img/icons.png) no-repeat 0 3px;
 }
 
-#portal-tabs.tabs span.icon {
-	background-image:url('../img/icons.png');
-	background-repeat:no-repeat;
-	background-position:0 0;
+#portal-tabs li.todo span.icon {
+	background:url(../img/icons.png) no-repeat 0 -55px;
 }
 
+
+/*
 #portal-tabs.tabs .filtered     span.icon {background-position:0 4px; padding:0 0 0 1px;}
 #portal-tabs.tabs .todos        span.icon {background-position:0 -49px; padding:0 0 0 3px;}
 #portal-tabs.tabs .appointments span.icon {background-position:0 -77px; padding:0 0 0 2px;}
 #portal-tabs.tabs .feedback     span.icon {background-position:0 -21px;  padding:0 0 0 1px;}
-
+*/
 
 
 
@@ -111,5 +111,5 @@
 	Context menu items
    ----------------------- */
 a.task-showinproject {
-	background:url('../img/icons.png') no-repeat 2px -384px;
+	background:url(../img/icons.png) no-repeat 2px -26px;
 }

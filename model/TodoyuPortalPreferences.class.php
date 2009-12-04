@@ -101,7 +101,7 @@ class TodoyuPortalPreferences {
 		$tab = self::getPref('tab');
 
 		if( $tab === false ) {
-			$tab = 0;
+			$tab = 'selection';
 		}
 
 		return $tab;
@@ -114,10 +114,8 @@ class TodoyuPortalPreferences {
 	 *
 	 * @param	Integer
 	 */
-	public static function saveActiveTab($idTab) {
-		$idTab	= intval($idTab);
-
-		self::savePref('tab', $idTab, 0, true);
+	public static function saveActiveTab($tabKey) {
+		self::savePref('tab', $tabKey, 0, true);
 	}
 
 
@@ -139,33 +137,6 @@ class TodoyuPortalPreferences {
 		$prefValue		= implode(',', $filtersetIDs);
 
 		self::savePref('filtersets', $prefValue, 0, true);
-	}
-
-
-
-
-
-
-
-	/**
-	 * Get filtersets of tab
-	 *
-	 * @param	Integer	$idTab
-	 * @return	String
-	 */
-	public static function getTabFiltersets($idTab = 0) {
-		$idTab = intval($idTab);
-		$idUser= userid();
-
-		if ($idTab == 0) {
-				// 'Selection' tab (filtersets stored in user prefs)
-			$filtersetIDs = TodoyuPreferenceManager::getPreferences(EXTID_PORTAL, 'filterset', $idTab, 0, false, $idUser);
-		} else {
-				// regular tab (filtersets stored in 'ext_portal_mm_tab_filterset')
-			$filtersetIDs = TodoyuPortalManager::getTabFiltersetIDs($idTab);
-		}
-
-		return $filtersetIDs;
 	}
 
 

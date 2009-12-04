@@ -6,15 +6,13 @@
 {/block}
 
 {block "content"}
-	{* portal tabs, default: selection, feedbacks, to dos, appointments *}
 
-	{$portalTabs}
+	{$tabHeads}
 
 	{* actual content, over here: list of tasks/ appointments *}
 
-	<div id="portal-tabcontent-{$tab.id}" class="portal-tabcontent {$tab.class}">
-		{$tabContent}
+	<div id="portal-tabcontent">
+		{$activeTabContent}
 	</div>
 
-	{$tabContainers}
 {/block}

@@ -7,7 +7,7 @@
 *
 *  This script is part of the todoyu project.
 *  The todoyu project is free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License, version 2, 
+*  it under the terms of the GNU General Public License, version 2,
 *  (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html) as published by
 *  the Free Software Foundation;
 *
@@ -27,14 +27,36 @@
  */
 
 
+	// Add portal tabs selection and todo
+TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::getSelectionTabContent', 0, array('portal/public', 'project/public'));
+TodoyuPortalManager::addTab('todo', 'TodoyuPortalRenderer::getTodoTabLabel', 'TodoyuPortalRenderer::getTodoTabContent', 10, array('portal/public', 'project/public'));
+
+
+	// Register context menu functions
+TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
+TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::removeAddMenuIfEmpty', 1000);
+
+
+/**
+ * Configuration for 'todo' tab
+ */
+$CONFIG['EXT']['portal']['todoTabFilters'] = array(
+	array(
+		'filter'	=> 'currentUserIsAssigned'
+	),
+	array(
+		'filter'	=> 'status',
+		'value'		=> STATUS_OPEN . ',' . STATUS_PROGRESS
+	)
+);
 
 
 
+
+/*
 $CONFIG['EXT']['portal']['renderer']['panel'][]		= 'TodoyuPortalRenderer::renderPanelWidgets';
-
 $CONFIG['EXT']['portal']['renderer']['tabs'][]		= 'TodoyuPortalRenderer::renderTabs';
 $CONFIG['EXT']['portal']['renderer']['tasklist'][]	= 'TodoyuPortalRenderer::renderTaskList';
-
 
 $CONFIG['EXT']['portal']['typetab']['task']			= 'filtered';
 $CONFIG['EXT']['portal']['typerenderer']['task']	= 'TodoyuPortalRenderer::renderTaskTab';
@@ -49,9 +71,7 @@ $CONFIG['EXT']['portal']['tabfiltered'] = array(
 	'is_or'		=> 0,
 	'sorting'	=> 0
 );
+*/
 
-
-TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
-TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::removeAddMenuIfEmpty', 1000);
 
 ?>

@@ -2,30 +2,21 @@
 	Metamenu entries
    -------------------------- */
 
-ul.navilist li .itemportal a {
-	padding-left: 30px !important;
-}
-
 ul.navilist li .itemportal a:hover {
 	background-color: #EFF3E5 !important;
 }
 
+#navi-main-list-portal li a {
+	background-image:url(../img/icons.png) !important;
+	background-repeat:no-repeat;
+}
+
 	/* Selection */
-a.linkportal0 {
-	background:url('../img/icons.png') no-repeat 6px 5px !important;
+#navi-main-list-portal li.itemSelection a {
+	background-position:6px 5px;
 }
 
-	/* Todos */
-a.linkportal1 {
-	background:url('../img/icons.png') no-repeat 6px -48px !important;
-}
-
-	/* Feedbacks */
-a.linkportal2 {
-	background:url('../img/icons.png') no-repeat 6px -20px !important;
-}
-
-	/* Appointments */
-a.linkportal3 {
-	background:url('../img/icons.png') no-repeat 6px -76px !important;
+	/* Todo */
+#navi-main-list-portal li.itemTodo a {
+	background-position:6px -55px;
 }

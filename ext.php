@@ -26,10 +26,6 @@
  * @subpackage	Portal
  */
 
-
-
-
-
 	// Declare ext ID, path
 define('EXTID_PORTAL',	111);
 define('PATH_EXT_PORTAL', PATH_EXT . '/portal');

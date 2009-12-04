@@ -26,7 +26,6 @@
  * @package		Todoyu
  * @subpackage	Portal
  */
-
 class TodoyuPortalRenderer {
 
 	/**
@@ -37,71 +36,72 @@ class TodoyuPortalRenderer {
 	private static $expandedTaskIDs = null;
 
 
+
 	/**
-	 * Render content of a portal tab (call registered render function)
+	 * Get label of selection tab in portal
 	 *
-	 * @param	Integer		$idTab
+	 * @param	Bool		$count
 	 * @return	String
 	 */
-	public static function renderTabContent($idTab) {
-		$idTab		= intval($idTab);
-		$renderFunc	= TodoyuPortalManager::getTabRenderer($idTab);
+	public static function getSelectionTabLabel($count = true) {
 
-		return TodoyuDiv::callUserFunction($renderFunc, $idTab);
+		$label	= TodoyuLocale::getLabel('portal.tab.selection');
+
+		if( $count ) {
+			$taskIDs= TodoyuPortalManager::getSelectionTaskIDs();
+			$label	= $label . ' (' . sizeof($taskIDs) . ')';
+		}
+
+		return $label;
 	}
 
 
 
 	/**
-	 * Render function for task tabs
+	 * Get content of selection tab in portal
+	 * Tasklist based on the selected filters in filterpreset list panelwidget
 	 *
-	 * @param	Integer		$idTab
 	 * @return	String
 	 */
-	public static function renderTaskTab($idTab) {
-		$idTab	= intval($idTab);
-		$taskIDs= TodoyuPortalManager::getTabTaskIDs($idTab);
+	public static function getSelectionTabContent() {
+		$taskIDs	= TodoyuPortalManager::getSelectionTaskIDs();
 
-		$content= '';
+		TodoyuHeader::sendTodoyuHeader('selection', sizeof($taskIDs));
 
-		foreach($taskIDs as $idTask) {
-			$content .= self::renderTask($idTask);
-		}
-
-		$tmpl	= 'ext/portal/view/tasklist.tmpl';
-		$data	= array(
-			'taskHTML'	=> $content
-		);
-
-		if( TodoyuRequest::isAjaxRequest() ) {
-			$data['contextMenuJsInit'] = 'Todoyu.Ext.project.ContextMenuTask.reattach();';
-		}
-
-		return render($tmpl, $data);
+		return self::renderTaskList($taskIDs);
 	}
 
 
 
 	/**
-	 * Get empty div containers for all not active tasks.
-	 * So they are available if tab is switched
+	 * Get label of todo tab in portal
+	 *
+	 * @param	Bool		$count
+	 * @return	String
+	 */
+	public static function getTodoTabLabel($count = true) {
+		$label		= TodoyuLocale::getLabel('portal.tab.todos');
+
+		if( $count ) {
+			$numTasks	= sizeof(TodoyuPortalManager::getTodoTaskIDs());
+			$label		=  $label . ' (' . $numTasks . ')';
+		}
+
+		return $label;
+	}
+
+
+
+	/**
+	 * Get content of todo tab in portal
 	 *
 	 * @return	String
 	 */
-	public static function renderEmptyTabContainers() {
-		$tabs	= TodoyuPortalManager::getTabs();
-		$active	= TodoyuPortalPreferences::getActiveTab();
+	public static function getTodoTabContent() {
+		$taskIDs= TodoyuPortalManager::getTodoTaskIDs();
 
-		foreach($tabs as $index => $tab) {
-			if( $tab['id'] == $active ) {
-				unset( $tabs[$index] );
-				break;
-			}
-		}
-
-		return render( 'ext/portal/view/tab-containers.tmpl', array('tabs'	=> $tabs) );
+		return self::renderTaskList($taskIDs);
 	}
-
 
 
 
@@ -111,19 +111,63 @@ class TodoyuPortalRenderer {
 	 * @param	Array	$taskIDs
 	 * @return	String
 	 */
-	public static function renderTaskList(array $taskIDs = array()) {
-		$tasksHtml = '';
+	public static function renderTaskList(array $taskIDs) {
+		$content= '';
 
 		foreach($taskIDs as $idTask) {
-			$tasksHtml .= TodoyuPortalRenderer::renderTask($idTask);
+			$content .= self::renderTask($idTask);
 		}
 
 		$tmpl	= 'ext/portal/view/tasklist.tmpl';
 		$data	= array(
-			'tasks'	=> $tasksHtml,
+			'tasks'	=> $content
 		);
 
+		if( TodoyuRequest::isAjaxRequest() ) {
+			$data['javascript'] = 'Todoyu.Ext.project.ContextMenuTask.reattach();';
+		}
+
 		return render($tmpl, $data);
+	}
+
+
+
+	/**
+	 * Render tab headers for portal
+	 *
+	 * @return	String
+	 */
+	public static function renderTabHeads($activeTab = '') {
+		$listID		= 'portal-tabs';
+		$class		= 'tabs';
+		$jsHandler	= 'Todoyu.Ext.portal.Tab.onSelect.bind(Todoyu.Ext.portal.Tab)';
+		$tabs		= TodoyuPortalManager::getTabs();
+
+		if( empty($activeTab) ) {
+			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
+		}
+
+		return TodoyuTabheadRenderer::renderTabs($listID, $class, $jsHandler, $tabs, $activeTab);
+	}
+
+
+
+
+	/**
+	 * Render content of a portal tab (call registered render function)
+	 *
+	 * @param	Integer		$idTab
+	 * @return	String
+	 */
+	public static function renderTabContent($tabKey) {
+		$tab	= TodoyuPortalManager::getTabConfig($tabKey);
+
+		if( TodoyuDiv::isFunctionReference($tab['contentFunc']) ) {
+			return TodoyuDiv::callUserFunction($tab['contentFunc']);
+		} else {
+			Todoyu::log('Missing render function for tab "' . $tabKey . '"', LOG_LEVEL_ERROR);
+			return 'Found no render function for this tab';
+		}
 	}
 
 
@@ -138,7 +182,6 @@ class TodoyuPortalRenderer {
 		$idTask	= intval($idTask);
 
 		if( is_null(self::$expandedTaskIDs) ) {
-			//TodoyuProjectPreferences::get
 			self::$expandedTaskIDs = TodoyuPortalPreferences::getExpandedTasks();
 		}
 
@@ -190,46 +233,6 @@ class TodoyuPortalRenderer {
 		$params	= array();
 
 		return TodoyuPanelWidgetRenderer::renderPanelWidgets('portal', $params);
-	}
-
-
-
-	/**
-	 * Render tab headers for portal
-	 *
-	 * @return	String
-	 */
-	public static function renderTabHeads($activeTab = '') {
-		$listID		= 'portal-tabs';
-		$class		= 'tabs';
-		$jsHandler	= 'Todoyu.Ext.portal.Tab.onSelect.bind(Todoyu.Ext.portal.Tab)';
-		$tabs		= TodoyuPortalManager::getTabs();
-
-		if ( empty($activeTab) ) {
-			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
-		}
-
-		return TodoyuTabheadRenderer::renderTabs($listID, $class, $jsHandler, $tabs, $activeTab);
-	}
-
-
-
-	/**
-	 * Update tab head
-	 *
-	 * @param	Integer	$idTab
-	 * @return	String
-	 */
-	public static function updateTabHead($idTab) {
-		$tabConfig = TodoyuPortalManager::getTab($idTab);
-		$tabConfig['id'] 			= 'portal-tabhead-' . $idTab;
-//		$tabConfig['classKey']		= $idTab;
-		$tabTasks 					= Portal::getTaskIDs($idTab);
-		$tabConfig['tasksamount']	= count($tabTasks);
-		$tabConfig['hasIcon']		= 1;
-		$tabConfig['tasksamount']	= TodoyuPortalManager::getTasksAmount($idTab);
-
-		return TodoyuTabheadRenderer::renderTab($tabConfig['id'], $tabConfig['key'], $tabConfig['class'], $tabConfig['classKey'], $idTab, TodoyuLocale::getLabel($tabConfig['label']), $tabConfig['position'], $tabConfig['hasIcon'], $tabConfig['tasksamount']);
 	}
 
 }

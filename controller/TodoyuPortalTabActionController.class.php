@@ -22,17 +22,11 @@
 class TodoyuPortalTabActionController extends TodoyuActionController {
 
 	public function updateAction(array $params) {
-		$idTab	= intval($params['tab']);
+		$tabKey	= $params['tab'];
 
-		TodoyuPortalPreferences::saveActiveTab($idTab);
+		TodoyuPortalPreferences::saveActiveTab($tabKey);
 
-		return TodoyuPortalRenderer::renderTabContent($idTab);
-	}
-
-	public function updateTabHeadAction(array $params) {
-		$idTab	= intval($params['tab']);
-
-		return TodoyuPortalRenderer::updateTabHead($idTab);
+		return TodoyuPortalRenderer::renderTabContent($tabKey);
 	}
 
 	public function saveActiveAction(array $params) {

@@ -25,120 +25,106 @@
  * @name 		Portal Manager
  * @package		Todoyu
  * @subpackage	Portal
- *
  */
-
 class TodoyuPortalManager {
 
 	/**
-	 * Get tab record
+	 * Add a tab to portal view
 	 *
-	 * @param	Integer		$idTab
+	 * @param	String		$key			Key of the tab
+	 * @param	String		$labelFunc		Function which renders the label
+	 * @param	String		$contentFunc	Function which renders the content
+	 * @param	Integer		$position		Tab position (left to right)
+	 * @param	Array		$assets			Assets to load. List with format: portal/public, calendar/public, ...
+	 */
+	public static function addTab($key, $labelFunc, $contentFunc, $position = 100, array $assets = array()) {
+		$GLOBALS['CONFIG']['EXT']['portal']['tabs'][$key] = array(
+			'key'			=> $key,
+			'labelFunc'		=> $labelFunc,
+			'contentFunc'	=> $contentFunc,
+			'position'		=> intval($position),
+			'assets'		=> $assets
+		);
+	}
+
+
+
+	/**
+	 * Get config of all added tabs sorted by position
+	 *
 	 * @return	Array
 	 */
-	public static function getTab($idTab) {
-		$idTab	= intval($idTab);
+	public static function getTabsConfig() {
+		return TodoyuArray::sortByLabel($GLOBALS['CONFIG']['EXT']['portal']['tabs'], 'position');
+	}
 
-		if( $idTab === 0 ) {
-			$tab	= self::getFilterTabConfig();
-		} else {
-			$table	= 'ext_portal_tab';
-			$tab	= Todoyu::db()->getRecord($table, $idTab);
+
+
+	/**
+	 * Get config of a tab
+	 *
+	 * @param	String		$tabKey
+	 * @return	Array
+	 */
+	public static function getTabConfig($tabKey) {
+		return $GLOBALS['CONFIG']['EXT']['portal']['tabs'][$tabKey];
+	}
+
+
+
+	/**
+	 * Add the assets of the tabs to the page
+	 *
+	 */
+	public static function addTabAssetsToPage() {
+		$tabs	= self::getTabsConfig();
+		$assets	= array();
+
+		foreach($tabs as $tab) {
+			$assets	= array_merge($assets, $tab['assets']);
 		}
 
-		return $tab;
-	}
+		$assets	= array_unique($assets);
 
-
-
-	/**
-	 * Get configuration array of the filter tab
-	 * The filter tab is defined in config, not in database
-	 *
-	 * @return	Array
-	 */
-	public static function getFilterTabConfig() {
-		return $GLOBALS['CONFIG']['EXT']['portal']['tabfiltered'];
-	}
-
-
-
-	/**
-	 * Get the type of a tab
-	 *
-	 * @param	Integer		$idTab
-	 * @return	String
-	 */
-	public static function getTabType($idTab) {
-		$idTab	= intval($idTab);
-		$tab	= self::getTab($idTab);
-
-		return $tab['type'];
-	}
-
-
-
-	/**
-	 * Get the render function for a tab
-	 * The render function is based on the tab type
-	 *
-	 * @param	Integer		$idTab
-	 * @return	String		Function reference
-	 */
-	public static function getTabRenderer($idTab) {
-		$idTab	= intval($idTab);
-		$tabType= self::getTabType($idTab);
-
-		return self::getTypeRenderer($tabType);
-	}
-
-
-	/**
-	 * Get render function for a tab type
-	 *
-	 * @param	String		$type
-	 * @return	String		Function reference
-	 */
-	public static function getTypeRenderer($type) {
-		return $GLOBALS['CONFIG']['EXT']['portal']['typerenderer'][$type];
-	}
-
-
-
-	/**
-	 * Get filterset IDs which are linked to a tab
-	 *
-	 * @param	Integer		$idTab
-	 * @return	Array
-	 */
-	public static function getTabFiltersetIDs($idTab) {
-		$idTab	= intval($idTab);
-
-			// Get filterset IDs from mm table for normal tabs or from preferences for filtered tab
-		if( $idTab === 0 ) {
-			$filtersetIDs	= TodoyuPortalPreferences::getFilterTabFiltersetIDs();
-		} else {
-			$field	= 'id_filterset';
-			$table	= 'ext_portal_mm_tab_filterset';
-			$where	= 'id_tab = ' . $idTab;
-
-			$filtersetIDs	= Todoyu::db()->getColumn($field, $table, $where);
+		foreach($assets as $asset) {
+			$config	= explode('/', $asset);
+			TodoyuPage::addExtAssets($config[0], $config[1]);
 		}
 
-		return $filtersetIDs;
 	}
 
 
 
 	/**
-	 * Get task IDs for a tab. The tab must have the type task
+	 * Get tabs config
 	 *
-	 * @param	Integer		$idTab
 	 * @return	Array
 	 */
-	public static function getTabTaskIDs($idTab) {
-		$idTab				= intval($idTab);
-		$filtersetIDs		= TodoyuPortalManager::getTabFiltersetIDs($idTab);
+	public static function getTabs() {
+		$tabs	= self::getTabsConfig();
+
+			// Get label, content list counter, 'active' or not-state
+		foreach($tabs as $index => $tab) {
+			$tabs[$index]['id']				= $tab['key'];
+			$tabs[$index]['htmlId'] 		= 'portal-tabhead-' . $tab['key'];
+			$tabs[$index]['label']			= TodoyuDiv::callUserFunction($tab['labelFunc']);
+			$tabs[$index]['classKey'] 		= $tab['key'];
+			$tabs[$index]['hasIcon'] 		= true;
+		}
+
+		return $tabs;
+	}
+
+
+
+	/**
+	 * Get task IDs which match the selected filters
+	 * Conjunction is OR
+	 *
+	 * @return	Array
+	 */
+	public static function getSelectionTaskIDs() {
+		$filtersetIDs		= TodoyuPortalPreferences::getFilterTabFiltersetIDs();
 		$filtersetTaskIDs	= array();
 
 			// Get conditions for each filterset and search for the tasks
@@ -150,17 +136,11 @@ class TodoyuPortalManager {
 
 			// Depending on how much filtersets are linked to the task, combine the results by conjuction config
 		if( sizeof($filtersetTaskIDs) === 0 ) {
-			$taskIDs	= array();
+			$taskIDs= array();
 		} elseif( sizeof($filtersetTaskIDs) === 1 ) {
-			$taskIDs	= array_pop($filtersetTaskIDs);
+			$taskIDs= array_pop($filtersetTaskIDs);
 		} else {
-			$conjunction= TodoyuPortalManager::getTabConjunction($idTab);
-
-			if( $conjunction === 'OR' ) {
-				$taskIDs	= TodoyuArray::mergeSubArrays($filtersetTaskIDs);
-			} else {
-				$taskIDs	= TodoyuArray::intersectSubArrays($filtersetTaskIDs);
-			}
+			$taskIDs= array_unique(TodoyuArray::mergeSubArrays($filtersetTaskIDs));
 		}
 
 		return $taskIDs;
@@ -169,59 +149,16 @@ class TodoyuPortalManager {
 
 
 	/**
-	 * Get logical conjunction of given tab
-	 *
-	 * @param	Integer		$idTab
-	 * @return	String		OR / AND
-	 */
-	public static function getTabConjunction($idTab) {
-		$idTab = intval($idTab);
-
-		if( $idTab === 0 ) {
-			$conjunction = 'OR';
-		} else {
-			$tab 		= self::getTab($idTab);
-			$conjunction= intval($tab['is_or']) === 1 ? 'OR' : 'AND';
-		}
-
-		return $conjunction;
-	}
-
-
-
-	/**
-	 * Get portal tabs (and resp. data from 'ext_portal_tab') configured to be available/ displayed for current user.
+	 * Get task IDs for todo tab
 	 *
 	 * @return	Array
 	 */
-	public static function getTabs() {
-		$idUser		= TodoyuAuth::getUserID();
+	public static function getTodoTaskIDs() {
+		$conditions	= $GLOBALS['CONFIG']['EXT']['portal']['todoTabFilters'];
+		$taskFilter	= new TodoyuTaskFilter($conditions);
+		$taskIDs	= $taskFilter->getTaskIDs();
 
-			// Get user tabs from database
-		$fields	= '*';
-		$table	= 'ext_portal_tab';
-		$where	= '	deleted = 0 AND
-					(id_user = ' . $idUser . ' OR id_user = 0)';
-		$group	= '';
-		$order	= 'sorting ASC';
-
-		$tabs	= Todoyu::db()->getArray($fields, $table, $where, $group, $order);
-
-			// Get filter tab config
-		$filterTab = self::getFilterTabConfig();
-			// Prepend filtered tab
-		array_unshift($tabs, $filterTab);
-
-			// Get label, content list counter, 'active' or not-state
-		foreach($tabs as $index => $tab) {
-			$tabs[$index]['htmlId'] 		= 'portal-tabhead-' . $tab['id'];
-			$tabs[$index]['label']			= TodoyuDiv::getLabel($tab['title']);
-			$tabs[$index]['elementAmount']	= TodoyuPortalManager::getTabContentListedAmount($tab['id']);
-			$tabs[$index]['classKey'] 		= $tab['id'];
-			$tabs[$index]['hasIcon'] 		= true;
-		}
-
-		return $tabs;
+		return $taskIDs;
 	}
 
 
@@ -242,8 +179,10 @@ class TodoyuPortalManager {
 			$ownItems	= $GLOBALS['CONFIG']['EXT']['portal']['ContextMenu']['Task'];
 			$items		= array_merge_recursive($items, $ownItems);
 
+			TodoyuDebug::printInFirebug('dsdfsdf');
+
 				// Remove clone function
-			unset($items['clone']);
+			unset($items['actions']['submenu']['clone']);
 
 				// Remove add function for task and container
 			unset($items['add']['submenu']['task']);
@@ -279,89 +218,6 @@ class TodoyuPortalManager {
 
 		return $items;
 	}
-
-
-
-	/**
-	 * Get amount of listed entries (tasks, appointments, etc) in tab context
-	 *
-	 * @param	Integer		$tabID
-	 * @return	Integer
-	 *
-	 */
-	public static function getTabContentListedAmount( $tabID ) {
-		$tabID		= intval( $tabID );
-
-		$tab		= TodoyuPortalManager::getTab($tabID );
-		$funcRef	= explode('::', $GLOBALS['CONFIG']['EXT']['portal']['entriescounter'][ $tab['type'] ]);
-		$funcRefLen	= strlen( implode('', $funcRef) );
-
-		$amount = ( is_array($funcRef) && $funcRefLen > 0 ) ? call_user_func($funcRef, $tabID) : 0;
-
-		return $amount;
-	}
-
-
-
-
-	/**
-	 * Get rendered task list for a tab based on its filtersets
-	 *
-	 * @param	Integer		$tabID
-	 * @return	String
-	 *
-	 */
-	public static function getTasksAmount( $tabID ) {
-		$tabID		= intval($tabID);
-		$taskIDs	= self::getTaskIDs( $tabID );
-
-		return count( $taskIDs );
-	}
-
-
-
-		/**
-	 * Get task ids matching to given filterset.
-	 * Multiple filtersets are grouped (by 'id_set'), their condition groups are joined by OR-conjunction(s).
-	 *
-	 * @param	Integer		$tabID
-	 * @return	Array
-	 */
-	public static function getTaskIDs( $tabID ) {
-		$tabID	= intval($tabID);
-		$taskIDs= array();
-
-		$filtersets		= TodoyuPortalManager::getTabFiltersetIDs( $tabID );
-
-			// Get conditions of sets
-		$conditionSets		= array();
-		foreach($filtersets as $setID) {
-			$conditionSets[$setID] = TodoyuFiltersetManager::getFiltersetConditions( $setID );
-		}
-
-			// Per set: init filters from set and fetch task ids
-		$taskIDsOfSets	= array();
-		foreach($conditionSets as $setID => $conditions) {
-			$filter					= new TodoyuTaskFilter( $conditions );
-			$taskIDsOfSets[$setID]	= $filter->getTaskIDs();
-		}
-
-		if( sizeof($taskIDsOfSets) > 0 ) {
-				// Combine task ids of sets with logical conjunction
-			$conjunction = TodoyuPortalManager::getTabConjunction( $tabID );
-
-			if ($conjunction == 'OR') {
-					// OR conjunction
-				$taskIDs	= TodoyuArray::mergeSubArrays($taskIDsOfSets);
-			} else {
-					// AND conjunction
-				$taskIDs	= TodoyuArray::intersectSubArrays($taskIDsOfSets);
-			}
-		}
-
-		return $taskIDs;
-	}
-
 
 }
 

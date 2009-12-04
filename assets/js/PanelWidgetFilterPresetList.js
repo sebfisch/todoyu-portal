@@ -95,7 +95,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 *	Show refreshed filter tab
 	 */
 	showRefreshedFilterTab: function() {
-		this.ext.Tab.showTab(0, true);
+		this.ext.Tab.showTab('selection', true);
 	},
 
 

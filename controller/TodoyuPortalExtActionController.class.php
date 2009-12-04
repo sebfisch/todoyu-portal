@@ -41,34 +41,30 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::setTitle('LLL:portal.page.title');
 
 			// Get active tab
-		$activeTab	= intval($params['tab']);
-		if( $activeTab === 0 ) {
-			$activeTab = TodoyuPortalPreferences::getActiveTab();
-		} else {
+		$activeTab	= $params['tab'];
+		if( ! empty($activeTab) ) {
 			TodoyuPortalPreferences::saveActiveTab($activeTab);
+		} else {
+			$activeTab = TodoyuPortalPreferences::getActiveTab();
 		}
 
 			// Panel widgets
 		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();
-		TodoyuPage::set('panelWidgets', $panelWidgets);
-
 			// Tabheads
-		$portalTabs		= TodoyuPortalRenderer::renderTabHeads();
-		$tabContainers	= TodoyuPortalRenderer::renderEmptyTabContainers();
-
-		TodoyuPage::set('portalTabs', 	$portalTabs);
-		TodoyuPage::set('tabContainers', $tabContainers);
-
+		$tabHeads		= TodoyuPortalRenderer::renderTabHeads($activeTab);
 			// Render active tab, tab content
-		$tab			= TodoyuPortalManager::getTab($activeTab);
-		$tabContent		= TodoyuPortalRenderer::renderTabContent($activeTab);
+		$activeTabContent	= TodoyuPortalRenderer::renderTabContent($activeTab);
 
-		TodoyuPage::set('tab', 			$tab);
-		TodoyuPage::set('tabContent', 	$tabContent);
+		TodoyuPage::set('panelWidgets', $panelWidgets);
+		TodoyuPage::set('tabHeads', $tabHeads);
+		TodoyuPage::set('activeTabContent', $activeTabContent);
+
+		TodoyuPortalManager::addTabAssetsToPage();
+
 
 			// Add assets
-		TodoyuPage::addExtAssets('project');
-		TodoyuPage::addExtAssets('portal');
+//		TodoyuPage::addExtAssets('project');
+//		TodoyuPage::addExtAssets('portal');
 
 			// Context menu
 		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.project.ContextMenuTask.attach.bind(Todoyu.Ext.project.ContextMenuTask)');
