@@ -37,8 +37,7 @@ $CONFIG['EXT']['portal']['assets'] = array(
 		),
 		'css'	=> array(
 			array(
-				'file'		=> 'ext/portal/assets/css/metamenu.css',
-				'position'	=> 100
+				'file' 		=> 'ext/portal/assets/css/global.css',
 			)
 		)
 	),

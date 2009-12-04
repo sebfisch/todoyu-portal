@@ -1,11 +1,6 @@
-/* --------------------------
-	Metamenu entries
-   -------------------------- */
-
-ul.navilist li .itemportal a:hover {
-	background-color: #EFF3E5 !important;
-}
-
+/* -----------------
+	Submenu
+   ----------------- */
 #navi-main-list-portal li a {
 	background-image:url(../img/icons.png) !important;
 	background-repeat:no-repeat;
