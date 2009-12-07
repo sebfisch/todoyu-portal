@@ -21,7 +21,8 @@
 Todoyu.Ext.portal.Tab = {
 
 	ext: Todoyu.Ext.portal,
-	
+
+
 
 	/**
 	 *	onSelect event handler
@@ -64,8 +65,8 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Handler when tab is showed and updated
 	 * 
-	 * @param	String			tabKey
-	 * @param	Ajax.Response	response
+	 *	@param	String			tabKey
+	 *	@param	Ajax.Response	response
 	 */
 	onTabShowed: function(tabKey, response) {
 		var numSelected	= response.getTodoyuHeader('selection');
@@ -74,14 +75,14 @@ Todoyu.Ext.portal.Tab = {
 			this.updateNumResults('selection', numSelected);
 		}
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Update the label of a tab
 	 * 
-	 * @param	String		tabKey
-	 * @param	String		newLabel
+	 *	@param	String		tabKey
+	 *	@param	String		newLabel
 	 */
 	setTabLabel: function(tabKey, newLabel) {
 		$('portal-tabhead-' + tabKey + '-label').down('span.labeltext').update(newLabel);
@@ -94,8 +95,8 @@ Todoyu.Ext.portal.Tab = {
 	 * Replace the number in the brackets
 	 * @example	'Tasks (43)' => 'Tasks (33)'
 	 * 
-	 * @param	String		tabKey
-	 * @param	Integer		numResults
+	 *	@param	String		tabKey
+	 *	@param	Integer		numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
 		var labelEl	= $('portal-tabhead-' + tabKey + '-label').down('span.labeltext');
