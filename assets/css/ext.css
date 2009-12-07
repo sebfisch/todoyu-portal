@@ -71,18 +71,6 @@
 	width:45px;
 }
 
-.taskTabs .timetracking span.icon{
-	background:transparent url(../img/icons.png) no-repeat 4px -175px;
-}
-
-.taskTabs .comment span.icon{
-	background:transparent url(../img/icons.png) no-repeat 2px -205px;
-}
-
-.taskTabs .assets span.icon{
-	background:transparent url(../img/icons.png) no-repeat 1px -235px;
-}
-
 
 
 /* ----------------
