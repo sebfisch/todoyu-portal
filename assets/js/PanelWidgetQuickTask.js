@@ -25,10 +25,20 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 
 	ext: Todoyu.Ext.portal,
 
+
+
+	/**
+	 * Open 'add quicktask' popup dialog
+	 */
 	add: function() {
 		Todoyu.Ext.project.QuickTask.openPopup(this.onAdded.bind(this));
 	},
 
+
+
+	/**
+	 * Handle quicktask having been added 
+	 */
 	onAdded: function(idTask, idProject, started) {
 		console.log('added: ' + idTask);
 	}

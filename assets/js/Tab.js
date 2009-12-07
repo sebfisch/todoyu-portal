@@ -51,16 +51,16 @@ Todoyu.Ext.portal.Tab = {
 			'onComplete': this.onTabShowed.bind(this, tabKey)			
 		};
 		var target	= 'portal-tabcontent';
-		
+
 		Todoyu.Ui.update(target, url, options);
-		
+
 		if( activateTab === true ) {
 			Todoyu.Tabs.setActive('portal-tabhead-' + tabKey);
 		}
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Handler when tab is showed and updated
 	 * 
@@ -86,9 +86,9 @@ Todoyu.Ext.portal.Tab = {
 	setTabLabel: function(tabKey, newLabel) {
 		$('portal-tabhead-' + tabKey + '-label').down('span.labeltext').update(newLabel);
 	},
-	
-	
-	
+
+
+
 	/**
 	 * Update the number of results in the tablabel
 	 * Replace the number in the brackets
@@ -102,7 +102,7 @@ Todoyu.Ext.portal.Tab = {
 		var label	= labelEl.innerHTML;
 		var pattern	= /\(\d+\)/;
 		var replace	= '(' + numResults + ')';
-		
+
 		labelEl.update(label.replace(pattern, replace));
 	}
 };
