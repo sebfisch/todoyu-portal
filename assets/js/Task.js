@@ -20,7 +20,10 @@
 
 Todoyu.Ext.portal.Task = {
 
-	ext: Todoyu.Ext.portal,
+	/**
+	 *	Ext shortcut
+	 */
+	ext:	Todoyu.Ext.portal,
 
 
 

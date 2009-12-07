@@ -23,9 +23,12 @@
  */
 Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
-	ext: Todoyu.Ext.portal,
+	/**
+	 *	Ext shortcut
+	 */
+	ext:	Todoyu.Ext.portal,
 
-	list: 'panelwidget-filterpresetlist-list',
+	list:	'panelwidget-filterpresetlist-list',
 
 
 

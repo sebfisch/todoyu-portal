@@ -25,9 +25,10 @@
 Todoyu.Ext.portal = {
 
 
-	PanelWidget: {},
+	PanelWidget:	{},
 
-	Headlet: {},
+	Headlet:		{},
+
 
 
 	/**
@@ -48,8 +49,7 @@ Todoyu.Ext.portal = {
 			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 		}
 
-		/*
-
+/*
 
 			// Task already within current view (e.g 'portal')
 		if( Todoyu.exists('task-' + idTask) ) {
@@ -64,7 +64,10 @@ Todoyu.Ext.portal = {
 				// task was not in view, jump to 'project' view and show the task
 			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 		}
-		*/
+*/
+
+
+
 	},
 
 
