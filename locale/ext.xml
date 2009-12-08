@@ -4,9 +4,6 @@
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
-		<label index="panelWidgetFilterPresetList.title">Filter Presets</label>
-		<label index="panelWidgetFilterPresetList.manage">Manage Filters</label>
-		<label index="panelWidgetFilterPresetList.amount">Amount</label>
 		<label index="tab.selection">Selection</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="tab.todos">To Dos</label>
@@ -22,10 +19,8 @@
 		<label index="task.title.customer">Customer</label>
 		<label index="task.title.jump">Jump</label>
 		<label index="task.title.tasknumber">Taskno.</label>
-		<label index="panelWidgetQuicktaskWizard.title">Create Quicktask</label>
 		<label index="tab.todos">To Do's</label>
 		<label index="tab.feedbacks">Feedbacks</label>
-		<label index="panelwidget-taskbookmarks.title">Task Bookmarks</label>
 		<label index="date.start.short">B</label>
 		<label index="selection.noTasksFound">There are no tasks suiting this filter combination</label>
 		<label index="subMenuEntry.selection">Portal > Selection</label>
@@ -37,9 +32,6 @@
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
-		<label index="panelWidgetFilterPresetList.title">Standard Filter</label>
-		<label index="panelWidgetFilterPresetList.manage">Filter bearbeiten</label>
-		<label index="panelWidgetFilterPresetList.amount">Menge</label>
 		<label index="tab.selection">Auswahl</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="tab.todos">Aufgaben</label>
@@ -55,10 +47,8 @@
 		<label index="task.title.customer">Kunde</label>
 		<label index="task.title.jump">Springen</label>
 		<label index="task.title.tasknumber">Aufgaben-Nr</label>
-		<label index="panelWidgetQuicktaskWizard.title">Kurz-Aufgabe</label>
 		<label index="tab.todos">Aufgaben</label>
 		<label index="tab.feedbacks">Feedbacks</label>
-		<label index="panelwidget-taskbookmarks.title">Aufgaben-Favoriten</label>
 		<label index="date.start.short">S</label>
 		<label index="selection.noTasksFound">Es gibt keine Aufgaben zu dieser Filterauswahl</label>
 		<label index="subMenuEntry.selection">Portal > Auswahl</label>

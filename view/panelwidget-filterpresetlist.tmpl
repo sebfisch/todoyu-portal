@@ -1,4 +1,5 @@
 <div id="filterPresetsBox">
+{if count($filtersets) > 0}
 	<div id="filterTarget">
 		<div class="filter">
 			<span class="field">
@@ -15,9 +16,16 @@
 			</span>
 		</div>
 	</div>
+{else}
+	<div class="centered">{Label panelwidget-filterpresetlist.noFilters}</div>
+{/if}
 	<br/>
 	{* ---------- Manage filter presets button ---------- *}
 	{restrict 'portal' 'panelwidget:filterPresetList:manageFilters'}
-	{Button label="portal.panelWidgetFilterPresetList.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+	{if count($filtersets) > 0}
+	{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+	{else}
+	{Button label="panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+	{/if}
 	{/restrict}
 </div>
