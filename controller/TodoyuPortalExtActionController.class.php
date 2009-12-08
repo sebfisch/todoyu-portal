@@ -19,6 +19,12 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Default portal action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
 class TodoyuPortalExtActionController extends TodoyuActionController {
 
 	/**
@@ -60,11 +66,6 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('activeTabContent', $activeTabContent);
 
 		TodoyuPortalManager::addTabAssetsToPage();
-
-
-			// Add assets
-//		TodoyuPage::addExtAssets('project');
-//		TodoyuPage::addExtAssets('portal');
 
 			// Context menu
 		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.project.ContextMenuTask.attach.bind(Todoyu.Ext.project.ContextMenuTask)');
