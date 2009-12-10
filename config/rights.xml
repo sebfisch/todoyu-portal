@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rights labels="ext/portal/locale/rights.xml">
-	<section key="general">
-		<allow right="use" />
+<names>
+	
+	<section name="general">
+		<right name="use" />
 	</section>
-	<section key="panelwidgets">
-		<allow right="panelwidget:quicktaskWizard" />
-		<allow right="panelwidget:filterPresetList" />
+	
+	<section name="panelwidgets">
+		<right name="panelwidget:quicktaskWizard" />
+		<right name="panelwidget:filterPresetList" />
 	</section>
-	<section key="panelwidgetFilterPresetList">
-		<allow right="panelwidget:filterPresetList:manageFilters" />
+	
+	<section name="panelwidgetFilterPresetList">
+		<right name="panelwidget:filterPresetList:manageFilters" />
 	</section>
-</rights>
+	
+</names>
