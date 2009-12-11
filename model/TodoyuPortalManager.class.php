@@ -179,8 +179,6 @@ class TodoyuPortalManager {
 			$ownItems	= $GLOBALS['CONFIG']['EXT']['portal']['ContextMenu']['Task'];
 			$items		= array_merge_recursive($items, $ownItems);
 
-			TodoyuDebug::printInFirebug('dsdfsdf');
-
 				// Remove clone function
 			unset($items['actions']['submenu']['clone']);
 
