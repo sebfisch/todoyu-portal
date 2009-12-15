@@ -18,7 +18,7 @@
 		</span>
 	{/if}
 	</span>
-	<span class="billable-time" title="{Label task.billable_time} ({Label timetracking.tracked_time}: {hour_format $task.tracked_time true})">{hour_format $task.tracked_time true}</span>
+	<span class="billable-time" title="{Label task.billable_time} ({Label timetracking.tracked_time}: {Workload $task.tracked_time true})">{Workload $task.tracked_time true}</span>
 	<span title="{Label project.taskno}: {$task.id_project}.{$task.tasknumber}" class="taskNumber">{$task.id_project}.{$task.tasknumber}</span>
 
 	{if count($task.additionalIcons) > 0}

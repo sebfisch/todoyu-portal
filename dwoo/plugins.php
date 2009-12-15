@@ -20,23 +20,12 @@
 ***************************************************************/
 
 /**
- * Extension main file for portal extension
+ * Portal Dwoo Plugins
  *
  * @package		Todoyu
  * @subpackage	Portal
  */
 
-	// Declare ext ID, path
-define('EXTID_PORTAL',	111);
-define('PATH_EXT_PORTAL', PATH_EXT . '/portal');
 
-	// Register module locales
-TodoyuLocale::register('portal', PATH_EXT_PORTAL . '/locale/ext.xml');
-TodoyuLocale::register('panelwidget-filterpresetlist', PATH_EXT_PORTAL . '/locale/panelwidget-filterpresetlist.xml');
-TodoyuLocale::register('panelwidget-quicktask', PATH_EXT_PORTAL . '/locale/panelwidget-quicktask.xml');
-
-	// Request configurations
-require_once( PATH_EXT_PORTAL . '/config/constants.php' );
-require_once( PATH_EXT_PORTAL . '/config/extension.php' );
 
 ?>
