@@ -22,7 +22,6 @@
 /**
  * Manager for Portal
  *
- * @name 		Portal Manager
  * @package		Todoyu
  * @subpackage	Portal
  */
@@ -124,7 +123,7 @@ class TodoyuPortalManager {
 	 * @return	Array
 	 */
 	public static function getSelectionTaskIDs() {
-		$filtersetIDs		= TodoyuPortalPreferences::getFilterTabFiltersetIDs();
+		$filtersetIDs		= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
 		$filtersetTaskIDs	= array();
 
 			// Get conditions for each filterset and search for the tasks
@@ -215,6 +214,28 @@ class TodoyuPortalManager {
 		}
 
 		return $items;
+	}
+
+
+
+	/**
+	 * Modify task form if task is edited in portal
+	 * Change form action and button actions
+	 *
+	 * @param	TodoyuForm		$form
+	 * @param	Integer			$idTask
+	 */
+	public static function modifyTaskForm(TodoyuForm $form, $idTask) {
+		if( AREA === EXTID_PORTAL ) {
+			$formUrl = TodoyuDiv::buildUrl(array(
+				'ext'		=> 'portal',
+				'controller'=> 'task'
+			));
+
+			$form->setAttribute('action', $formUrl);
+			$form->getField('save')->setAttribute('onclick', 'Todoyu.Ext.portal.Task.saveTask(this.form)');
+			$form->getField('cancel')->setAttribute('onclick', 'Todoyu.Ext.portal.Task.cancelEdit(' . $idTask . ')');
+		}
 	}
 
 }

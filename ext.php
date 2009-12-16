@@ -38,5 +38,6 @@ TodoyuLocale::register('panelwidget-quicktask', PATH_EXT_PORTAL . '/locale/panel
 	// Request configurations
 require_once( PATH_EXT_PORTAL . '/config/constants.php' );
 require_once( PATH_EXT_PORTAL . '/config/extension.php' );
+require_once( PATH_EXT_PORTAL . '/config/hooks.php' );
 
 ?>

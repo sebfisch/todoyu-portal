@@ -83,7 +83,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 * @return	Array
 	 */
 	private function getActiveFiltersetIDs() {
-		return TodoyuPortalPreferences::getFilterTabFiltersetIDs();
+		return TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
 	}
 
 

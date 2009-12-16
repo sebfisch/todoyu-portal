@@ -19,40 +19,84 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Portal task action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
 class TodoyuPortalTaskActionController extends TodoyuActionController {
 
+	/**
+	 * Get task content in portal
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function getAction(array $params) {
 		$idTask	= intval($params['task']);
 
 		return TodoyuPortalRenderer::renderTask($idTask);
 	}
 
+
+
+	/**
+	 * Edit task in portal. Get form content
+	 *
+	 * @param	Array	$params
+	 */
 	public function editAction(array $params) {
 		$idTask	= intval($params['task']);
 
-		echo TodoyuTaskRenderer::renderTaskEditForm($idTask);
+		return TodoyuTaskRenderer::renderTaskEditForm($idTask);
 	}
 
-	public function getTasklistAction(array $params) {
-		$prefName	= $params['storePrefs'];
-		$storePrefs	= $params[$prefName];
 
-		if( $storePrefs ) {
-				// Store prefs (active tab)
-			$activeTabID	= trim($params['tab']);
-			$activeTabID	= (substr($activeTab, 0, 4) == 'tab_') ? substr($activeTabID, 4) : $activeTabID;
 
-			TodoyuPortalPreferences::saveActiveTab($activeTabID);
+	/**
+	 * Save task in portal
+	 * It's nearly the same as in project, but renders a portal task at the end (and doesn't set some preferences)
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
+	public function saveAction(array $params) {
+		$data			= $params['task'];
+		$idTask			= intval($data['id']);
+		$idParentTask	= intval($data['id_parenttask']);
+
+			// Create a cache record for the buildform hooks
+		$task = new TodoyuTask(0);
+		$task->injectData($data);
+		TodoyuCache::addRecord($task);
+
+			// Initialize form for validation
+		$xmlPath	= 'ext/project/config/form/task.xml';
+		$form		= TodoyuFormManager::getForm($xmlPath, $idTask);
+
+		$form->setFormData($data);
+
+			// Check if form is valid
+		if( $form->isValid() ) {
+				// If form is valid, get form storage data and update task
+			$storageData= $form->getStorageData();
+
+				// Save task
+			$idTaskNew	= TodoyuTaskManager::saveTask($storageData);
+
+			TodoyuHeader::sendTodoyuHeader('idTask', $idTaskNew);
+			TodoyuHeader::sendTodoyuHeader('idTaskOld', $idTask);
+
+			return TodoyuPortalRenderer::renderTask($idTaskNew);
 		} else {
-				// Fetch prefs (active tab, filters)
-			$activeTabID	= TodoyuPortalPreferences::getActiveTab();
+			TodoyuHeader::sendTodoyuHeader('idTask', $idTask);
+			TodoyuHeader::sendTodoyuErrorHeader();
+
+			return $form->render();
 		}
-
-		return TodoyuPortalRenderer::renderTabContent($activeTabID);
 	}
-
 
 }
-
 
 ?>

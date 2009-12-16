@@ -18,16 +18,16 @@
 		</span>
 	{/if}
 	</span>
-	<span class="billable-time" title="{Label task.billable_time} ({Label timetracking.tracked_time}: {Workload $task.tracked_time true})">{Workload $task.tracked_time true}</span>
-	<span title="{Label project.taskno}: {$task.id_project}.{$task.tasknumber}" class="taskNumber">{$task.id_project}.{$task.tasknumber}</span>
+	<span class="billableTime" title="{Label task.billableTime} ({Label timetracking.tracked_time}: {Workload $task.tracked_time true})">{Workload $task.tracked_time true}</span>
+	<span class="taskNumber" title="{Label project.taskno}: {$task.id_project}.{$task.tasknumber}">{$task.id_project}.{$task.tasknumber}</span>
+	
+	<span class="additionalStuff">
+	{foreach $task.additionalIcons icon}
+		<span class="{$task.icon.class}" title="{$task.icon.label}"></span>
+	{/foreach}
+	{if sizeof($task.additionalIcons)==0}&nbsp;{/if}
+	</span>
 
-	{if count($task.additionalIcons) > 0}
-		<span class="additionalStuff">
-		{foreach $task.additionalIcons icon}
-			<span class="{$task.icon.class}" title="{$task.icon.label}"></span>
-		{/foreach}
-		</span>
-	{/if}
 
 	</h3>
 	{$details}

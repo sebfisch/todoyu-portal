@@ -119,10 +119,16 @@ class TodoyuPortalPreferences {
 	}
 
 
-	public static function getFilterTabFiltersetIDs() {
+
+	/**
+	 * Get currently selected filtersets for selection tab
+	 *
+	 * @return	Array
+	 */
+	public static function getSelectionTabFiltersetIDs() {
 		$filtersetIDs	= self::getPref('filtersets');
 
-		if( $filtersetIDs === false ) {
+		if( $filtersetIDs === false || $filtersetIDs === '' ) {
 			$filtersetIDs = array();
 		} else {
 			$filtersetIDs = explode(',', $filtersetIDs);
@@ -132,7 +138,13 @@ class TodoyuPortalPreferences {
 	}
 
 
-	public static function saveFilterTabFiltersetIDs(array $filtersetIDs) {
+
+	/**
+	 * Save currently selected filtersets for selection tab
+	 *
+	 * @param	Array		$filtersetIDs
+	 */
+	public static function saveSelectionTabFiltersetIDs(array $filtersetIDs) {
 		$filtersetIDs	= TodoyuArray::intval($filtersetIDs, true);
 		$prefValue		= implode(',', $filtersetIDs);
 

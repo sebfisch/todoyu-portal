@@ -50,12 +50,11 @@ Todoyu.Ext.portal.Task = {
 
 
 	/**
-	 *	Refresh given task
+	 *	Refresh a task
 	 *
 	 *	@param	Integer	idTask
-	 *	@param	unknown	response
 	 */
-	refresh: function(idTask, response) {
+	refresh: function(idTask) {
 		var target	= 'task-' + idTask;
 		var url		= Todoyu.getUrl('portal', 'task');
 		var options	= {
@@ -63,15 +62,25 @@ Todoyu.Ext.portal.Task = {
 				'action':	'get',
 				'task':		idTask
 			},
-			'onComplete': function(idTask, response) {
-				this.addContextMenu(idTask);
-			}.bind(this, idTask)
+			'onComplete': this.onRefreshed.bind(this, idTask)
 		};
 
 			// Detach menu
 		this.removeContextMenu(idTask);
 			// Update task
 		Todoyu.Ui.replace(target, url, options);
+	},
+	
+	
+	
+	/**
+	 * Handler when task refreshed
+	 * 
+	 * @param	Integer			idTask
+	 * @param	Ajax.Response	response
+	 */
+	onRefreshed: function(idTask, response) {
+		this.addContextMenu(idTask);
 	},
 
 
@@ -133,5 +142,25 @@ Todoyu.Ext.portal.Task = {
 	saveTaskOpen: function(idTask, open) {
 		var value = open ? 1 : 0;
 		this.ext.savePref('taskOpen', value, idTask);
+	},
+	
+	
+	saveTask: function(form) {
+		tinyMCE.triggerSave();
+
+			$(form).request({
+				'parameters': {
+					'action':	'save'
+				},
+				onComplete: this.onSaved.bind(this)
+			});
+	},
+	
+	onSaved: function(response) {
+		Todoyu.Ext.project.Task.Edit.onSaved(response);
+	},
+	
+	cancelEdit: function(idTask) {
+		this.refresh(idTask);
 	}
 };
