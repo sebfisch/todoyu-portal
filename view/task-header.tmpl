@@ -2,10 +2,10 @@
 	<h3 id="task-{$task.id}-header" class="contextmenutask" name="task-{$task.id}" onclick="Todoyu.Ext.portal.Task.toggleDetails({$task.id})">
 	<span class="headLabel bcStatus{$task.status}" title="{$task.fulltitle}">
 		<span class="taskDate date" title="{Label core.deadline}: {date_format $task.date_deadline "%d.%m.%y"} / {Label core.start}: {date_format $task.date_start "%d.%m.%y"}">
-			{date_format $task.date_deadline "%d.%m.%y"}
+			{date_format $task.date_deadline "%d.%m.%y"}&nbsp;
 		</span>
 		<span class="customer">
-			{if $task.customer.shortname}{$task.customer.shortname}{else}{$task.customer.name}{/if}
+			{if $task.customer.shortname}{$task.customer.shortname}{else}{$task.customer.title}{/if}&nbsp;
 		</span>
 		<span class="projectName" title="{Label project.project}: {$task.project.title} (ID: {$task.project.id}) / {Label task.task}: {$task.title}">
 			{htmlencode $task.project.title|truncate:45} - {htmlencode $task.title|truncate:45}

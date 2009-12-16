@@ -204,7 +204,8 @@ class TodoyuPortalRenderer {
 		$taskData	= TodoyuTaskManager::getTaskInfoArray($idTask, 3);
 
 			// Prepare data array for template
-		$data = array(
+		$tmpl	= 'ext/portal/view/task-header.tmpl';
+		$data 	= array(
 			'task'			=> $taskData,
 			'isExpanded'	=> $isExpanded
 		);
@@ -217,7 +218,6 @@ class TodoyuPortalRenderer {
 		}
 
 		$data	= TodoyuHookManager::callHookDataModifier('project', 'taskDataBeforeRendering', $data, array($idTask));
-		$tmpl	= 'ext/portal/view/task-header.tmpl';
 
 		return render($tmpl, $data);
 	}
