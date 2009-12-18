@@ -88,7 +88,7 @@ class TodoyuPanelWidgetQuicktask extends TodoyuPanelWidget implements TodoyuPane
 		$form		= TodoyuFormManager::getForm($xmlPath);
 
 			// Preset (empty) form data
-		$formData	= array();
+		$formData	= $form->getFormData();
 		$formData	= TodoyuFormHook::callLoadData($xmlPath, $formData, 0);
 
 		return $form->render();
