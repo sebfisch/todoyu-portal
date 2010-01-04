@@ -27,6 +27,7 @@
 		<label index="subMenuEntry.todos">Portal > To Do's</label>
 		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
 		<label index="subMenuEntry.appointments">Portal > Appointments</label>
+		<label index="contextmenu.showinproject">Show in Project</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Portal</label>
@@ -55,5 +56,6 @@
 		<label index="subMenuEntry.todos">Portal > Aufgaben</label>
 		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
 		<label index="subMenuEntry.appointments">Portal > Termine</label>
-	</labels>	
+		<label index="contextmenu.showinproject">Im Projekt anzeigen</label>
+	</labels>
 </locallang>

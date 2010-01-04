@@ -100,7 +100,9 @@ class TodoyuPortalPreferences {
 	public static function getActiveTab() {
 		$tab = self::getPref('tab');
 
-		if ( $tab === '0' ) {
+		$tabs	= TodoyuPortalManager::getTabs();
+
+		if ( $tab === false ) {
 			$tab = 'selection';
 		}
 
