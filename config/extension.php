@@ -39,6 +39,8 @@ TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::removeA
 
 /**
  * Configuration for 'todo' tab
+ *
+ * @see	ext/project/config/filters.php	(all filter declarations)
  */
 $CONFIG['EXT']['portal']['todoTabFilters'] = array(
 	array(

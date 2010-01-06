@@ -73,7 +73,6 @@ class TodoyuPortalManager {
 
 	/**
 	 * Add the assets of the tabs to the page
-	 *
 	 */
 	public static function addTabAssetsToPage() {
 		$tabs	= self::getTabsConfig();
