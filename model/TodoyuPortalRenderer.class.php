@@ -206,10 +206,13 @@ class TodoyuPortalRenderer {
 			// Prepare data array for template
 		$tmpl	= 'ext/portal/view/task-header.tmpl';
 		$data 	= array(
-			'task'			=> $taskData,
-			'isExpanded'	=> $isExpanded
+			'task'				=> $taskData,
+			'isExpanded'		=> $isExpanded,
+			'subtasks'			=> '',
+			'additionalIcons'	=> TodoyuTaskManager::getAdditionalTaskIcons($idTask),
+			'infoIcons'			=> TodoyuTaskManager::getAllTaskInfoIcons($idTask),
 		);
-
+		
 			// Render details if task is expanded
 		if( $isExpanded ) {
 			$activeTab		= TodoyuProjectPreferences::getActiveTaskTab($idTask, AREA);
