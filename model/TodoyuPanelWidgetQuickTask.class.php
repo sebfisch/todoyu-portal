@@ -97,7 +97,7 @@ class TodoyuPanelWidgetQuicktask extends TodoyuPanelWidget implements TodoyuPane
 
 
 	public static function isAllowed() {
-		return allowed('portal', 'panelwidget:quicktaskWizard');
+		return allowed('portal', 'panelwidgets:quicktaskWizard');
 	}
 
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rights>
-	
+
 	<section name="general">
 		<right name="use" />
 	</section>
-	
+
 	<section name="panelwidgets">
-		<right name="panelwidget:quicktaskWizard" />
-		<right name="panelwidget:filterPresetList" />
+		<right name="quicktaskWizard" />
+		<right name="filterPresetList" />
 	</section>
-	
-	<section name="panelwidgetFilterPresetList">
-		<right name="panelwidget:filterPresetList:manageFilters" />
+
+	<section name="filterPresetList">
+		<right name="manageFilters" />
 	</section>
-	
+
 </rights>

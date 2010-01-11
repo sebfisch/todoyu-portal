@@ -129,7 +129,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	public static function isAllowed() {
-		return allowed('portal', 'panelwidget:filterPresetList');
+		return allowed('portal', 'panelwidgets:filterPresetList');
 	}
 
 }

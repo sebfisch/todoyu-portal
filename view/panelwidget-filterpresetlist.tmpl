@@ -21,7 +21,7 @@
 {/if}
 	<br/>
 	{* ---------- Manage filter presets button ---------- *}
-	{restrict 'portal' 'panelwidget:filterPresetList:manageFilters'}
+	{restrict 'portal' 'filterPresetList:manageFilters'}
 	{if count($filtersets) > 0}
 	{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{else}

@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="section.general">General</label>
-		<label index="section.actions">Actions</label>
-		<label index="right.action:ext:default">Portal Default View</label>
-		<label index="right.controller:preference">Save Preferences</label>
-		<label index="right.controller:tab">Tab Controller</label>
-		<label index="section.panelwidgets">Panel Widgets</label>
-		<label index="right.PanelWidgetQuicktaskWizard">Allowed to see quicktask wizard</label>
-		<label index="right.PanelWidgetFilterPresetList">Allowed to see filter wizard</label>
-		<label index="right.use">Use portal</label>
-		<label index="section.panelwidgetFilterPresetList">Panelwidget FilterPresetList</label>
-		<label index="right.panelwidget:filterPresetList:manageFilters">Manage filter button</label>
+		<label index="general">General Settings</label>
+		<label index="general.use">Use Portal</label>
+		<label index="panelwidgets">Panel Widgets</label>
+		<label index="panelwidgets.quicktaskWizard">Allowed to see quicktask wizard</label>
+		<label index="panelwidgets.filterPresetList">Allowed to see filter wizard</label>
+		<label index="filterPresetList">Panelwidget FilterPresetList</label>
+		<label index="filterPresetList.manageFilters">Manage filter button</label>
 	</labels>
 	<labels lang="de">
-		<label index="section.general">Allgemein</label>
-		<label index="section.actions">Aktionen</label>
-		<label index="right.action:ext:default">Portal Standard-Ansicht</label>
-		<label index="right.controller:preference">Einstellungen speichern</label>
-		<label index="right.controller:tab">Reiter-Steuerung</label>
-		<label index="section.panelwidgets">Steuerelemente</label>
-		<label index="right.PanelWidgetQuicktaskWizard">Sieht Kurz-Aufgabe Anleitung</label>
-		<label index="right.PanelWidgetFilterPresetList">Sieht Filter-Vorgabenlisten Element</label>
-		<label index="right.use">Portal Verwenden</label>
-		<label index="section.panelwidgetFilterPresetList">Filtervorgaben Element</label>
-		<label index="right.panelwidget:filterPresetList:manageFilters">Filter Verwalten Knopf</label>
+		<label index="general">Allgemeine Einstellungen</label>
+		<label index="general.use">Portal Verwenden</label>
+		<label index="panelwidgets">Steuerelemente</label>
+		<label index="panelwidgets.quicktaskWizard">Sieht Kurz-Aufgabe Anleitung</label>
+		<label index="panelwidgets.filterPresetList">Sieht Filter-Vorgabenlisten Element</label>
+		<label index="filterPresetList">Filtervorgaben Element</label>
+		<label index="filterPresetList.manageFilters">Filter Verwalten Knopf</label>
 	</labels>
 </locallang>
