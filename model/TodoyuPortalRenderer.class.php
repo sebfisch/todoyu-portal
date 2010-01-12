@@ -212,7 +212,7 @@ class TodoyuPortalRenderer {
 			'additionalIcons'	=> TodoyuTaskManager::getAdditionalTaskIcons($idTask),
 			'infoIcons'			=> TodoyuTaskManager::getAllTaskInfoIcons($idTask),
 		);
-		
+
 			// Render details if task is expanded
 		if( $isExpanded ) {
 			$activeTab		= TodoyuProjectPreferences::getActiveTaskTab($idTask, AREA);
