@@ -53,7 +53,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	/**
-	 * Get filtersets of the user (includes public filtersets)
+	 * Get filtersets of current user (includes public filtersets)
 	 *
 	 * @return	Array
 	 */
