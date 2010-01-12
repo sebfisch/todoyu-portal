@@ -206,6 +206,8 @@ class TodoyuPortalPreferences {
 	public static function saveTaskExpandedStatus($idTask, $expanded = true) {
 		$idTask	= intval($idTask);
 
+		TodoyuDebug::printInFirebug('open');
+
 		if( $expanded ) {
 			self::savePref('task-exp', $idTask);
 		} else {

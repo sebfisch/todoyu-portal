@@ -113,25 +113,59 @@ Todoyu.Ext.portal.Task = {
 	 *	@param	Integer	idTask
 	 */
 	toggleDetails: function(idTask) {
-		var details;
-
 			// If detail is loaded yet, send only a preference request
 		if( Todoyu.Ext.project.Task.isDetailsLoaded(idTask) ) {
-			details = $('task-' + idTask + '-details');
+			var details = $('task-' + idTask + '-details');
+				// Toggle details
+			details.toggle();
 				// Save preference
-			this.saveTaskOpen(idTask, !details.visible());
+			this.saveTaskOpen(idTask, details.visible());
+			
+			this.onDetailsToggled(idTask);
 		} else {
-			Todoyu.Ext.project.Task.loadDetails(idTask);
-			details	= $('task-' + idTask + '-details');
-			details.hide();
+				// Details are not loaded yet
+			this.loadDetails(idTask, '', this.onDetailsToggled.bind(this));
 		}
-
-			// Toggle visibility
-		details.toggle();
-		$('task-' + idTask).toggleClassName('expanded');
 	},
+	
+	
+	
+	/**
+	 * Handler when details of a task have been toggled
+	 * 
+	 * @param	Integer			idTask
+	 * @param	String			tab
+	 * @param	Ajax.Response	response
+	 */
+	onDetailsToggled: function(idTask, tab, response) {
+		Todoyu.Ext.project.Task.refreshExpandedStyle(idTask);
+	},
+	
+	
+	
+	/**
+	 * Load details of given task and append them to (have them shown inside) header of given task
+	 *
+	 *	@param	Integer	idTask
+	 *	@param	String	tab
+	 */
+	loadDetails: function(idTask, tab, onComplete) {
+		var url		= Todoyu.getUrl('portal', 'task');
+		var options	= {
+			'parameters': {
+				'action':	'detail',
+				'task':		idTask
+			},
+			'onComplete': Todoyu.Ext.project.Task.onDetailsLoaded.bind(this, idTask, tab, onComplete)
+		};
+		var target	= 'task-' + idTask + '-header';
 
+			// Fade out the "not acknowledged" icon if its there
+		Todoyu.Ext.project.Task.fadeAcknowledgeIcon.delay(1, idTask);
 
+		Todoyu.Ui.append(target, url, options);
+	},
+	
 
 	/**
 	 *	Save task being opened state
@@ -145,21 +179,41 @@ Todoyu.Ext.portal.Task = {
 	},
 	
 	
+	
+	/**
+	 * Save task after editing
+	 * 
+	 * @param	DomElement		form
+	 */
 	saveTask: function(form) {
 		tinyMCE.triggerSave();
 
-			$(form).request({
-				'parameters': {
-					'action':	'save'
-				},
-				onComplete: this.onSaved.bind(this)
-			});
+		$(form).request({
+			'parameters': {
+				'action':	'save'
+			},
+			'onComplete': this.onSaved.bind(this)
+		});
 	},
 	
+	
+	
+	/**
+	 * Handler when task saved
+	 * 
+	 * @param	Ajax.Response		response
+	 */
 	onSaved: function(response) {
 		Todoyu.Ext.project.Task.Edit.onSaved(response);
 	},
 	
+	
+	
+	/**
+	 * Cancel inline editing of the task
+	 * 
+	 * @param	Integer		idTask
+	 */
 	cancelEdit: function(idTask) {
 		this.refresh(idTask);
 	}

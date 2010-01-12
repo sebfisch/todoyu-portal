@@ -9,9 +9,9 @@
 		<label index="workload_chargeable.label">Chargeable</label>
 	</labels>
 	<labels lang="de">
-		<label index="title">Schnell-Aufgaben Assistent</label>
-		<label index="popup.title">Schnell-Aufgabe erzeugen</label>
-		<label index="addQuicktask">Aufgaben-Assisten</label>
+		<label index="title">Aufgaben Assistent</label>
+		<label index="popup.title">Aufgabe erzeugen</label>
+		<label index="addQuicktask">Aufgaben-Assisten öffnen</label>
 		<label index="workloadTracked.label">Arbeitspensum</label>
 		<label index="startTracking.label">Zeiterfassung starten</label>
 		<label index="workload_chargeable.label">Anrechenbar</label>

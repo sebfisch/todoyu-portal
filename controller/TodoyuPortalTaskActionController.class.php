@@ -97,6 +97,26 @@ class TodoyuPortalTaskActionController extends TodoyuActionController {
 		}
 	}
 
+
+	/**
+	 * Get task detail content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
+	public function detailAction(array $params) {
+		$idTask		= intval($params['task']);
+
+			// Save task open
+		TodoyuPortalPreferences::saveTaskExpandedStatus($idTask, true);
+
+			// Set task acknowledged
+		TodoyuTaskManager::setTaskAcknowledged($idTask);
+
+		return TodoyuTaskRenderer::renderTaskDetail($idTask);
+	}
+
+
 }
 
 ?>

@@ -15,13 +15,12 @@
 		<span class="billableTime" title="{Label task.billableTime} ({Label timetracking.tracked_time}: {Workload $task.tracked_time true})">{Workload $task.tracked_time true}</span>
 		<span class="taskNumber" title="{Label project.taskno}: {$task.id_project}.{$task.tasknumber}">{$task.id_project}.{$task.tasknumber}</span>
 
-
 		<span class="additionalStuff">
 			{foreach $infoIcons infoIcon}
-					<span id="{$infoIcon.id}" class="{$infoIcon.class}" title="{Label $infoIcon.label true}" {if $infoIcon.onclick}onclick="{$infoIcon.onclick}"{/if}></span>
+				<span id="{$infoIcon.id}" class="{$infoIcon.class}" title="{Label $infoIcon.label true}" {if $infoIcon.onclick}onclick="{$infoIcon.onclick}"{/if}></span>
 			{/foreach}
 			{foreach $additionalIcons icon}
-					<span class="{$icon.class}" title="{$icon.label}"></span>
+				<span class="{$icon.class}" title="{$icon.label}"></span>
 			{/foreach}
 		</span>
 
