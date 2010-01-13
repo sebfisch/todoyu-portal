@@ -20,12 +20,12 @@
 ***************************************************************/
 
 /**
- * Panel widget: quicktask
+ * Panelwidget Quicktask
  *
+ * @package		Todoyu
+ * @subpackage	Portal
  */
-
 class TodoyuPanelWidgetQuicktask extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
-
 
 	/**
 	 * Constructor (init widget)
