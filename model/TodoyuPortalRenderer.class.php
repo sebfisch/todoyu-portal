@@ -132,6 +132,10 @@ class TodoyuPortalRenderer {
 
 
 
+
+
+
+
 	/**
 	 * Render tab headers for portal
 	 *

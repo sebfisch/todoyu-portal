@@ -124,7 +124,7 @@ class TodoyuPortalManager {
 	public static function getSelectionTaskIDs() {
 		$filtersetIDs		= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
 		$filtersetTaskIDs	= array();
-		$sorting			= '	ext_project_task.date_deadline,
+		$order				= '	ext_project_task.date_deadline,
 								ext_project_task.date_end';
 
 			// Get conditions for each filterset and search for the tasks
@@ -141,6 +141,11 @@ class TodoyuPortalManager {
 			$taskIDs= array_pop($filtersetTaskIDs);
 		} else {
 			$taskIDs= array_unique(TodoyuArray::mergeSubArrays($filtersetTaskIDs));
+		}
+
+			// Sort tasks by deadline. Is only necessary if multiple filtersets are used
+		if( sizeof($filtersetIDs) > 1 ) {
+			$taskIDs= TodoyuTaskManager::sortTaskIDs($taskIDs, $order);
 		}
 
 		return $taskIDs;
