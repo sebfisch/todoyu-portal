@@ -43,6 +43,6 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 	 * Handle quicktask having been added 
 	 */
 	onAdded: function(idTask, idProject, started) {
-		console.log('added: ' + idTask);
+		this.ext.Tab.refresh();
 	}
 };

@@ -108,5 +108,13 @@ Todoyu.Ext.portal.Tab = {
 		var replace	= '(' + numResults + ')';
 
 		labelEl.update(label.replace(pattern, replace));
+	},
+	
+	getActiveTab: function() {
+		return Todoyu.Tabs.getActiveKey('portal-tabs');
+	},
+	
+	refresh: function() {
+		this.showTab(this.getActiveTab());
 	}
 };
