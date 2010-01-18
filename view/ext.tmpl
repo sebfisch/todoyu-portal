@@ -5,14 +5,10 @@
 	{$panelWidgets}
 {/block}
 
-{block "content"}
-
+{block "contentTabs"}
 	{$tabHeads}
+{/block}
 
-	{* actual content, over here: list of tasks/ appointments *}
-
-	<div id="portal-tabcontent">
-		{$activeTabContent}
-	</div>
-
+{block "contentBody"}
+	{$activeTabContent}
 {/block}

@@ -52,9 +52,9 @@ Todoyu.Ext.portal.Tab = {
 				'action': 	'update',
 				'tab':		tabKey
 			},
-			'onComplete': this.onTabShowed.bind(this, tabKey)			
+			'onComplete': this.onTabShowed.bind(this, tabKey)
 		};
-		var target	= 'portal-tabcontent';
+		var target	= 'content-body';
 
 		Todoyu.Ui.update(target, url, options);
 
@@ -67,13 +67,13 @@ Todoyu.Ext.portal.Tab = {
 
 	/**
 	 * Handler when tab is showed and updated
-	 * 
+	 *
 	 *	@param	String			tabKey
 	 *	@param	Ajax.Response	response
 	 */
 	onTabShowed: function(tabKey, response) {
 		var numSelected	= response.getTodoyuHeader('selection');
-		
+
 		if( numSelected !== null ) {
 			this.updateNumResults('selection', numSelected);
 		}
@@ -83,7 +83,7 @@ Todoyu.Ext.portal.Tab = {
 
 	/**
 	 * Update the label of a tab
-	 * 
+	 *
 	 *	@param	String		tabKey
 	 *	@param	String		newLabel
 	 */
@@ -97,7 +97,7 @@ Todoyu.Ext.portal.Tab = {
 	 * Update the number of results in the tablabel
 	 * Replace the number in the brackets
 	 * @example	'Tasks (43)' => 'Tasks (33)'
-	 * 
+	 *
 	 *	@param	String		tabKey
 	 *	@param	Integer		numResults
 	 */
@@ -109,11 +109,11 @@ Todoyu.Ext.portal.Tab = {
 
 		labelEl.update(label.replace(pattern, replace));
 	},
-	
+
 	getActiveTab: function() {
 		return Todoyu.Tabs.getActiveKey('portal-tabs');
 	},
-	
+
 	refresh: function() {
 		this.showTab(this.getActiveTab());
 	}
