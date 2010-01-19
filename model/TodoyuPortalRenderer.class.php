@@ -213,8 +213,7 @@ class TodoyuPortalRenderer {
 			'task'				=> $taskData,
 			'isExpanded'		=> $isExpanded,
 			'subtasks'			=> '',
-			'additionalIcons'	=> TodoyuTaskManager::getAdditionalTaskIcons($idTask),
-			'infoIcons'			=> TodoyuTaskManager::getAllTaskInfoIcons($idTask),
+			'taskIcons'			=> TodoyuTaskManager::getAllTaskIcons($idTask),
 		);
 
 			// Render details if task is expanded

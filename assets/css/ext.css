@@ -41,7 +41,7 @@
 	width:40px;
 }
 
-.portalTaskList h3 span.additionalStuff {
+.portalTaskList h3 span.taskIcons {
 	position:absolute;
 	height:16px;
 	width:65px;
@@ -51,7 +51,7 @@
 	cursor:default;
 }
 
-.portalTaskList .task h3 span.additionalStuff span {
+.portalTaskList .task h3 span.taskIcons span {
 	float:left;
 	clear:none;
 	width:16px;
