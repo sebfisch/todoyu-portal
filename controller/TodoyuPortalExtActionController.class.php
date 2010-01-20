@@ -67,9 +67,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 
 		TodoyuPortalManager::addTabAssetsToPage();
 
-//		TodoyuDebug::printHtml(setlocale(LC_ALL, 0));
-//		TodoyuDebug::printHtml(Todoyu::getLocale());
-//
+		TodoyuDebug::printHtml(TodoyuLocaleManager::getLocaleOptions());
 
 			// Context menu
 		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.project.ContextMenuTask.attach.bind(Todoyu.Ext.project.ContextMenuTask)');
