@@ -45,7 +45,7 @@ class TodoyuPortalRenderer {
 	 */
 	public static function getSelectionTabLabel($count = true) {
 
-		$label	= TodoyuLocale::getLabel('portal.tab.selection');
+		$label	= TodoyuLanguage::getLabel('portal.tab.selection');
 
 		if( $count ) {
 			$taskIDs= TodoyuPortalManager::getSelectionTaskIDs();
@@ -80,7 +80,7 @@ class TodoyuPortalRenderer {
 	 * @return	String
 	 */
 	public static function getTodoTabLabel($count = true) {
-		$label		= TodoyuLocale::getLabel('portal.tab.todos');
+		$label		= TodoyuLanguage::getLabel('portal.tab.todos');
 
 		if( $count ) {
 			$numTasks	= sizeof(TodoyuPortalManager::getTodoTaskIDs());
