@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
 	<labels lang="en">
-		<label index="title">Filter Presets</label>
+		<label index="title">My Filters</label>
 		<label index="create">Create Filters</label>
 		<label index="manage">Manage Filters</label>
 		<label index="amount">Amount</label>
 		<label index="noFilters">There have not been any filters created yet.</label>	
 	</labels>
 	<labels lang="de">
-		<label index="title">Filter Vorgaben</label>
+		<label index="title">Meine Filter</label>
 		<label index="create">Filter anlegen</label>
 		<label index="manage">Filter bearbeiten</label>
 		<label index="amount">Menge</label>

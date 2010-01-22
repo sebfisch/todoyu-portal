@@ -4,7 +4,7 @@
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
-		<label index="tab.selection">Selection</label>
+		<label index="tab.selection">My Filter</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="tab.todos">To Dos</label>
 		<label index="tab.appointments">Appointments</label>
@@ -33,7 +33,7 @@
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
-		<label index="tab.selection">Auswahl</label>
+		<label index="tab.selection">Mein Filter</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="tab.todos">Aufgaben</label>
 		<label index="tab.appointments">Termine</label>

@@ -31,11 +31,9 @@
 TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::getSelectionTabContent', 0, array('portal/public', 'project/public'));
 TodoyuPortalManager::addTab('todo', 'TodoyuPortalRenderer::getTodoTabLabel', 'TodoyuPortalRenderer::getTodoTabContent', 10, array('portal/public', 'project/public'));
 
-
 	// Register context menu functions
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::removeAddMenuIfEmpty', 1000);
-
 
 /**
  * Configuration for 'todo' tab
