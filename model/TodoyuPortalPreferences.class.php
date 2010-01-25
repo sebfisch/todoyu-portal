@@ -161,7 +161,7 @@ class TodoyuPortalPreferences {
 	 */
 	public static function saveTabFiltersets($filtersetIDs, $idTab = 0) {
 		$idTab			= intval($idTab);
-		$filtersetIDs	= TodoyuDiv::intExplode(',', $filtersetIDs, true, true);
+		$filtersetIDs	= TodoyuArray::intExplode(',', $filtersetIDs, true, true);
 
 		if ($idTab == 0) {
 				// 'Selection' tab (filtersets stored in user prefs)
