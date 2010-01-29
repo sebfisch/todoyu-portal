@@ -130,7 +130,8 @@ class TodoyuPortalManager {
 			// Get conditions for each filterset and search for the tasks
 		foreach($filtersetIDs as $idFilterset) {
 			$conditions			= TodoyuFiltersetManager::getFiltersetConditions($idFilterset);
-			$taskFilter			= new TodoyuTaskFilter($conditions);
+			$conjunction		= TodoyuFiltersetManager::getFilterset($idFilterset)->getConjunction();
+			$taskFilter			= new TodoyuTaskFilter($conditions, $conjunction);
 			$filtersetTaskIDs[]	= $taskFilter->getTaskIDs($sorting);
 		}
 
