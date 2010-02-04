@@ -57,19 +57,20 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 *
 	 * @return	Array
 	 */
-	private function getFiltersets() {
+	private function getFiltersetOptions() {
 		$activeFiltersets	= self::getActiveFiltersetIDs();
 		$filtersets			= TodoyuFiltersetManager::getTaskFiltersets(0, false);
 
-			// Add amount information to each filterset
 		foreach($filtersets as $index => $filterset) {
 			$conditions	= TodoyuFiltersetManager::getFiltersetConditions($filterset['id']);
 			$taskFilter	= new TodoyuTaskFilter($conditions);
 			$taskIDs	= $taskFilter->getTaskIDs();
 
 				// Update filterset
-			$filtersets[$index]['amount']	= sizeof($taskIDs);
+			$resultsAmount	= sizeof($taskIDs);
+			$filtersets[$index]['label']	= substr($filtersets[$index]['title'], 0, 46) . ' (' . $resultsAmount . ')';
 			$filtersets[$index]['selected']	= in_array($filterset['id'], $activeFiltersets);
+			$filtersets[$index]['value']	= $filterset['id'];
 		}
 
 		return $filtersets;
@@ -78,7 +79,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	/**
-	 * Get IDs of the active filtersets in the list
+	 * Get IDs of active filtersets in list
 	 *
 	 * @return	Array
 	 */
@@ -94,16 +95,15 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 * @return	String
 	 */
 	public function renderContent() {
-		$filtersets	= $this->getFiltersets();
-
 		$tmpl	= 'ext/portal/view/panelwidget-filterpresetlist.tmpl';
+
 		$data	= array(
-			'id'			=> $this->getID(),
-			'filtersets'	=> $filtersets
+			'id'		=> $this->getID(),
+			'options'	=> $this->getFiltersetOptions(),
+			'value'		=> self::getActiveFiltersetIDs(),
 		);
 
 		$content	= render($tmpl, $data);
-
 		$this->setContent($content);
 
 		return $content;
@@ -128,6 +128,12 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	}
 
 
+
+	/**
+	 * Check whether usage of the widget is allowed to current user
+	 *
+	 * @return	Boolean
+	 */
 	public static function isAllowed() {
 		return allowed('portal', 'panelwidgets:filterPresetList');
 	}

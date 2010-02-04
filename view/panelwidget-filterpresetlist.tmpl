@@ -1,17 +1,10 @@
 <div id="filterPresetsBox">
-{if count($filtersets) > 0}
+{if count($options) > 0}
 	<div id="filterTarget">
 		<div class="filter">
 			<span class="field">
 				<span class="scrollbarHide overflowHidden displayBlock">
-					<select size="{sizeof($filtersets)}" id="panelwidget-{$id}-list" multiple="multiple">
-					{* ---------- List all filter presets as options ---------- *}
-					{foreach $filtersets filterset}
-						<option title="{htmlencode $filterset.title}" value="{$filterset.id}" class="{cycle values="odd,even"}{if $filterset.selected == 1} selected{/if}" {if $filterset.selected == 1}selected="selected"{/if}>
-							{htmlencode $filterset.title|truncate:46} ({$filterset.amount})
-						</option>
-					{/foreach}
-					</select>
+					{select options=$options value=$value id="panelwidget-$id-list" multiple=true size=sizeof($options)}				
 				</span>
 			</span>
 		</div>
