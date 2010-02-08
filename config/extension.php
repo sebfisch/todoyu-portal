@@ -33,7 +33,6 @@ TodoyuPortalManager::addTab('todo', 'TodoyuPortalRenderer::getTodoTabLabel', 'To
 
 	// Register context menu functions
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
-TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::removeAddMenuIfEmpty', 1000);
 
 /**
  * Configuration for 'todo' tab

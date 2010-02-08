@@ -207,25 +207,6 @@ class TodoyuPortalManager {
 
 
 	/**
-	 * Remove "add" parent menu, if no subitems are in there
-	 *
-	 * @param	Integer		$idTask
-	 * @param	Array		$items
-	 * @return	Array
-	 */
-	public static function removeAddMenuIfEmpty($idTask, array $items) {
-		if( is_array($items['add']['submenu']) ) {
-			if( sizeof($items['add']['submenu']) === 0 ) {
-				unset($items['add']);
-			}
-		}
-
-		return $items;
-	}
-
-
-
-	/**
 	 * Modify task form if task is edited in portal
 	 * Change form action and button actions
 	 *

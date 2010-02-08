@@ -19,14 +19,6 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-$CONFIG['EXT']['portal']['ContextMenu']['Task'] = array(
-	'showinproject'	=> array(
-		'key'		=> 'showinproject',
-		'label'		=> 'portal.contextmenu.showinproject',
-		'jsAction'	=> 'Todoyu.Ext.project.goToTaskInProject(#ID#)',
-		'class'		=> 'task-ctxmenu task-showinproject',
-		'position'	=> 10
-	)
-);
+$CONFIG['EXT']['portal']['ContextMenu']['Task'] = array();
 
 ?>
