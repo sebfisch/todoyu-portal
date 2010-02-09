@@ -12,9 +12,9 @@
 
 
 
-/* -----------------
-	List
-   ----------------- */
+/* ------------------------
+	Special Task Header
+   ------------------------ */
 .portalTaskList h1 span.taskDate,
 .portalTaskList h3 span.taskDate {
 	width:62px;
@@ -29,37 +29,6 @@
 .portalTaskList h3 span.projectName {
 	width:340px;
 }
-
-.portalTaskList h3 span.billableTime {
-	display:inline-block;
-	width:30px;
-	margin-right:5px;
-}
-
-.portalTaskList h3 span.taskNumber {
-	display:inline-block;
-	width:40px;
-}
-
-.portalTaskList h3 span.taskIcons {
-	position:absolute;
-	height:16px;
-	width:65px;
-	margin-top:-2px;
-	padding:1px 3px;
-	background:url(../../../../core/assets/img/dottedline_ver.png) repeat-y 0 0;
-	cursor:default;
-}
-
-.portalTaskList .task h3 span.taskIcons span {
-	float:left;
-	clear:none;
-	width:16px;
-	height:16px;
-	margin:0;
-	margin-left:3px;
-}
-
 
 
 
