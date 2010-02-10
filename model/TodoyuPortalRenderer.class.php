@@ -63,7 +63,7 @@ class TodoyuPortalRenderer {
 	 *
 	 * @return	String
 	 */
-	public static function getSelectionTabContent() {
+	public static function renderSelectionTabContent() {
 		$taskIDs	= TodoyuPortalManager::getSelectionTaskIDs();
 
 		TodoyuHeader::sendTodoyuHeader('selection', sizeof($taskIDs));
@@ -97,7 +97,7 @@ class TodoyuPortalRenderer {
 	 *
 	 * @return	String
 	 */
-	public static function getTodoTabContent() {
+	public static function renderTodoTabContent() {
 		$taskIDs= TodoyuPortalManager::getTodoTaskIDs();
 
 		return self::renderTaskList($taskIDs);

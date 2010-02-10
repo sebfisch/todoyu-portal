@@ -19,22 +19,26 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+/**
+ * Portaltab action controller
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
 class TodoyuPortalTabActionController extends TodoyuActionController {
 
+	/**
+	 * Update tab content
+	 *
+	 * @param	Array		$params
+	 * @return	String
+	 */
 	public function updateAction(array $params) {
 		$tabKey	= $params['tab'];
 
 		TodoyuPortalPreferences::saveActiveTab($tabKey);
 
 		return TodoyuPortalRenderer::renderTabContent($tabKey);
-	}
-
-	public function saveActiveAction(array $params) {
-		$idTab	= intval($params['tab']);
-
-		TodoyuPortalPreferences::saveActiveTab($idTab);
-
-		return TodoyuPortalRenderer::renderTabContent($idTab);
 	}
 
 }
