@@ -45,16 +45,21 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	String	tabKey
 	 *	@param	Boolean	refresh
 	 */
-	showTab: function(tabKey, activateTab) {
+	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
 		var options	= {
 			'parameters': {
-				'action': 	'update',
+				'action':	'update',
 				'tab':		tabKey
 			},
 			'onComplete': this.onTabShowed.bind(this, tabKey)
 		};
 		var target	= 'content-body';
+		
+			// Add extra params
+		if( typeof(extraParams) === 'object' ) {
+			options.parameters.params = Object.toJSON(extraParams);
+		}
 
 		Todoyu.Ui.update(target, url, options);
 

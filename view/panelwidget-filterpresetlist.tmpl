@@ -1,24 +1,21 @@
-<div id="filterPresetsBox">
-{if count($options) > 0}
-	<div id="filterTarget">
-		<div class="filter">
-			<span class="field">
-				<span class="scrollbarHide overflowHidden displayBlock">
-					{select options=$options value=$value id="panelwidget-$id-list" multiple=true size=sizeof($options)}				
-				</span>
-			</span>
-		</div>
-	</div>
+{foreach $types type typeFiltersets}
+	<h2>{$typeFiltersets.title}</h2>
+	<span class="scrollbarHide overflowHidden displayBlock">
+		{$typeLower = strtolower($type)}
+		{select options=$typeFiltersets.options value=$selected id="panelwidget-$id-list-$typeLower" multiple=true}
+	</span>
 {else}
-	<div class="notification">{Label panelwidget-filterpresetlist.noFilters}</div>
-{/if}
-	<br/>
-	{* ---------- Manage filter presets button ---------- *}
-	{restrict 'portal' 'filterPresetList:manageFilters'}
+	<div class="notification">
+		{Label panelwidget-filterpresetlist.noFilters}
+	</div>
+{/foreach}
+
+<br/>
+{* ---------- Manage filter presets button ---------- *}
+{restrict 'portal' 'filterPresetList:manageFilters'}
 	{if count($filtersets) > 0}
-	{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+		{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{else}
-	{Button label="panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+		{Button label="panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{/if}
-	{/restrict}
-</div>
+{/restrict}

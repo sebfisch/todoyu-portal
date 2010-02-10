@@ -63,7 +63,12 @@ class TodoyuPortalRenderer {
 	 *
 	 * @return	String
 	 */
-	public static function renderSelectionTabContent() {
+	public static function renderSelectionTabContent(array $params = array()) {
+		if( isset($params['filtersets']) ) {
+			$filtersetIDs	= TodoyuArray::intval($params['filtersets'], true, true);
+			TodoyuPortalPreferences::saveSelectionTabFiltersetIDs($filtersetIDs);
+		}
+
 		$taskIDs	= TodoyuPortalManager::getSelectionTaskIDs();
 
 		TodoyuHeader::sendTodoyuHeader('selection', sizeof($taskIDs));
@@ -97,7 +102,7 @@ class TodoyuPortalRenderer {
 	 *
 	 * @return	String
 	 */
-	public static function renderTodoTabContent() {
+	public static function renderTodoTabContent(array $params = array()) {
 		$taskIDs= TodoyuPortalManager::getTodoTaskIDs();
 
 		return self::renderTaskList($taskIDs);
@@ -165,11 +170,11 @@ class TodoyuPortalRenderer {
 	 * @param	Integer		$idTab
 	 * @return	String
 	 */
-	public static function renderTabContent($tabKey) {
+	public static function renderTabContent($tabKey, array $params = array()) {
 		$tab	= TodoyuPortalManager::getTabConfig($tabKey);
 
 		if( TodoyuDiv::isFunctionReference($tab['contentFunc']) ) {
-			return TodoyuDiv::callUserFunction($tab['contentFunc']);
+			return TodoyuDiv::callUserFunction($tab['contentFunc'], $params);
 		} else {
 			Todoyu::log('Missing render function for tab "' . $tabKey . '"', LOG_LEVEL_ERROR);
 			return 'Found no render function for this tab';

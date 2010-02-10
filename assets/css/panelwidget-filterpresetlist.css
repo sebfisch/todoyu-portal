@@ -15,3 +15,9 @@
 #panelwidget-filterpresetlist select option {
 	cursor:pointer;
 }
+
+#panelwidget-filterpresetlist h2 {
+	font-size:11px;
+	padding-top:5px;
+	border-bottom:1px dotted #000000;
+}

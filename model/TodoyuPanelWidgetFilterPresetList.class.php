@@ -59,7 +59,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 */
 	private function getFiltersetOptions() {
 		$activeFiltersets	= self::getActiveFiltersetIDs();
-		$filtersets			= TodoyuFiltersetManager::getTaskFiltersets(0, false);
+		$filtersets			= TodoyuFiltersetManager::getTypeFiltersets('TASK', 0, false);
 
 		foreach($filtersets as $index => $filterset) {
 			$conditions	= TodoyuFiltersetManager::getFiltersetConditions($filterset['id']);
@@ -67,13 +67,38 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 			$taskIDs	= $taskFilter->getTaskIDs();
 
 				// Update filterset
-			$resultsAmount	= sizeof($taskIDs);
-			$filtersets[$index]['label']	= substr($filtersets[$index]['title'], 0, 46) . ' (' . $resultsAmount . ')';
+			$filtersets[$index]['label']	= TodoyuDiv::cropText($filtersets[$index]['title'], 46, '', false) . ' (' . sizeof($taskIDs) . ')';
 			$filtersets[$index]['selected']	= in_array($filterset['id'], $activeFiltersets);
 			$filtersets[$index]['value']	= $filterset['id'];
 		}
 
 		return $filtersets;
+	}
+
+
+	public function getFiltersetTypes() {
+		$typeKeys	= TodoyuFilterManager::getFilterTypes(true);
+		$types		= array();
+
+		foreach($typeKeys as $typeKey) {
+			$typeFiltersets	= TodoyuFiltersetManager::getTypeFiltersets($typeKey);
+			$filterClass	= TodoyuFilterManager::getFilterTypeClass($typeKey);
+
+			$types[$typeKey]['title'] = TodoyuFilterManager::getFilterTypeLabel($typeKey);
+
+			foreach($typeFiltersets as $index => $typeFilterset) {
+				$conditions	= TodoyuFiltersetManager::getFiltersetConditions($typeFilterset['id']);
+				$typeFilter	= new $filterClass($conditions);
+				$itemIDs	= $typeFilter->getItemIDs();
+
+				$types[$typeKey]['options'][] = array(
+					'label'	=> TodoyuDiv::cropText($typeFilterset['title'], 46, '', false) . ' (' . sizeof($itemIDs) . ')',
+					'value'	=> $typeFilterset['id']
+				);
+			}
+		}
+
+		return $types;
 	}
 
 
@@ -99,9 +124,14 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 		$data	= array(
 			'id'		=> $this->getID(),
+			'types'		=> $this->getFiltersetTypes(),
 			'options'	=> $this->getFiltersetOptions(),
-			'value'		=> self::getActiveFiltersetIDs(),
+			'selected'	=> array()
 		);
+
+		if( TodoyuPortalPreferences::getActiveTab() === 'selection' ) {
+			$data['selected']	= self::getActiveFiltersetIDs();
+		}
 
 		$content	= render($tmpl, $data);
 		$this->setContent($content);

@@ -28,7 +28,10 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 */
 	ext:	Todoyu.Ext.portal,
 
-	list:	'panelwidget-filterpresetlist-list',
+	/**
+	 * List of all select items with filtersets
+	 */	
+	lists: {},
 
 
 
@@ -36,38 +39,72 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 *	Init
 	 */
 	init: function() {
-		this.installObserver();
+			// Find all lists
+		var lists = $('panelwidget-filterpresetlist-content').select('select');
+		
+			// Add lists to internal storage and install an onchange observer
+		lists.each(function(list){
+			var type = list.id.split('-').last();
+			this.lists[type] = list;
+			
+			list.observe('change', this.onSelectionChange.bindAsEventListener(this, type));			
+		}.bind(this));
 	},
 
 
 
 	/**
-	 *	Install observer
+	 * Handler when selection in one of the lists is changed
+	 * 
+	 * @param	Event		event
+	 * @param	String		type		List type
 	 */
-	installObserver: function() {
-		$(this.list).observe('change', this.onSelectionChange.bindAsEventListener(this));
+	onSelectionChange: function(event, type) {
+			// Unselect all other option groups
+		this.unselectOtherTypes(type);
+		
+			// DEV message
+		if( type !== 'task' ) {
+			Todoyu.notifyError('Only task is implemented. Please try again in a few days ;-)');
+			return;
+		}
+		
+			// Add params for tab refresh
+		var params	= {
+			'filtersets': this.getFiltersets()
+		};
+		
+			// Refresh tab content
+		this.ext.Tab.showTab('selection', true, params);	
 	},
 
 
-
+	
 	/**
-	 *	onSelectionChange event handler
-	 *
-	 *	@param	Object	event
-	 */
-	onSelectionChange: function(event) {
-		var onComplete = this.showRefreshedFilterTab.bind(this);
-
-		this.saveFiltersets(onComplete);
-	},
-
-
-
-	/**
-	 *	Get filtersets
+	 * Get selected filterset IDs
+	 * 
+	 * @return	Array
 	 */
 	getFiltersets: function() {
-		return $F(this.list);
+		return $H(this.lists).collect(function(pair){
+			return $F(pair.value);
+		}).flatten();
+	},
+	
+	
+	/**
+	 * Unselect all options in the other lists, because only one type can be active
+	 * 
+	 * @param	String		type
+	 */
+	unselectOtherTypes: function(type) {
+		$H(this.lists).each(function(type, pair){
+			if( pair.key !== type ) {
+				pair.value.select('option').each(function(option){
+					option.selected = false;	
+				});
+			}
+		}.bind(this, type));
 	},
 
 
@@ -77,55 +114,5 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 */
 	manageFiltersets: function() {
 		Todoyu.goTo('search', 'ext');
-	},
-
-
-
-	/**
-	 *	Save filtersets
-	 *
-	 *	@param	String	onComplete
-	 */
-	saveFiltersets: function(onComplete) {
-		var value 		= this.getFiltersets().join(',');
-
-		Todoyu.Pref.save('portal', 'filtersets', value, 0, onComplete);
-	},
-
-
-
-	/**
-	 *	Show refreshed filter tab
-	 */
-	showRefreshedFilterTab: function() {
-		this.ext.Tab.showTab('selection', true);
-	},
-
-
-
-	/**
-	 *	Evoked by onchange of filter presets panel widget, does:
-	 *  -Switch (store) active filters
-	 *  -Redraw and activate (if not yet) "Selection" tab
-	 *
-	 *	@param	Element	elFilterSelector
-	 */
-	changeAndActivateSelectionFiltersets: function(elFilterSelector) {
-		var filtersets = this.getSelectedFiltersets(elFilterSelector);
-		filtersets = filtersets.join(',');
-
-		var url 	= Todoyu.getUrl('portal', 'preference');	// ext, action
-		var options = {
-			'parameters': {
-				'name':		'tabFiltersets',
-				'value':	filtersets
-			},
-			'onComplete': function(response) {
-					// Refresh task list of 'Selection' tab and have the tab refreshed/ activated
-				Todoyu.Ext.portal.Tab.activateAndUpdateContent(0);
-			}
-		};
-
-		Todoyu.send(url, options);
 	}
 };
