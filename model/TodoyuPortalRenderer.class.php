@@ -125,6 +125,8 @@ class TodoyuPortalRenderer {
 
 		if( TodoyuRequest::isAjaxRequest() ) {
 			$data['javascript'] = 'Todoyu.Ext.project.ContextMenuTask.reattach();';
+		} else {
+			TodoyuHookManager::callHook('project', 'renderTasks');
 		}
 
 		return render($tmpl, $data);

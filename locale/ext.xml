@@ -11,7 +11,7 @@
 		<label index="tasktree.header.date">Date</label>
 		<label index="tasktree.header.customer">Customer</label>
 		<label index="tasktree.header.number">No.</label>
-		<label index="tasktree.header.tasknumber">Time - Number</label>
+		<label index="tasktree.header.tasknumber">Number</label>
 		<label index="task.title.deadline">Deadline</label>
 		<label index="task.title.deadline_short">D</label>
 		<label index="task.title.begin">Start</label>
@@ -40,7 +40,7 @@
 		<label index="tasktree.header.date">Datum</label>
 		<label index="tasktree.header.customer">Kunde</label>
 		<label index="tasktree.header.number">Nr.</label>
-		<label index="tasktree.header.tasknumber">Zeit - Nummer</label>
+		<label index="tasktree.header.tasknumber">Nummer</label>
 		<label index="task.title.deadline">Frist</label>
 		<label index="task.title.deadline_short">F</label>
 		<label index="task.title.begin">Start</label>

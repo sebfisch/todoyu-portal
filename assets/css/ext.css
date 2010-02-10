@@ -15,18 +15,18 @@
 /* ------------------------
 	Special Task Header
    ------------------------ */
-.portalTaskList h1 span.taskDate,
-.portalTaskList h3 span.taskDate {
-	width:62px;
+  
+.portalTaskList h1 span.taskDate {
+	width:45px;
 }
 
 .portalTaskList h1 span.customer,
-.portalTaskList h3 span.customer {
-	width:90px;
+.portalTaskList .task h3 div.customer {
+	width:100px;
 }
 
 .portalTaskList h1 span.projectName,
-.portalTaskList h3 span.projectName {
+.portalTaskList .task h3 div.projectName {
 	width:340px;
 }
 
