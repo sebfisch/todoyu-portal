@@ -76,6 +76,12 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	}
 
 
+
+	/**
+	 * Get array of types of filtersets (record types with dedicated filtersets)
+	 *
+	 * @return	Array
+	 */
 	public function getFiltersetTypes() {
 		$typeKeys	= TodoyuFilterManager::getFilterTypes(true);
 		$types		= array();
@@ -85,6 +91,10 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 			$filterClass	= TodoyuFilterManager::getFilterTypeClass($typeKey);
 
 			$types[$typeKey]['title'] = TodoyuFilterManager::getFilterTypeLabel($typeKey);
+
+			if ( count($typeFiltersets) == 0 ) {
+				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
+			}
 
 			foreach($typeFiltersets as $index => $typeFilterset) {
 				$conditions	= TodoyuFiltersetManager::getFiltersetConditions($typeFilterset['id']);
@@ -122,10 +132,12 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	public function renderContent() {
 		$tmpl	= 'ext/portal/view/panelwidget-filterpresetlist.tmpl';
 
+		$filtersetOptions	= $this->getFiltersetOptions();
+
 		$data	= array(
 			'id'		=> $this->getID(),
 			'types'		=> $this->getFiltersetTypes(),
-			'options'	=> $this->getFiltersetOptions(),
+			'options'	=> $filtersetOptions,
 			'selected'	=> array()
 		);
 

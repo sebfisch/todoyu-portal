@@ -2,11 +2,13 @@
 	<h2>{$typeFiltersets.title}</h2>
 	<span class="scrollbarHide overflowHidden displayBlock">
 		{$typeLower = strtolower($type)}
-		{select options=$typeFiltersets.options value=$selected id="panelwidget-$id-list-$typeLower" multiple=true}
+		{if is_array($typeFiltersets.options)}
+			{select options=$typeFiltersets.options value=$selected id="panelwidget-$id-list-$typeLower" multiple=true}
+		{/if}
 	</span>
 {else}
 	<div class="notification">
-		{Label panelwidget-filterpresetlist.noFilters}
+		{Label panelwidget-filterpresetlist.error.noFilters}
 	</div>
 {/foreach}
 
