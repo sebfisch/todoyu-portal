@@ -21,6 +21,10 @@
 
 class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
+	/**
+	 * @todo	comment
+	 * @param	Array	$params
+	 */
 	public function tabAction(array $params) {
 		$idTab	= intval($params['value']);
 
@@ -28,6 +32,11 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	}
 
 
+
+	/**
+	 * @todo	comment
+	 * @param	Array	$params
+	 */
 	public function filtersetsAction(array $params) {
 		$filtersetIDs	= explode(',', $params['value']);
 		$filtersetIDs	= TodoyuArray::intval($filtersetIDs, true, true);
@@ -36,13 +45,14 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	}
 
 
+
 	/**
 	 * Save task being expanded / collapsed.
 	 * $params contains task ID and expand-state.
 	 * 		task id:	$params['item'],
 	 * 		expanded:	$params['value'] === 1
 	 *
-	 *	@param array $params
+	 * @param array $params
 	 */
 	public function taskOpenAction(array $params) {
 		$idTask		= intval($params['item']);
@@ -56,7 +66,7 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	/**
 	 * General panelWidget action, saves collapse status
 	 *
-	 *	@param	Array	$params
+	 * @param	Array	$params
 	 */
 	public function pwidgetAction(array $params) {
 		$idWidget	= $params['item'];

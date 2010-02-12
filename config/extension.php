@@ -27,9 +27,15 @@
  */
 
 
-	// Add portal tabs selection and todo
-TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 0, array('portal/public', 'project/public'));
+	// Add portal tab: 'my filters'
+if ( allowed('portal', 'panelwidgets:filterPresetList')) {
+	TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 0, array('portal/public', 'project/public'));
+}
+
+	// Add portal tab: 'todos'
 TodoyuPortalManager::addTab('todo', 'TodoyuPortalRenderer::getTodoTabLabel', 'TodoyuPortalRenderer::renderTodoTabContent', 10, array('portal/public', 'project/public'));
+
+
 
 	// Register context menu functions
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);

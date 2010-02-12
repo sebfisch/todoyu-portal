@@ -30,8 +30,8 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 	/**
 	 * Portal default action: render portal view
 	 *
-	 *	@param	Array	$params
-	 *	@return	String
+	 * @param	Array	$params
+	 * @return	String
 	 */
 	public function defaultAction(array $params) {
 		restrict('portal', 'general:use');
