@@ -104,10 +104,7 @@ class TodoyuPortalManager {
 			// Get label, content list counter, 'active' or not-state
 		foreach($tabs as $index => $tab) {
 			$tabs[$index]['id']				= $tab['key'];
-			$tabs[$index]['htmlId'] 		= 'portal-tabhead-' . $tab['key'];
 			$tabs[$index]['label']			= TodoyuDiv::callUserFunction($tab['labelFunc']);
-			$tabs[$index]['classKey'] 		= $tab['key'];
-			$tabs[$index]['hasIcon'] 		= true;
 		}
 
 		return $tabs;

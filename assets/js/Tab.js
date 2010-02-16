@@ -64,7 +64,7 @@ Todoyu.Ext.portal.Tab = {
 		Todoyu.Ui.update(target, url, options);
 
 		if( activateTab === true ) {
-			Todoyu.Tabs.setActive('portal-tabhead-' + tabKey);
+			Todoyu.Tabs.setActive('portal', tabKey);
 		}
 	},
 
@@ -93,7 +93,7 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	String		newLabel
 	 */
 	setTabLabel: function(tabKey, newLabel) {
-		$('portal-tabhead-' + tabKey + '-label').down('span.labeltext').update(newLabel);
+		$('portal-tab-' + tabKey + '-label').down('span.labeltext').update(newLabel);
 	},
 
 
@@ -107,7 +107,7 @@ Todoyu.Ext.portal.Tab = {
 	 *	@param	Integer		numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
-		var labelEl	= $('portal-tabhead-' + tabKey + '-label').down('span.labeltext');
+		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
 		var label	= labelEl.innerHTML;
 		var pattern	= /\(\d+\)/;
 		var replace	= '(' + numResults + ')';

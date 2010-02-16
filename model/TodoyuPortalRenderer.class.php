@@ -149,8 +149,7 @@ class TodoyuPortalRenderer {
 	 * @return	String
 	 */
 	public static function renderTabHeads($activeTab = '') {
-		$listID		= 'portal-tabs';
-		$class		= 'tabs';
+		$name		= 'portal';
 		$jsHandler	= 'Todoyu.Ext.portal.Tab.onSelect.bind(Todoyu.Ext.portal.Tab)';
 		$tabs		= TodoyuPortalManager::getTabs();
 
@@ -158,7 +157,7 @@ class TodoyuPortalRenderer {
 			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
 		}
 
-		return TodoyuTabheadRenderer::renderTabs($listID, $class, $jsHandler, $tabs, $activeTab);
+		return TodoyuTabheadRenderer::renderTabs($name, $tabs, $jsHandler, $activeTab);
 	}
 
 

@@ -2,11 +2,11 @@
 	Tabs
    ----------------- */
 
-#portal-tabs li.selection span.icon {
+#portal-tab-selection span.icon {
 	background:url(../img/icons.png) no-repeat 0 3px;
 }
 
-#portal-tabs li.todo span.icon {
+#portal-tab-todo span.icon {
 	background:url(../img/icons.png) no-repeat 0 -55px;
 }
 
