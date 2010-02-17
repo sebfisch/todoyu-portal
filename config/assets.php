@@ -26,9 +26,6 @@
  * @subpackage	Portal
  */
 
-
-
-
 $CONFIG['EXT']['portal']['assets'] = array(
 		// default assets: loaded all over the installation always
 	'default' => array(
