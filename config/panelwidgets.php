@@ -24,6 +24,5 @@
  */
 
 TodoyuPanelWidgetManager::addDefaultPanelWidget('portal', 'TodoyuPanelWidgetFilterPresetList', 10);
-TodoyuPanelWidgetManager::addDefaultPanelWidget('portal', 'TodoyuPanelWidgetQuickTask', 20);
 
 ?>

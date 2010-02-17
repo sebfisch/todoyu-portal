@@ -84,22 +84,6 @@ $CONFIG['EXT']['portal']['assets'] = array(
 				'position' => 110,
 			)
 		)
-	),
-
-		// quicktask
-	'panelwidget-quicktask' => array(
-		'js' => array(
-			array(
-				'file' => 'ext/portal/assets/js/PanelWidgetQuickTask.js',
-				'position' => 120,
-			),
-		),
-		'css' => array(
-			array(
-				'file' => 'ext/portal/assets/css/panelwidget-quicktask.css',
-				'position' => 120,
-			)
-		)
 	)
 
 );
