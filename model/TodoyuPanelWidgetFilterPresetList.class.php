@@ -162,7 +162,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 		TodoyuPage::addExtAssets('portal', 'public');
 		TodoyuPage::addExtAssets('portal', 'panelwidget-filterpresetlist');
 
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.PanelWidget.FilterPresetList.init.bind(Todoyu.Ext.portal.PanelWidget.FilterPresetList)');
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.PanelWidget.FilterPresetList.init.bind(Todoyu.Ext.portal.PanelWidget.FilterPresetList)', 100);
 
 		$this->renderContent();
 
