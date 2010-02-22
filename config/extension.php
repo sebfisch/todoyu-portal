@@ -47,7 +47,7 @@ TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTask
  */
 $CONFIG['EXT']['portal']['todoTabFilters'] = array(
 	array(
-		'filter'	=> 'currentUserIsAssigned'
+		'filter'	=> 'currentPersonIsAssigned'
 	),
 	array(
 		'filter'	=> 'status',

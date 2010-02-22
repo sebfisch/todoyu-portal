@@ -53,7 +53,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	/**
-	 * Get filtersets of current user (includes public filtersets)
+	 * Get filtersets of current person (includes public filtersets)
 	 *
 	 * @return	Array
 	 */
@@ -172,9 +172,9 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	/**
-	 * Check whether usage of the widget is allowed to current user
+	 * Check if panelwidget is allowed
 	 *
-	 * @return	Boolean
+	 * @return	Bool
 	 */
 	public static function isAllowed() {
 		return allowed('portal', 'panelwidgets:filterPresetList');

@@ -37,10 +37,10 @@ class TodoyuPortalPreferences {
 	 * @param	String		$value
 	 * @param	Integer		$idItem
 	 * @param	Boolean		$unique
-	 * @param	Integer		$idUser
+	 * @param	Integer		$idPerson
 	 */
-	public static function savePref($preference, $value, $idItem = 0, $unique = false, $idArea = 0, $idUser = 0) {
-		TodoyuPreferenceManager::savePreference(EXTID_PORTAL, $preference, $value, $idItem, $unique, $idArea, $idUser);
+	public static function savePref($preference, $value, $idItem = 0, $unique = false, $idArea = 0, $idPerson = 0) {
+		TodoyuPreferenceManager::savePreference(EXTID_PORTAL, $preference, $value, $idItem, $unique, $idArea, $idPerson);
 	}
 
 
@@ -50,14 +50,11 @@ class TodoyuPortalPreferences {
 	 *
 	 * @param	String		$preference
 	 * @param	Integer		$idItem
-	 * @param	Integer		$idUser
+	 * @param	Integer		$idPerson
 	 * @return	String
 	 */
-	public static function getPref($preference, $idItem = 0, $idArea = 0, $unserialize = false, $idUser = 0) {
-		$idItem	= intval($idItem);
-		$idUser	= intval($idUser);
-
-		return TodoyuPreferenceManager::getPreference(EXTID_PORTAL, $preference, $idItem, $idArea, $unserialize, $idUser);
+	public static function getPref($preference, $idItem = 0, $idArea = 0, $unserialize = false, $idPerson = 0) {
+		return TodoyuPreferenceManager::getPreference(EXTID_PORTAL, $preference, $idItem, $idArea, $unserialize, $idPerson);
 	}
 
 
@@ -68,11 +65,11 @@ class TodoyuPortalPreferences {
 	 * @param	String		$preference
 	 * @param	Integer		$idItem
 	 * @param	Integer		$idArea
-	 * @param	Integer		$idUser
+	 * @param	Integer		$idPerson
 	 * @return	Array
 	 */
-	public static function getPrefs($preference, $idItem = 0, $idArea = 0, $idUser = 0) {
-		return TodoyuPreferenceManager::getPreferences(EXTID_PORTAL, $preference, $idItem, $idArea, $idUser);
+	public static function getPrefs($preference, $idItem = 0, $idArea = 0, $idPerson = 0) {
+		return TodoyuPreferenceManager::getPreferences(EXTID_PORTAL, $preference, $idItem, $idArea, $idPerson);
 	}
 
 
@@ -84,16 +81,16 @@ class TodoyuPortalPreferences {
 	 * @param	String		$value
 	 * @param	Integer		$idItem
 	 * @param	Integer		$idArea
-	 * @param	Integer		$idUser
+	 * @param	Integer		$idPerson
 	 */
-	public static function deletePref($preference, $value = null, $idItem = 0, $idArea = 0, $idUser = 0) {
-		TodoyuPreferenceManager::deletePreference(EXTID_PORTAL, $preference, $value, $idItem, $idArea, $idUser);
+	public static function deletePref($preference, $value = null, $idItem = 0, $idArea = 0, $idPerson = 0) {
+		TodoyuPreferenceManager::deletePreference(EXTID_PORTAL, $preference, $value, $idItem, $idArea, $idPerson);
 	}
 
 
 
 	/**
-	 * Get currently active tab of current user
+	 * Get currently active tab of current person
 	 *
 	 * @return	Integer
 	 */
@@ -110,7 +107,7 @@ class TodoyuPortalPreferences {
 
 
 	/**
-	 * Save active tab of current user
+	 * Save active tab of current person
 	 *
 	 * @param	Integer
 	 */
@@ -164,11 +161,11 @@ class TodoyuPortalPreferences {
 		$filtersetIDs	= TodoyuArray::intExplode(',', $filtersetIDs, true, true);
 
 		if ($idTab == 0) {
-				// 'Selection' tab (filtersets stored in user prefs)
+				// 'Selection' tab
 			TodoyuPreferenceManager::deletePreference(EXTID_PORTAL, 'filterset', null, $idTab);
 
 			foreach($filtersetIDs as $idFilterset) {
-				TodoyuPreferenceManager::savePreference(EXTID_PORTAL, 'filterset', $idFilterset, $idTab, false);	// extID, pref, value, idItem, unique, idUser
+				TodoyuPreferenceManager::savePreference(EXTID_PORTAL, 'filterset', $idFilterset, $idTab, false);
 			}
 		} else {
 			// Regular tab (filtersets stored in 'ext_portal_mm_tab_filterset')
