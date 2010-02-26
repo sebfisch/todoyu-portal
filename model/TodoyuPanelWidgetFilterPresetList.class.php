@@ -61,7 +61,11 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 		$activeFiltersets	= self::getActiveFiltersetIDs();
 		$filtersets			= TodoyuFiltersetManager::getTypeFiltersets('TASK', 0, false);
 
+
 		foreach($filtersets as $index => $filterset) {
+
+
+
 			$conditions	= TodoyuFiltersetManager::getFiltersetConditions($filterset['id']);
 			$taskFilter	= new TodoyuTaskFilter($conditions);
 			$taskIDs	= $taskFilter->getTaskIDs();
@@ -88,21 +92,17 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 		foreach($typeKeys as $typeKey) {
 			$typeFiltersets	= TodoyuFiltersetManager::getTypeFiltersets($typeKey);
-			$filterClass	= TodoyuFilterManager::getFilterTypeClass($typeKey);
 
-			$types[$typeKey]['title'] = TodoyuFilterManager::getFilterTypeLabel($typeKey);
-
-			if ( count($typeFiltersets) == 0 ) {
-				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
+			if( sizeof($typeFiltersets) > 0 ) {
+				$types[$typeKey]['title'] = TodoyuFilterManager::getFilterTypeLabel($typeKey);
+//				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
 			}
 
 			foreach($typeFiltersets as $index => $typeFilterset) {
-				$conditions	= TodoyuFiltersetManager::getFiltersetConditions($typeFilterset['id']);
-				$typeFilter	= new $filterClass($conditions);
-				$itemIDs	= $typeFilter->getItemIDs();
+				$resultCount	= TodoyuFiltersetManager::getFiltersetCount($typeFilterset['id']);
 
 				$types[$typeKey]['options'][] = array(
-					'label'	=> TodoyuDiv::cropText($typeFilterset['title'], 46, '', false) . ' (' . sizeof($itemIDs) . ')',
+					'label'	=> TodoyuDiv::cropText($typeFilterset['title'], 46, '', false) . ' (' . $resultCount . ')',
 					'value'	=> $typeFilterset['id']
 				);
 			}

@@ -47,10 +47,6 @@ $CONFIG['EXT']['portal']['assets'] = array(
 				'position'	=> 100
 			),
 			array(
-				'file' 		=> 'ext/portal/assets/js/Task.js',
-				'position'	=> 101
-			),
-			array(
 				'file' 		=> 'ext/portal/assets/js/Tab.js',
 				'position'	=> 102
 			)
@@ -72,13 +68,13 @@ $CONFIG['EXT']['portal']['assets'] = array(
 		'js' => array(
 			array(
 				'file' => 'ext/portal/assets/js/PanelWidgetFilterPresetList.js',
-				'position' => 110,
+				'position' => 110
 			)
 		),
 		'css' => array(
 			array(
 				'file' => 'ext/portal/assets/css/panelwidget-filterpresetlist.css',
-				'position' => 110,
+				'position' => 110
 			)
 		)
 	)

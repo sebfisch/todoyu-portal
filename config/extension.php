@@ -27,33 +27,15 @@
  */
 
 
-	// Add portal tab: 'my filters'
-if ( allowed('portal', 'panelwidgets:filterPresetList')) {
-	TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 0, array('portal/public', 'project/public'));
-}
 
-	// Add portal tab: 'todos'
-TodoyuPortalManager::addTab('todo', 'TodoyuPortalRenderer::getTodoTabLabel', 'TodoyuPortalRenderer::renderTodoTabContent', 10, array('portal/public', 'project/public'));
+	// Add portal tab: 'selection'
+TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10, array('portal/public'));
 
 
 
 	// Register context menu functions
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 
-/**
- * Configuration for 'todo' tab
- *
- * @see	ext/project/config/filters.php	(all filter declarations)
- */
-$CONFIG['EXT']['portal']['todoTabFilters'] = array(
-	array(
-		'filter'	=> 'currentPersonIsAssigned'
-	),
-	array(
-		'filter'	=> 'status',
-		'value'		=> STATUS_OPEN . ',' . STATUS_PROGRESS
-	)
-);
 
 
 

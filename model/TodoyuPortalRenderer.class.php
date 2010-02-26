@@ -29,121 +29,6 @@
 class TodoyuPortalRenderer {
 
 	/**
-	 * Expanded task IDs
-	 *
-	 * @var	Array
-	 */
-	private static $expandedTaskIDs = null;
-
-
-
-	/**
-	 * Get label of selection tab in portal
-	 *
-	 * @param	Bool		$count
-	 * @return	String
-	 */
-	public static function getSelectionTabLabel($count = true) {
-
-		$label	= TodoyuLanguage::getLabel('portal.tab.selection');
-
-		if( $count ) {
-			$taskIDs= TodoyuPortalManager::getSelectionTaskIDs();
-			$label	= $label . ' (' . sizeof($taskIDs) . ')';
-		}
-
-		return $label;
-	}
-
-
-
-	/**
-	 * Get content of selection tab in portal
-	 * Tasklist based on the selected filters in filterpreset list panelwidget
-	 *
-	 * @return	String
-	 */
-	public static function renderSelectionTabContent(array $params = array()) {
-		if( isset($params['filtersets']) ) {
-			$filtersetIDs	= TodoyuArray::intval($params['filtersets'], true, true);
-			TodoyuPortalPreferences::saveSelectionTabFiltersetIDs($filtersetIDs);
-		}
-
-		$taskIDs	= TodoyuPortalManager::getSelectionTaskIDs();
-
-		TodoyuHeader::sendTodoyuHeader('selection', sizeof($taskIDs));
-
-		return self::renderTaskList($taskIDs);
-	}
-
-
-
-	/**
-	 * Get label of todo tab in portal
-	 *
-	 * @param	Bool		$count
-	 * @return	String
-	 */
-	public static function getTodoTabLabel($count = true) {
-		$label		= TodoyuLanguage::getLabel('portal.tab.todos');
-
-		if( $count ) {
-			$numTasks	= sizeof(TodoyuPortalManager::getTodoTaskIDs());
-			$label		=  $label . ' (' . $numTasks . ')';
-		}
-
-		return $label;
-	}
-
-
-
-	/**
-	 * Get content of todo tab in portal
-	 *
-	 * @return	String
-	 */
-	public static function renderTodoTabContent(array $params = array()) {
-		$taskIDs= TodoyuPortalManager::getTodoTaskIDs();
-
-		return self::renderTaskList($taskIDs);
-	}
-
-
-
-	/**
-	 * Render task list
-	 *
-	 * @param	Array	$taskIDs
-	 * @return	String
-	 */
-	public static function renderTaskList(array $taskIDs) {
-		$content= '';
-
-		foreach($taskIDs as $idTask) {
-			$content .= self::renderTask($idTask);
-		}
-
-		$tmpl	= 'ext/portal/view/tasklist.tmpl';
-		$data	= array(
-			'tasks'	=> $content
-		);
-
-		if( TodoyuRequest::isAjaxRequest() ) {
-			$data['javascript'] = 'Todoyu.Ext.project.ContextMenuTask.reattach();';
-		} else {
-			TodoyuHookManager::callHook('project', 'renderTasks');
-		}
-
-		return render($tmpl, $data);
-	}
-
-
-
-
-
-
-
-	/**
 	 * Render tab headers for portal
 	 *
 	 * @return	String
@@ -183,55 +68,75 @@ class TodoyuPortalRenderer {
 
 
 	/**
-	 * Check if task is expanded
+	 * Get label of selection tab in portal
 	 *
-	 * @param	Integer		$idTask
-	 * @return	Boolean
+	 * @param	Bool		$count
+	 * @return	String
 	 */
-	public static function isTaskExpanded($idTask) {
-		$idTask	= intval($idTask);
+	public static function getSelectionTabLabel($count = true) {
+		$label	= TodoyuLanguage::getLabel('portal.tab.selection');
 
-		if( is_null(self::$expandedTaskIDs) ) {
-			self::$expandedTaskIDs = TodoyuPortalPreferences::getExpandedTasks();
+		if( $count ) {
+			$numResults	= TodoyuPortalManager::getSelectionCount();
+			$label		= $label . ' (' . $numResults . ')';
 		}
 
-		return in_array($idTask, self::$expandedTaskIDs);
+		return $label;
+	}
+
+
+
+
+	/**
+	 * Get content of selection tab in portal
+	 *
+	 * Tasklist based on the selected filters in filterpreset list panelwidget
+	 *
+	 * @return	String
+	 */
+	public static function renderSelectionTabContent(array $params = array()) {
+			// Check if filtersets are available as parameters
+		if( isset($params['filtersets']) ) {
+			$filtersetIDs	= TodoyuArray::intval($params['filtersets'], true, true);
+			TodoyuPortalPreferences::saveSelectionTabFiltersetIDs($filtersetIDs);
+		} else {
+			$filtersetIDs	= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
+		}
+
+			// Check if type is available as parameter
+		if( ! isset($params['type']) ) {
+			if( sizeof($filtersetIDs) > 0 ) {
+				$type	= TodoyuFiltersetManager::getFiltersetType($filtersetIDs[0]);
+			} else {
+				$type	= 'task';
+			}
+		} else {
+			$type	= trim($params['type']);
+		}
+
+
+		if( sizeof($filtersetIDs) === 0 ) {
+			return self::renderNoSelectionMessage();
+		} else {
+			$resultItemIDs	= TodoyuFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs);
+
+			TodoyuHeader::sendTodoyuHeader('selection', sizeof($resultItemIDs));
+
+			return TodoyuSearchRenderer::renderResultsListing($type, $resultItemIDs);
+		}
 	}
 
 
 
 	/**
-	 * Render task
+	 * Render message if no filterset is selected
 	 *
-	 * @param	Integer		$idTask
 	 * @return	String
 	 */
-	public static function renderTask($idTask) {
-		$idTask		= intval($idTask);
+	private static function renderNoSelectionMessage() {
+		$tmpl	= 'ext/portal/view/selection-nofilterset.tmpl';
 
-				// Get some task information
-		$isExpanded	= self::isTaskExpanded($idTask);
-		$taskData	= TodoyuTaskManager::getTaskInfoArray($idTask, 3);
-
-			// Prepare data array for template
-		$tmpl	= 'ext/portal/view/task-header.tmpl';
-		$data 	= array(
-			'task'				=> $taskData,
-			'isExpanded'		=> $isExpanded,
-			'subtasks'			=> '',
-			'taskIcons'			=> TodoyuTaskManager::getAllTaskIcons($idTask),
-		);
-
-			// Render details if task is expanded
-		if( $isExpanded ) {
-			$activeTab		= TodoyuProjectPreferences::getActiveTaskTab($idTask, AREA);
-			$data['details']= TodoyuTaskRenderer::renderTaskDetail($idTask, $activeTab);
-			$data['task']['class'] .= ' expanded';
-		}
-
-		$data	= TodoyuHookManager::callHookDataModifier('project', 'taskDataBeforeRendering', $data, array($idTask));
-
-		return render($tmpl, $data);
+		return render($tmpl);
 	}
 
 

@@ -101,10 +101,10 @@ class TodoyuPortalManager {
 	public static function getTabs() {
 		$tabs	= self::getTabsConfig();
 
-			// Get label, content list counter, 'active' or not-state
+		// Get label, content list counter, 'active' or not-state
 		foreach($tabs as $index => $tab) {
-			$tabs[$index]['id']				= $tab['key'];
-			$tabs[$index]['label']			= TodoyuDiv::callUserFunction($tab['labelFunc']);
+			$tabs[$index]['id']		= $tab['key'];
+			$tabs[$index]['label']	= TodoyuDiv::callUserFunction($tab['labelFunc'], true);
 		}
 
 		return $tabs;
@@ -112,57 +112,9 @@ class TodoyuPortalManager {
 
 
 
-	/**
-	 * Get task IDs which match the selected filters
-	 * Conjunction is OR
-	 *
-	 * @return	Array
-	 */
-	public static function getSelectionTaskIDs() {
-		$filtersetIDs		= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
-		$filtersetTaskIDs	= array();
-		$order				= '	ext_project_task.date_deadline,
-								ext_project_task.date_end';
-
-			// Get conditions for each filterset and search for the tasks
-		foreach($filtersetIDs as $idFilterset) {
-			$conditions			= TodoyuFiltersetManager::getFiltersetConditions($idFilterset);
-			$conjunction		= TodoyuFiltersetManager::getFilterset($idFilterset)->getConjunction();
-			$taskFilter			= new TodoyuTaskFilter($conditions, $conjunction);
-			$filtersetTaskIDs[]	= $taskFilter->getTaskIDs($sorting);
-		}
-
-			// Depending on how much filtersets are linked to the task, combine the results by conjuction config
-		if( sizeof($filtersetTaskIDs) === 0 ) {
-			$taskIDs= array();
-		} elseif( sizeof($filtersetTaskIDs) === 1 ) {
-			$taskIDs= array_pop($filtersetTaskIDs);
-		} else {
-			$taskIDs= array_unique(TodoyuArray::mergeSubArrays($filtersetTaskIDs));
-		}
-
-			// Sort tasks by deadline. Is only necessary if multiple filtersets are used
-		if( sizeof($filtersetIDs) > 1 ) {
-			$taskIDs= TodoyuTaskManager::sortTaskIDs($taskIDs, $order);
-		}
-
-		return $taskIDs;
-	}
 
 
 
-	/**
-	 * Get task IDs for todo tab
-	 *
-	 * @return	Array
-	 */
-	public static function getTodoTaskIDs() {
-		$conditions	= $GLOBALS['CONFIG']['EXT']['portal']['todoTabFilters'];
-		$taskFilter	= new TodoyuTaskFilter($conditions);
-		$taskIDs	= $taskFilter->getTaskIDs();
-
-		return $taskIDs;
-	}
 
 
 
@@ -204,23 +156,27 @@ class TodoyuPortalManager {
 
 
 	/**
-	 * Modify task form if task is edited in portal
-	 * Change form action and button actions
+	 * Get number of result items for selection tab with currently selected filtersets
 	 *
-	 * @param	TodoyuForm		$form
-	 * @param	Integer			$idTask
+	 * @return	Integer
 	 */
-	public static function modifyTaskForm(TodoyuForm $form, $idTask) {
-		if( AREA === EXTID_PORTAL ) {
-			$formUrl = TodoyuDiv::buildUrl(array(
-				'ext'		=> 'portal',
-				'controller'=> 'task'
-			));
+	public static function getSelectionCount() {
+		$filtersetIDs	= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
+		$numResults		= TodoyuFiltersetManager::getFiltersetsCount($filtersetIDs);
 
-			$form->setAttribute('action', $formUrl);
-			$form->getField('save')->setAttribute('onclick', 'Todoyu.Ext.portal.Task.saveTask(this.form)');
-			$form->getField('cancel')->setAttribute('onclick', 'Todoyu.Ext.portal.Task.cancelEdit(' . $idTask . ')');
-		}
+		return $numResults;
+	}
+
+
+	/**
+	 * Get type of currently selected filtersets
+	 *
+	 * @return	String
+	 */
+	public static function getSelectionType() {
+		$idFilterset	= intval($filtersetIDs[0]);
+
+		return TodoyuFiltersetManager::getFiltersetType($idFilterset);
 	}
 
 }
