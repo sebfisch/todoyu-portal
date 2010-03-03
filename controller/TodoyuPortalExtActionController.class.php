@@ -47,7 +47,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::setTitle('LLL:portal.page.title');
 
 			// Get active tab
-		$activeTab	= $params['tab'];
+		$activeTab	= isset( $params['tab'] ) ? $params['tab'] : NULL;
 		if( ! empty($activeTab) ) {
 			TodoyuPortalPreferences::saveActiveTab($activeTab);
 		} else {
