@@ -42,8 +42,8 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 *	Show tab
 	 *
-	 *	@param	String	tabKey
-	 *	@param	Boolean	refresh
+	 * @param	String		tabKey
+	 * @param	Boolean		refresh
 	 */
 	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
@@ -54,8 +54,9 @@ Todoyu.Ext.portal.Tab = {
 			},
 			'onComplete': this.onTabShowed.bind(this, tabKey)
 		};
+
 		var target	= 'content-body';
-		
+
 			// Add extra params
 		if( typeof(extraParams) === 'object' ) {
 			options.parameters.params = Object.toJSON(extraParams);
@@ -73,8 +74,8 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Handler when tab is showed and updated
 	 *
-	 *	@param	String			tabKey
-	 *	@param	Ajax.Response	response
+	 * @param	String				tabKey
+	 * @param	Ajax.Response		response
 	 */
 	onTabShowed: function(tabKey, response) {
 		var numSelected	= response.getTodoyuHeader('selection');
@@ -103,8 +104,8 @@ Todoyu.Ext.portal.Tab = {
 	 * Replace the number in the brackets
 	 * @example	'Tasks (43)' => 'Tasks (33)'
 	 *
-	 *	@param	String		tabKey
-	 *	@param	Integer		numResults
+	 * @param	String			tabKey
+	 * @param	Integer			numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
 		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
@@ -115,11 +116,24 @@ Todoyu.Ext.portal.Tab = {
 		labelEl.update(label.replace(pattern, replace));
 	},
 
+
+
+	/**
+	 * Get key of currently active tab
+	 * 
+	 * @return	String
+	 */
 	getActiveTab: function() {
 		return Todoyu.Tabs.getActiveKey('portal-tabs');
 	},
 
+
+
+	/**
+	 * Refresh tabs display
+	 */
 	refresh: function() {
 		this.showTab(this.getActiveTab());
 	}
+
 };

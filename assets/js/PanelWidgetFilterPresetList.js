@@ -41,12 +41,12 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	init: function() {
 			// Find all lists
 		var lists = $('panelwidget-filterpresetlist-content').select('select');
-		
+
 			// Add lists to internal storage and install an onchange observer
 		lists.each(function(list){
 			var type = list.id.split('-').last();
 			this.lists[type] = list;
-			
+
 			list.observe('change', this.onSelectionChange.bindAsEventListener(this, type));			
 		}.bind(this));
 	},
@@ -62,25 +62,25 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	onSelectionChange: function(event, type) {
 			// Unselect all other option groups
 		this.unselectOtherTypes(type);
-		
+
 			// DEV message
 		if( type !== 'task' && false ) {
 			Todoyu.notifyError('Only task is implemented. Please try again in a few days ;-)');
 			return;
 		}
-		
+
 			// Add params for tab refresh
 		var params	= {
 			'filtersets': 	this.getFiltersets(),
 			'type':			type
 		};
-		
+
 			// Refresh tab content
 		this.ext.Tab.showTab('selection', true, params);	
 	},
 
 
-	
+
 	/**
 	 * Get selected filterset IDs
 	 * 
@@ -91,8 +91,9 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 			return $F(pair.value);
 		}).flatten();
 	},
-	
-	
+
+
+
 	/**
 	 * Unselect all options in the other lists, because only one type can be active
 	 * 
@@ -116,4 +117,5 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	manageFiltersets: function() {
 		Todoyu.goTo('search', 'ext');
 	}
+
 };

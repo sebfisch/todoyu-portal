@@ -112,12 +112,6 @@ class TodoyuPortalManager {
 
 
 
-
-
-
-
-
-
 	/**
 	 * Add items to task context menu
 	 *
@@ -140,14 +134,6 @@ class TodoyuPortalManager {
 				// Remove add function for task and container
 			unset($items['add']['submenu']['task']);
 			unset($items['add']['submenu']['container']);
-
-
-				// Change behavour of change status to project js
-			if( array_key_exists('status', $items) ) {
-				foreach($items['status']['submenu'] as $statusName => $subItemConfig) {
-					$items['status']['submenu'][$statusName]['jsAction'] = str_replace('Ext.project.Task', 'Ext.portal.Task', $subItemConfig['jsAction']);
-				}
-			}
 		}
 
 		return $items;

@@ -26,8 +26,6 @@
  * @subpackage	Admin
  */
 
-
-
 	// Add portal tab: 'selection'
 TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10, array('portal/public'));
 
@@ -35,8 +33,6 @@ TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabL
 
 	// Register context menu functions
 TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
-
-
 
 
 
@@ -59,6 +55,5 @@ $CONFIG['EXT']['portal']['tabfiltered'] = array(
 	'sorting'	=> 0
 );
 */
-
 
 ?>
