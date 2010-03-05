@@ -19,13 +19,13 @@
 		<label index="tab.todos">To Do's</label>
 		<label index="tab.feedbacks">Feedbacks</label>
 		<label index="date.start.short">B</label>
-		<label index="selection.noTasksFound">There are no tasks suiting this filter combination</label>
+		<label index="selection.noTasksFound">There are no Tasks Suiting this Filter Combination</label>
 		<label index="subMenuEntry.selection">Portal > Selection</label>
 		<label index="subMenuEntry.todos">Portal > To Do's</label>
 		<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
 		<label index="subMenuEntry.appointments">Portal > Appointments</label>
 		<label index="contextmenu.showinproject">Show in Project</label>
-		<label index="selection.noFiltersetsSelected">No filtersets selected!</label>
+		<label index="selection.noFiltersetsSelected">No Filtersets Selected!</label>
 	</labels>
 	<labels lang="de">
 		<label index="ext.title">Portal</label>
