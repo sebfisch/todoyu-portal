@@ -4,18 +4,16 @@
 		<label index="general">General Settings</label>
 		<label index="general.use">Use Portal</label>
 		<label index="panelwidgets">Panel Widgets</label>
-		<label index="panelwidgets.quicktaskWizard">Allowed to see quicktask wizard</label>
-		<label index="panelwidgets.filterPresetList">Allowed to see filter wizard and filtered tab</label>
+		<label index="panelwidgets.filterPresetList">Use filter wizard and filtered tab</label>
 		<label index="filterPresetList">Panelwidget FilterPresetList</label>
-		<label index="filterPresetList.manageFilters">Manage filter button</label>
+		<label index="filterPresetList.manageFilters">Manage filters</label>
 	</labels>
 	<labels lang="de">
 		<label index="general">Allgemeine Einstellungen</label>
 		<label index="general.use">Portal Verwenden</label>
 		<label index="panelwidgets">Steuerelemente</label>
-		<label index="panelwidgets.quicktaskWizard">Sieht Kurz-Aufgabe Anleitung</label>
-		<label index="panelwidgets.filterPresetList">Sieht Filter-Vorgabenlisten Element und Filter-Tab</label>
-		<label index="filterPresetList">Filtervorgaben Element</label>
-		<label index="filterPresetList.manageFilters">Filter Verwalten Knopf</label>
+		<label index="panelwidgets.filterPresetList">Filterliste und Filter-Tab benutzen</label>
+		<label index="filterPresetList">Filterliste</label>
+		<label index="filterPresetList.manageFilters">Filter Verwalten</label>
 	</labels>
 </locallang>
