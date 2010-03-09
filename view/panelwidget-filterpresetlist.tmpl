@@ -15,7 +15,8 @@
 {* ---------- Manage filter presets button ---------- *}
 {restrict 'search' 'general:area'}
 	<br/>
-	{if count($filtersets) > 0}
+	{$numFiltersets = count(TodoyuArray::mergeSubArrays(TodoyuArray::getColumn($types, 'options')))}
+	{if $numFiltersets > 0}
 		{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{else}
 		{Button label="panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
