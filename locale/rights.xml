@@ -3,17 +3,11 @@
 	<labels lang="en">
 		<label index="general">General Settings</label>
 		<label index="general.use">Use Portal</label>
-		<label index="panelwidgets">Panel Widgets</label>
-		<label index="panelwidgets.filterPresetList">Use filter wizard and filtered tab</label>
-		<label index="filterPresetList">Panelwidget FilterPresetList</label>
-		<label index="filterPresetList.manageFilters">Manage filters</label>
+		<label index="general.area">See Portal Area</label>
 	</labels>
 	<labels lang="de">
 		<label index="general">Allgemeine Einstellungen</label>
 		<label index="general.use">Portal Verwenden</label>
-		<label index="panelwidgets">Steuerelemente</label>
-		<label index="panelwidgets.filterPresetList">Filterliste und Filter-Tab benutzen</label>
-		<label index="filterPresetList">Filterliste</label>
-		<label index="filterPresetList.manageFilters">Filter Verwalten</label>
+		<label index="general.area">Sieht Portal Bereich</label>
 	</labels>
 </locallang>

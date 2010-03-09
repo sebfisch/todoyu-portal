@@ -12,9 +12,9 @@
 	</div>
 {/foreach}
 
-<br/>
 {* ---------- Manage filter presets button ---------- *}
-{restrict 'portal' 'filterPresetList:manageFilters'}
+{restrict 'search' 'general:area'}
+	<br/>
 	{if count($filtersets) > 0}
 		{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{else}

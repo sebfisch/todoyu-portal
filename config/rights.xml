@@ -3,15 +3,7 @@
 
 	<section name="general">
 		<right name="use" />
-	</section>
-
-	<section name="panelwidgets">
-		<right name="quicktaskWizard" />
-		<right name="filterPresetList" />
-	</section>
-
-	<section name="filterPresetList">
-		<right name="manageFilters" />
+		<right name="area" require="general:use" />
 	</section>
 
 </rights>
