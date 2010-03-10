@@ -5,8 +5,8 @@
 		<label index="create">Create Filters</label>
 		<label index="manage">Manage Filters</label>
 		<label index="amount">Amount</label>
-		<label index="error.noFilters">There have not been any filters created yet.</label>	
-		<label index="error.noTypeFiltersets">No Filters defined</label>	
+		<label index="error.noFilters">No Filters Created yet.</label>
+		<label index="error.noTypeFiltersets">No Filters Defined</label>
 	</labels>
 	<labels lang="de">
 		<label index="title">Meine Filter</label>

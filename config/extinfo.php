@@ -26,11 +26,11 @@
 
 $CONFIG['EXT']['portal']['info'] = array(
 	'title'			=> 'Portal',
-	'description' 	=> 'Portal area (Quick overview of various aspects of todoyu)',
+	'description' 	=> 'Portal Area (Quick Overview of Various Aspects of Your Daily Work)',
 	'author' 		=> array(
-		'name'		=> 'Todoyu Core Team',
+		'name'		=> 'todoyu Core Developer Team',
 		'email'		=> 'team@todoyu.com',
-		'company'	=> 'Snowflake Productions, Zürich'
+		'company'	=> 'snowflake productions GmbH, Zurich'
 	),
 	'state' 		=> 'beta',
 	'version' 		=> '0.2.0',
