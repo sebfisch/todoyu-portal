@@ -5,7 +5,7 @@
 		<label index="create">Create Filters</label>
 		<label index="manage">Manage Filters</label>
 		<label index="amount">Amount</label>
-		<label index="error.noFilters">No Filters Created yet.</label>
+		<label index="error.noFilters">No Filters Created Yet</label>
 		<label index="error.noTypeFiltersets">No Filters Defined</label>
 	</labels>
 	<labels lang="de">
@@ -13,7 +13,7 @@
 		<label index="create">Filter anlegen</label>
 		<label index="manage">Filter bearbeiten</label>
 		<label index="amount">Menge</label>
-		<label index="error.noFilters">Es wurden noch keine Filter erstellt.</label>
+		<label index="error.noFilters">Es wurden noch keine Filter erstellt</label>
 		<label index="error.noTypeFiltersets">Keine Filter definiert</label>
 	</labels>	
 </locallang>

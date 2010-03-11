@@ -2,7 +2,7 @@
 <locallang>
 	<labels lang="en">
 		<label index="title">Quicktask Wizard</label>
-		<label index="popup.title">Create quicktask</label>
+		<label index="popup.title">Create Quicktask</label>
 		<label index="addQuicktask">Add Quicktask</label>
 		<label index="workloadTracked.label">Workload</label>
 		<label index="startTracking.label">Start Tracking</label>
