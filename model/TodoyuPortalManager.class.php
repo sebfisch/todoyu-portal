@@ -72,28 +72,6 @@ class TodoyuPortalManager {
 
 
 	/**
-	 * Add the assets of the tabs to the page
-	 */
-	public static function addTabAssetsToPage() {
-		$tabs	= self::getTabsConfig();
-		$assets	= array();
-
-		foreach($tabs as $tab) {
-			$assets	= array_merge($assets, $tab['assets']);
-		}
-
-		$assets	= array_unique($assets);
-
-		foreach($assets as $asset) {
-			$config	= explode('/', $asset);
-			TodoyuPage::addExtAssets($config[0], $config[1]);
-		}
-
-	}
-
-
-
-	/**
 	 * Get tabs config
 	 *
 	 * @return	Array
@@ -163,6 +141,28 @@ class TodoyuPortalManager {
 		$idFilterset	= intval($filtersetIDs[0]);
 
 		return TodoyuFiltersetManager::getFiltersetType($idFilterset);
+	}
+
+
+
+	/**
+	 * Add the assets of the tabs to the page
+	 */
+	public static function addTabAssetsToPage() {
+		$tabs	= self::getTabsConfig();
+		$assets	= array();
+
+		foreach($tabs as $tab) {
+			$assets	= array_merge($assets, $tab['assets']);
+		}
+
+		$assets	= array_unique($assets);
+
+		foreach($assets as $asset) {
+			$config	= explode('/', $asset);
+			TodoyuPage::addExtAssets($config[0], $config[1]);
+		}
+
 	}
 
 }
