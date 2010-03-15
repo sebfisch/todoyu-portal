@@ -1,4 +1,30 @@
 <?php
+/***************************************************************
+*  Copyright notice
+*
+*  (c) 2009 snowflake productions gmbh
+*  All rights reserved
+*
+*  This script is part of the todoyu project.
+*  The todoyu project is free software; you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License, version 2,
+*  (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html) as published by
+*  the Free Software Foundation;
+*
+*  This script is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+*  GNU General Public License for more details.
+*
+*  This copyright notice MUST APPEAR in all copies of the script!
+***************************************************************/
+
+/**
+ * Test for: TodoyuPortalManager
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
 
 /**
  * Test class for TodoyuPortalManager.
@@ -17,7 +43,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp() {
         $this->object = new TodoyuPortalManager;
-    }
+	}
 
 
 
@@ -32,11 +58,18 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     *
+     *	Test TodoyuPortalManager::addTab
      */
 	public function testAddTab() {
 		$tabKey	= 'selection';
-		TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10, array('portal/public'));
+
+		$this->object->addTab(
+			$tabKey,
+			'TodoyuPortalRenderer::getSelectionTabLabel',
+			'TodoyuPortalRenderer::renderSelectionTabContent',
+			10,
+			array('portal/public')
+		);
 
 		$tabConfig	= $GLOBALS['CONFIG']['EXT']['portal']['tabs'][$tabKey];
 
@@ -59,7 +92,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     *
+     * Test TodoyuPortalManager::getTabsConfig
      */
     public function testGetTabsConfig() {
 		$tabsConfig	= $this->object->getTabsConfig();
@@ -89,7 +122,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     *
+     * Test TodoyuPortalManager::GetTabConfig
      */
     public function testGetTabConfig() {
 		$tabKeys	= array('selection', 'todo', 'feedback', 'appointment');
@@ -109,41 +142,66 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 			$this->assertArrayHasKey( 'assets', $tabConfig, 'tab \'' . $tabKey . '\' has assets' );
 			$this->assertType('array', $tabConfig['assets']);
-			$this->assertGreaterThan( 0, $tabConfig['assets'] );
+			$this->assertGreaterThan( 0, count($tabConfig['assets']) );
 		}
     }
 
 
 
     /**
-     * @todo Implement testGetTabs().
+     * Test GetTabConfig::getTabs
      */
-    public function testGetTabs()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-          'This test has not been implemented yet.'
-        );
+    public function testGetTabs() {
+        $tabs	= $this->object->getTabs();
+
+        $this->assertType('array', $tabs);
+		$this->assertGreaterThan( 0, count($tabs) );
+
+		foreach($tabs as $tab) {
+			$tabKey	= $tab['key'];
+
+			$this->assertArrayHasKey( 'key', $tab );
+
+			$this->assertArrayHasKey( 'labelFunc', $tab );
+			$this->assertTrue( TodoyuDiv::isFunctionReference($tab['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
+
+			$this->assertArrayHasKey( 'contentFunc', $tab );
+			$this->assertTrue( TodoyuDiv::isFunctionReference($tab['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
+
+			$this->assertArrayHasKey( 'position', $tab );
+
+			$this->assertArrayHasKey( 'assets', $tab );
+			$this->assertType('array', $tab['assets']);
+
+			$this->assertArrayHasKey( 'id', $tab );
+			$this->assertArrayHasKey( 'label', $tab );
+		}
     }
 
 
 
     /**
-     * @todo Implement testGetTaskContextMenuItems().
+     * Test GetTabConfig::getTaskContextMenuItems (add context menu items)
      */
-    public function testGetTaskContextMenuItems()
-    {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-          'This test has not been implemented yet.'
-        );
+    public function testGetTaskContextMenuItems() {
+			// Get ID of a task
+    	$where	= 'deleted = 0 AND type = ' . TASK_TYPE_TASK;
+    	$idTask	= Todoyu::db()->getFieldValue('id', 'ext_project_task', $where, '', '', '0,1', 'id');
+
+//    	AREA must be EXTID_PORTAL, test should fail from here
+    	$items	= $this->object->getTaskContextMenuItems($idTask, array());
+
+//    	$this->assertGreaterThan( 0, count($items) );
+
+    	$this->markTestIncomplete('untestable because AREA simulation not at hand.');
     }
+
+
 
     /**
      * @todo Implement testGetSelectionCount().
      */
-    public function testGetSelectionCount()
-    {
+    public function testGetSelectionCount() {
         // Remove the following lines when you implement this test.
         $this->markTestIncomplete(
           'This test has not been implemented yet.'
@@ -155,19 +213,19 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
     /**
      * @todo Implement testGetSelectionType().
      */
-    public function testGetSelectionType()
-    {
+    public function testGetSelectionType() {
         // Remove the following lines when you implement this test.
         $this->markTestIncomplete(
           'This test has not been implemented yet.'
         );
     }
 
+
+
     /**
      * @todo Implement testAddTabAssetsToPage().
      */
-    public function testAddTabAssetsToPage()
-    {
+    public function testAddTabAssetsToPage() {
         // Remove the following lines when you implement this test.
         $this->markTestIncomplete(
           'This test has not been implemented yet.'
