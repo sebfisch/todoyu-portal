@@ -79,7 +79,7 @@ class TodoyuPortalManager {
 	public static function getTabs() {
 		$tabs	= self::getTabsConfig();
 
-		// Get label, content list counter, 'active' or not-state
+			// Get label, content list counter, 'active' or not-state
 		foreach($tabs as $index => $tab) {
 			$tabs[$index]['id']		= $tab['key'];
 			$tabs[$index]['label']	= TodoyuDiv::callUserFunction($tab['labelFunc'], true);

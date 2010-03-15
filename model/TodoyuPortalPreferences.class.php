@@ -129,6 +129,12 @@ class TodoyuPortalPreferences {
 			$filtersetIDs = array();
 		} else {
 			$filtersetIDs = explode(',', $filtersetIDs);
+
+				// Remove references of non-existent filtersets
+			$allFiltersetIDs	= TodoyuFiltersetManager::getFiltersetIDs(personid());
+			$allFiltersetIDs	= TodoyuArray::flatten($allFiltersetIDs);
+
+			$filtersetIDs	= array_intersect($allFiltersetIDs, $filtersetIDs);
 		}
 
 		return $filtersetIDs;
