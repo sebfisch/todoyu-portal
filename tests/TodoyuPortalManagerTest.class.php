@@ -32,17 +32,40 @@
  */
 class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 {
-    /**
+	/**
      * @var TodoyuPortalManager
      */
-    protected $object;
+	protected $object;
+
+	/**
+     * @var Array
+     */
+	private $array;
+
+
 
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp() {
-        $this->object = new TodoyuPortalManager;
+	protected function setUp() {
+		$this->object = new TodoyuPortalManager;
+
+			// Get ID of a task
+		$where	= 'deleted = 0 AND type = ' . TASK_TYPE_TASK;
+		$idTask	= Todoyu::db()->getFieldValue('id', 'ext_project_task', $where, '', '', '0,1', 'id');
+
+		$this->array	= array(
+			'tabKeys'		=> array(
+								0 => 'selection',
+								1 => 'todo',
+								2 => 'feedback',
+								3 => 'appointment'
+			),
+			'taskIDs'	=> array(
+				$idTask
+			)
+		);
 	}
 
 
@@ -61,7 +84,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
      *	Test TodoyuPortalManager::addTab
      */
 	public function testAddTab() {
-		$tabKey	= 'selection';
+		$tabKey	= $this->array['tabKeys'][0];
 
 		$this->object->addTab(
 			$tabKey,
@@ -121,11 +144,12 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
 
-    /**
+	/**
      * Test TodoyuPortalManager::GetTabConfig
      */
     public function testGetTabConfig() {
-		$tabKeys	= array('selection', 'todo', 'feedback', 'appointment');
+		$tabKeys	= $this->array['tabKeys'];
+
 		foreach($tabKeys as $tabKey) {
 			$tabConfig	= $this->object->getTabConfig($tabKey);
 
@@ -148,13 +172,13 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
 
-    /**
+	/**
      * Test GetTabConfig::getTabs
      */
-    public function testGetTabs() {
-        $tabs	= $this->object->getTabs();
+	public function testGetTabs() {
+		$tabs	= $this->object->getTabs();
 
-        $this->assertType('array', $tabs);
+		$this->assertType('array', $tabs);
 		$this->assertGreaterThan( 0, count($tabs) );
 
 		foreach($tabs as $tab) {
@@ -180,13 +204,11 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
 
-    /**
+	/**
      * Test GetTabConfig::getTaskContextMenuItems (add context menu items)
      */
-    public function testGetTaskContextMenuItems() {
-			// Get ID of a task
-    	$where	= 'deleted = 0 AND type = ' . TASK_TYPE_TASK;
-    	$idTask	= Todoyu::db()->getFieldValue('id', 'ext_project_task', $where, '', '', '0,1', 'id');
+	public function testGetTaskContextMenuItems() {
+		$idTask	= $this->array['taskIDs'][0];
 
 //    	AREA must be EXTID_PORTAL, test should fail from here
     	$items	= $this->object->getTaskContextMenuItems($idTask, array());
@@ -198,7 +220,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase
 
 
 
-    /**
+	/**
      * @todo Implement testGetSelectionCount().
      */
     public function testGetSelectionCount() {
