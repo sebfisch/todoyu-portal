@@ -71,7 +71,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 			$taskIDs	= $taskFilter->getTaskIDs();
 
 				// Update filterset
-			$filtersets[$index]['label']	= TodoyuDiv::cropText($filtersets[$index]['title'], 46, '', false) . ' (' . sizeof($taskIDs) . ')';
+			$filtersets[$index]['label']	= TodoyuString::crop($filtersets[$index]['title'], 46, '', false) . ' (' . sizeof($taskIDs) . ')';
 			$filtersets[$index]['selected']	= in_array($filterset['id'], $activeFiltersets);
 			$filtersets[$index]['value']	= $filterset['id'];
 		}
@@ -102,7 +102,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 				$resultCount	= TodoyuFiltersetManager::getFiltersetCount($typeFilterset['id']);
 
 				$types[$typeKey]['options'][] = array(
-					'label'	=> TodoyuDiv::cropText($typeFilterset['title'], 46, '', false) . ' (' . $resultCount . ')',
+					'label'	=> TodoyuString::crop($typeFilterset['title'], 46, '', false) . ' (' . $resultCount . ')',
 					'value'	=> $typeFilterset['id']
 				);
 			}
