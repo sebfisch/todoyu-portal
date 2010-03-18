@@ -27,58 +27,33 @@
  */
 
 $CONFIG['EXT']['portal']['assets'] = array(
-		// Default assets: loaded all over the installation always
-	'default' => array(
-		'js' => array(
-
+	'js' => array(
+		array(
+			'file' 		=> 'ext/portal/assets/js/Ext.js',
+			'position'	=> 100
 		),
-		'css'	=> array(
-			array(
-				'file' 		=> 'ext/portal/assets/css/global.css',
-			)
+		array(
+			'file' 		=> 'ext/portal/assets/js/Tab.js',
+			'position'	=> 102
+		),
+		array(
+			'file' => 'ext/portal/assets/js/PanelWidgetFilterPresetList.js',
+			'position' => 110
 		)
 	),
-
-		// Public assets: basis assets for this extension
-	'public' => array(
-		'js' => array(
-			array(
-				'file' 		=> 'ext/portal/assets/js/Ext.js',
-				'position'	=> 100
-			),
-			array(
-				'file' 		=> 'ext/portal/assets/js/Tab.js',
-				'position'	=> 102
-			)
+	'css' => array(
+		array(
+			'file' 		=> 'ext/portal/assets/css/global.css',
 		),
-		'css' => array(
-			array(
-				'file' 		=> 'ext/portal/assets/css/ext.css',
-				'position'	=> 100
-			)
-		)
-	),
-
-
-	// Panel widgets assets
-
-
-		// Filter preset list
-	'panelwidget-filterpresetlist' => array(
-		'js' => array(
-			array(
-				'file' => 'ext/portal/assets/js/PanelWidgetFilterPresetList.js',
-				'position' => 110
-			)
+		array(
+			'file' 		=> 'ext/portal/assets/css/ext.css',
+			'position'	=> 100
 		),
-		'css' => array(
-			array(
-				'file' => 'ext/portal/assets/css/panelwidget-filterpresetlist.css',
-				'position' => 110
-			)
+		array(
+			'file' => 'ext/portal/assets/css/panelwidget-filterpresetlist.css',
+			'position' => 110
 		)
 	)
-
 );
 
 ?>
