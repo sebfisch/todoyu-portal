@@ -63,12 +63,6 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 			// Unselect all other option groups
 		this.unselectOtherTypes(type);
 
-			// DEV message
-		if( type !== 'task' && false ) {
-			Todoyu.notifyError('Only task is implemented. Please try again in a few days ;-)');
-			return;
-		}
-
 			// Add params for tab refresh
 		var params	= {
 			'filtersets': 	this.getFiltersets(),

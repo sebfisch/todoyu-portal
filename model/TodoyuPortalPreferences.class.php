@@ -137,6 +137,8 @@ class TodoyuPortalPreferences {
 			$filtersetIDs	= array_intersect($allFiltersetIDs, $filtersetIDs);
 		}
 
+		$filtersetIDs	= array_values($filtersetIDs);
+
 		return $filtersetIDs;
 	}
 
