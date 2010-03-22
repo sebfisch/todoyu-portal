@@ -2,12 +2,10 @@
 <locallang>
 	<labels lang="en">
 		<label index="general">General Settings</label>
-		<label index="general.use">Use Portal</label>
-		<label index="general.area">See Portal Area</label>
+		<label index="general.use">Use portal and see portal area</label>
 	</labels>
 	<labels lang="de">
 		<label index="general">Allgemeine Einstellungen</label>
-		<label index="general.use">Portal Verwenden</label>
-		<label index="general.area">Sieht Portal Bereich</label>
+		<label index="general.use">Portal verwenden und Portal Bereich sehen</label>
 	</labels>
 </locallang>
