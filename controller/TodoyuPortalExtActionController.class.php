@@ -29,7 +29,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 
 
 	public function init(array $params) {
-		restrict('portal', 'general:area');
+		restrict('portal', 'general:use');
 	}
 
 
