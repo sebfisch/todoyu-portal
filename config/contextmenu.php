@@ -19,6 +19,6 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-$CONFIG['EXT']['portal']['ContextMenu']['Task'] = array();
+Todoyu::$CONFIG['EXT']['portal']['ContextMenu']['Task'] = array();
 
 ?>

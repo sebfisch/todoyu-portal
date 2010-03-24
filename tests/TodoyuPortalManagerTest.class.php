@@ -93,7 +93,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 			array('portal/public')
 		);
 
-		$tabConfig	= $GLOBALS['CONFIG']['EXT']['portal']['tabs'][$tabKey];
+		$tabConfig	= Todoyu::$CONFIG['EXT']['portal']['tabs'][$tabKey];
 
 		$this->assertType( 'array', $tabConfig );
 		$this->assertGreaterThan( 0, sizeof($tabConfig) );

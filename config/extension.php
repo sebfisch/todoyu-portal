@@ -37,15 +37,15 @@ TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTask
 
 
 /*
-$CONFIG['EXT']['portal']['renderer']['panel'][]		= 'TodoyuPortalRenderer::renderPanelWidgets';
-$CONFIG['EXT']['portal']['renderer']['tabs'][]		= 'TodoyuPortalRenderer::renderTabs';
-$CONFIG['EXT']['portal']['renderer']['tasklist'][]	= 'TodoyuPortalRenderer::renderTaskList';
+Todoyu::$CONFIG['EXT']['portal']['renderer']['panel'][]		= 'TodoyuPortalRenderer::renderPanelWidgets';
+Todoyu::$CONFIG['EXT']['portal']['renderer']['tabs'][]		= 'TodoyuPortalRenderer::renderTabs';
+Todoyu::$CONFIG['EXT']['portal']['renderer']['tasklist'][]	= 'TodoyuPortalRenderer::renderTaskList';
 
-$CONFIG['EXT']['portal']['typetab']['task']			= 'filtered';
-$CONFIG['EXT']['portal']['typerenderer']['task']	= 'TodoyuPortalRenderer::renderTaskTab';
-$CONFIG['EXT']['portal']['entriescounter']['task']	= 'TodoyuPortalManager::getTasksAmount';
+Todoyu::$CONFIG['EXT']['portal']['typetab']['task']			= 'filtered';
+Todoyu::$CONFIG['EXT']['portal']['typerenderer']['task']	= 'TodoyuPortalRenderer::renderTaskTab';
+Todoyu::$CONFIG['EXT']['portal']['entriescounter']['task']	= 'TodoyuPortalManager::getTasksAmount';
 
-$CONFIG['EXT']['portal']['tabfiltered'] = array(
+Todoyu::$CONFIG['EXT']['portal']['tabfiltered'] = array(
 	'id'		=> 0,
 	'type'		=> 'task',
 	'id_person'	=> 0,

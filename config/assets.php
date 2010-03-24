@@ -26,7 +26,7 @@
  * @subpackage	Portal
  */
 
-$CONFIG['EXT']['portal']['assets'] = array(
+Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	'js' => array(
 		array(
 			'file' 		=> 'ext/portal/assets/js/Ext.js',

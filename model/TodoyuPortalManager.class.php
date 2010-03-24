@@ -37,7 +37,7 @@ class TodoyuPortalManager {
 	 * @param	Array		$assets			Assets to load. List with format: portal/public, calendar/public, ...
 	 */
 	public static function addTab($key, $labelFunc, $contentFunc, $position = 100, array $assets = array()) {
-		$GLOBALS['CONFIG']['EXT']['portal']['tabs'][$key] = array(
+		Todoyu::$CONFIG['EXT']['portal']['tabs'][$key] = array(
 			'key'			=> $key,
 			'labelFunc'		=> $labelFunc,
 			'contentFunc'	=> $contentFunc,
@@ -54,7 +54,7 @@ class TodoyuPortalManager {
 	 * @return	Array
 	 */
 	public static function getTabsConfig() {
-		return TodoyuArray::sortByLabel($GLOBALS['CONFIG']['EXT']['portal']['tabs'], 'position');
+		return TodoyuArray::sortByLabel(Todoyu::$CONFIG['EXT']['portal']['tabs'], 'position');
 	}
 
 
@@ -66,7 +66,7 @@ class TodoyuPortalManager {
 	 * @return	Array
 	 */
 	public static function getTabConfig($tabKey) {
-		return $GLOBALS['CONFIG']['EXT']['portal']['tabs'][$tabKey];
+		return Todoyu::$CONFIG['EXT']['portal']['tabs'][$tabKey];
 	}
 
 
@@ -103,7 +103,7 @@ class TodoyuPortalManager {
 			// Only show it in portal
 		if( AREA === EXTID_PORTAL ) {
 				// Add special portal items
-			$ownItems	= $GLOBALS['CONFIG']['EXT']['portal']['ContextMenu']['Task'];
+			$ownItems	= Todoyu::$CONFIG['EXT']['portal']['ContextMenu']['Task'];
 			$items		= array_merge_recursive($items, $ownItems);
 
 				// Remove clone function

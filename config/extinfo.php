@@ -24,7 +24,7 @@
  */
 
 
-$CONFIG['EXT']['portal']['info'] = array(
+Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 	'title'			=> 'Portal',
 	'description' 	=> 'Portal Area (Quick Overview of Various Aspects of Your Daily Work)',
 	'author' 		=> array(
