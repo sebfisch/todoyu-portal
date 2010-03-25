@@ -28,7 +28,7 @@ if( allowed('portal', 'general:use') ) {
 	$pos		= 0;
 
 	foreach($tabsConfig as $tabConfig) {
-		$label	= TodoyuDiv::callUserFunction($tabConfig['labelFunc'], false);
+		$label	= TodoyuFunction::callUserFunction($tabConfig['labelFunc'], false);
 
 		TodoyuFrontend::addSubmenuEntry('portal', $tabConfig['key'], $label, '?ext=portal&tab=' . $tabConfig['key'], $pos++);
 	}

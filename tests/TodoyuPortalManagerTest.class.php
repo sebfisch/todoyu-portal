@@ -101,10 +101,10 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 		$this->assertArrayHasKey( 'key', $tabConfig );
 
 		$this->assertArrayHasKey( 'labelFunc', $tabConfig );
-		$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
+		$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
 
 		$this->assertArrayHasKey( 'contentFunc', $tabConfig, 'tab ' . $index . ' has \'' . $tabKey . '\' contentFunc' );
-		$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
+		$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
 
 		$this->assertArrayHasKey( 'assets', $tabConfig);
 		$this->assertType( 'array', $tabConfig['assets'] );
@@ -130,10 +130,10 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 			$this->assertArrayHasKey( 'key', $tabConfig );
 
 			$this->assertArrayHasKey( 'labelFunc', $tabConfig );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['labelFunc']), 'tab ' . $index . ' (' . $key . ') labelFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['labelFunc']), 'tab ' . $index . ' (' . $key . ') labelFunc function reference validated');
 
 			$this->assertArrayHasKey( 'contentFunc', $tabConfig );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['contentFunc']), 'tab ' . $index . ' (' . $key . ')  contentFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['contentFunc']), 'tab ' . $index . ' (' . $key . ')  contentFunc function reference validated');
 
 			$this->assertArrayHasKey( 'assets', $tabConfig );
 			$this->assertType( 'array', $tabConfig['assets'] );
@@ -158,10 +158,10 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 			$this->assertArrayHasKey( 'key', $tabConfig );
 
 			$this->assertArrayHasKey( 'labelFunc', $tabConfig );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
 
 			$this->assertArrayHasKey( 'contentFunc', $tabConfig );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tabConfig['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
 
 			$this->assertArrayHasKey( 'assets', $tabConfig, 'tab \'' . $tabKey . '\' has assets' );
 			$this->assertType('array', $tabConfig['assets']);
@@ -186,10 +186,10 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 			$this->assertArrayHasKey( 'key', $tab );
 
 			$this->assertArrayHasKey( 'labelFunc', $tab );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tab['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tab['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
 
 			$this->assertArrayHasKey( 'contentFunc', $tab );
-			$this->assertTrue( TodoyuDiv::isFunctionReference($tab['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
+			$this->assertTrue( TodoyuFunction::isFunctionReference($tab['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
 
 			$this->assertArrayHasKey( 'position', $tab );
 
