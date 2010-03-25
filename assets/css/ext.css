@@ -19,17 +19,24 @@ h1.extIconPortal .title {
 /* ------------------------
 	Special Task Header
    ------------------------ */
-  
-.portalTaskList h1 span.taskDate {
+
+.portalTaskList h1 span.taskDate,
+.portalTaskList .task h3 span.taskDate {
 	width:45px;
 }
 
 .portalTaskList h1 span.customer,
-.portalTaskList .task h3 div.customer {
+.portalTaskList .task h3 span.customer {
 	width:100px;
 }
 
 .portalTaskList h1 span.projectName,
-.portalTaskList .task h3 div.projectName {
+.portalTaskList .task h3 span.projectName {
 	width:340px;
+}
+
+.portalTaskList .task h3 span.customer,
+.portalTaskList .task h3 span.projectName,
+.portalTaskList .task h3 span.taskNumber {
+	margin:0 0 0 5px;
 }
