@@ -131,6 +131,7 @@ class TodoyuPortalManager {
 	}
 
 
+
 	/**
 	 * Get type of currently selected filtersets
 	 *
@@ -140,16 +141,6 @@ class TodoyuPortalManager {
 		$idFilterset	= intval($filtersetIDs[0]);
 
 		return TodoyuFiltersetManager::getFiltersetType($idFilterset);
-	}
-
-
-
-	/**
-	 * Add the assets of the tabs to the page
-	 * @todo	Remove, no longer used
-	 */
-	public static function addTabAssetsToPage() {
-
 	}
 
 }

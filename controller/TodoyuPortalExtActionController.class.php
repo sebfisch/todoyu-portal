@@ -69,11 +69,6 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('tabHeads', $tabHeads);
 		TodoyuPage::set('activeTabContent', $activeTabContent);
 
-		TodoyuPortalManager::addTabAssetsToPage();
-
-			// Context menu
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.project.ContextMenuTask.attach.bind(Todoyu.Ext.project.ContextMenuTask)', 100);
-
 			// Display output
 		return TodoyuPage::render();
 	}
