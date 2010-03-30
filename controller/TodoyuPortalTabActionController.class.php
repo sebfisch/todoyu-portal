@@ -38,9 +38,6 @@ class TodoyuPortalTabActionController extends TodoyuActionController {
 
 		TodoyuPortalPreferences::saveActiveTab($tabKey);
 
-		TodoyuDebug::printInFirebug($params);
-		TodoyuDebug::printInFirebug($extra);
-
 		return TodoyuPortalRenderer::renderTabContent($tabKey, $extra);
 	}
 
