@@ -138,7 +138,8 @@ class TodoyuPortalManager {
 	 * @return	String
 	 */
 	public static function getSelectionType() {
-		$idFilterset	= intval($filtersetIDs[0]);
+// @todo	check $filtersetIDs needed? method used still?
+		$idFilterset	= 0; //intval($filtersetIDs[0]);
 
 		return TodoyuFiltersetManager::getFiltersetType($idFilterset);
 	}

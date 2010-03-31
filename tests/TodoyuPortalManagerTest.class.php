@@ -102,7 +102,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 		$this->assertArrayHasKey( 'labelFunc', $tabConfig );
 		$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['labelFunc']), 'tab \'' . $tabKey . '\' labelFunc function reference validated');
 
-		$this->assertArrayHasKey( 'contentFunc', $tabConfig, 'tab ' . $index . ' has \'' . $tabKey . '\' contentFunc' );
+		$this->assertArrayHasKey( 'contentFunc', $tabConfig, 'tab has \'' . $tabKey . '\' contentFunc' );
 		$this->assertTrue( TodoyuFunction::isFunctionReference($tabConfig['contentFunc']), 'tab \'' . $tabKey . '\' contentFunc function reference validated');
 
 		$this->assertArrayHasKey( 'assets', $tabConfig);
