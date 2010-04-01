@@ -60,11 +60,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 		$activeFiltersets	= self::getActiveFiltersetIDs();
 		$filtersets			= TodoyuFiltersetManager::getTypeFiltersets('TASK', 0, false);
 
-
 		foreach($filtersets as $index => $filterset) {
-
-
-
 			$conditions	= TodoyuFiltersetManager::getFiltersetConditions($filterset['id']);
 			$taskFilter	= new TodoyuTaskFilter($conditions);
 			$taskIDs	= $taskFilter->getTaskIDs();
@@ -117,7 +113,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 *
 	 * @return	Array
 	 */
-	private function getActiveFiltersetIDs() {
+	private static function getActiveFiltersetIDs() {
 		return TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
 	}
 
