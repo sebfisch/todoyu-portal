@@ -69,7 +69,7 @@ class TodoyuPortalRenderer {
 	/**
 	 * Get label of selection tab in portal
 	 *
-	 * @param	Bool		$count
+	 * @param	Boolean		$count
 	 * @return	String
 	 */
 	public static function getSelectionTabLabel($count = true) {
