@@ -16,4 +16,12 @@
 		<label index="startTracking.label">Zeiterfassung starten</label>
 		<label index="workload_chargeable.label">Anrechenbar</label>
 	</labels>
+	<labels lang="pt">
+		<label index="title">Quicktask Wizard</label>
+		<label index="popup.title">Criar Quicktask</label>
+		<label index="addQuicktask">Adicionar Quicktask</label>
+		<label index="workloadTracked.label">Workload</label>
+		<label index="startTracking.label">Iniciar Tracking</label>
+		<label index="workload_chargeable.label">Chargeable</label>
+	</labels>
 </locallang>

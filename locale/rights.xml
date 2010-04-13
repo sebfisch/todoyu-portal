@@ -8,4 +8,8 @@
 		<label index="general">Allgemeine Einstellungen</label>
 		<label index="general.use">Portal verwenden und Portal Bereich sehen</label>
 	</labels>
+	<labels lang="pt">
+		<label index="general">Configuração</label>
+		<label index="general.use">Utilizar portal e exibir área do portal</label>
+	</labels>
 </locallang>

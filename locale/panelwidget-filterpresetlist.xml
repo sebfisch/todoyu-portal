@@ -15,5 +15,13 @@
 		<label index="amount">Menge</label>
 		<label index="error.noFilters">Es wurden noch keine Filter erstellt</label>
 		<label index="error.noTypeFiltersets">Keine Filter definiert</label>
+	</labels>
+	<labels lang="pt">
+		<label index="title">Meus Filtros</label>
+		<label index="create">Criar Filtros</label>
+		<label index="manage">Editar Filtros</label>
+		<label index="amount">Quantidade</label>
+		<label index="error.noFilters">Nenhum Filtro Criado</label>
+		<label index="error.noTypeFiltersets">Nenhuma Definição de Filtro</label>
 	</labels>	
 </locallang>
