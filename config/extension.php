@@ -36,10 +36,6 @@ TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTask
 
 
 /*
-Todoyu::$CONFIG['EXT']['portal']['renderer']['panel'][]		= 'TodoyuPortalRenderer::renderPanelWidgets';
-Todoyu::$CONFIG['EXT']['portal']['renderer']['tabs'][]		= 'TodoyuPortalRenderer::renderTabs';
-Todoyu::$CONFIG['EXT']['portal']['renderer']['tasklist'][]	= 'TodoyuPortalRenderer::renderTaskList';
-
 Todoyu::$CONFIG['EXT']['portal']['typetab']['task']			= 'filtered';
 Todoyu::$CONFIG['EXT']['portal']['typerenderer']['task']	= 'TodoyuPortalRenderer::renderTaskTab';
 Todoyu::$CONFIG['EXT']['portal']['entriescounter']['task']	= 'TodoyuPortalManager::getTasksAmount';
