@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
-	<labels lang="en">
+	<labels lang="en_GB">
 		<label index="general">General Settings</label>
 		<label index="general.use">Use portal and see portal area</label>
 	</labels>
-	<labels lang="de">
+	<labels lang="de_DE">
 		<label index="general">Allgemeine Einstellungen</label>
 		<label index="general.use">Portal verwenden und Portal Bereich sehen</label>
 	</labels>
-	<labels lang="pt">
+	<labels lang="pt_BR">
 		<label index="general">Configuração</label>
 		<label index="general.use">Utilizar portal e exibir área do portal</label>
 	</labels>

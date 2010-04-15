@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
-	<labels lang="en">
+	<labels lang="en_GB">
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
@@ -28,7 +28,7 @@
 		<label index="contextmenu.showinproject">Show In Project</label>
 		<label index="selection.noFiltersetsSelected">No Filtersets Selected!</label>
 	</labels>
-	<labels lang="de">
+	<labels lang="de_DE">
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>
@@ -55,7 +55,7 @@
 		<label index="contextmenu.showinproject">Im Projekt anzeigen</label>
 		<label index="selection.noFiltersetsSelected">Keine Filter ausgewählt!</label>
 	</labels>
-	<labels lang="pt">
+	<labels lang="pt_BR">
 		<label index="ext.title">Portal</label>
 		<label index="page.title">Portal</label>
 		<label index="tab">Portal</label>

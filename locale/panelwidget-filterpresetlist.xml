@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <locallang>
-	<labels lang="en">
+	<labels lang="en_GB">
 		<label index="title">My Filters</label>
 		<label index="create">Create Filters</label>
 		<label index="manage">Manage Filters</label>
@@ -8,7 +8,7 @@
 		<label index="error.noFilters">No Filters Created Yet</label>
 		<label index="error.noTypeFiltersets">No Filters Defined</label>
 	</labels>
-	<labels lang="de">
+	<labels lang="de_DE">
 		<label index="title">Meine Filter</label>
 		<label index="create">Filter anlegen</label>
 		<label index="manage">Filter bearbeiten</label>
@@ -16,7 +16,7 @@
 		<label index="error.noFilters">Es wurden noch keine Filter erstellt</label>
 		<label index="error.noTypeFiltersets">Keine Filter definiert</label>
 	</labels>
-	<labels lang="pt">
+	<labels lang="pt_BR">
 		<label index="title">Meus Filtros</label>
 		<label index="create">Criar Filtros</label>
 		<label index="manage">Editar Filtros</label>
