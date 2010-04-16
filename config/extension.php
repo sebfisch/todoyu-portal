@@ -31,7 +31,7 @@ TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabL
 
 
 	// Register context menu functions
-TodoyuContextMenuManager::registerFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
+TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 
 
 
