@@ -34,6 +34,7 @@ TodoyuLanguage::register('portal', PATH_EXT_PORTAL . '/locale/ext.xml');
 TodoyuLanguage::register('panelwidget-filterpresetlist', PATH_EXT_PORTAL . '/locale/panelwidget-filterpresetlist.xml');
 
 	// Request configurations
+	// @notice	Auto-loaded configs if available: admin, assets, create, contextmenu, extinfo, filters, form, page, panelwidgets, rights, search
 require_once( PATH_EXT_PORTAL . '/config/constants.php' );
 require_once( PATH_EXT_PORTAL . '/config/extension.php' );
 require_once( PATH_EXT_PORTAL . '/config/hooks.php' );
