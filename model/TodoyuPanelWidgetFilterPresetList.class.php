@@ -24,7 +24,6 @@
  * @package		Todoyu
  * @subpackage	Portal
  */
-
 class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
 
 	/**

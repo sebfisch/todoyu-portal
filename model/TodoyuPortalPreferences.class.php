@@ -24,9 +24,7 @@
  * @name 		Portal preferences
  * @package		Todoyu
  * @subpackage	Portal
- *
  */
-
 class TodoyuPortalPreferences {
 
 	/**
