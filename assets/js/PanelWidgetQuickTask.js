@@ -23,7 +23,7 @@
 Todoyu.Ext.portal.PanelWidget.QuickTask = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.portal,
 
@@ -41,9 +41,9 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 	/**
 	 * Handle quicktask having been added
 	 *
-	 * @param	Integer		idTask
-	 * @param	Integer		idProject
-	 * @param	Boolean		started
+	 * @param	{Integer}		idTask
+	 * @param	{Integer}		idProject
+	 * @param	{Boolean}		started
 	 */
 	onAdded: function(idTask, idProject, started) {
 		this.ext.Tab.refresh();

@@ -23,7 +23,7 @@
 Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.portal,
 
@@ -35,7 +35,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 
 	/**
-	 *	Init
+	 * Init
 	 */
 	init: function() {
 			// Find all lists
@@ -55,8 +55,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	/**
 	 * Handler when selection in one of the lists is changed
 	 * 
-	 * @param	Event		event
-	 * @param	String		type		List type
+	 * @param	{Event}		    event
+	 * @param	{String}		type		List type
 	 */
 	onSelectionChange: function(event, type) {
 			// Unselect all other option groups
@@ -90,7 +90,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	/**
 	 * Unselect all options in the other lists, because only one type can be active
 	 * 
-	 * @param	String		type
+	 * @param	{String}		type
 	 */
 	unselectOtherTypes: function(type) {
 		$H(this.lists).each(function(type, pair){
@@ -105,7 +105,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 
 	/**
-	 *	Manage filtersets
+	 * Manage filtersets
 	 */
 	manageFiltersets: function() {
 		Todoyu.goTo('search', 'ext');

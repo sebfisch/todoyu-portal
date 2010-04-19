@@ -20,17 +20,17 @@
 Todoyu.Ext.portal.Tab = {
 
 	/**
-	 *	Ext shortcut
+	 * Ext shortcut
 	 */
 	ext:	Todoyu.Ext.portal,
 
 
 
 	/**
-	 *	onSelect event handler
+	 * onSelect event handler
 	 *
-	 *	@param	Object	event
-	 *	@param	String	tabKey
+	 * @param	{Object}	event
+	 * @param	{String}	tabKey
 	 */
 	onSelect: function(event, tabKey) {
 		this.showTab(tabKey);
@@ -39,10 +39,10 @@ Todoyu.Ext.portal.Tab = {
 
 
 	/**
-	 *	Show tab
+	 * Show tab
 	 *
-	 * @param	String		tabKey
-	 * @param	Boolean		refresh
+	 * @param	{String}		tabKey
+	 * @param	{Boolean}		refresh
 	 */
 	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
@@ -73,8 +73,8 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Handler when tab is showed and updated
 	 *
-	 * @param	String				tabKey
-	 * @param	Ajax.Response		response
+	 * @param	{String}				tabKey
+	 * @param	{Ajax.Response}		response
 	 */
 	onTabShowed: function(tabKey, response) {
 		var numSelected	= response.getTodoyuHeader('selection');
@@ -89,8 +89,8 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Update the label of a tab
 	 *
-	 *	@param	String		tabKey
-	 *	@param	String		newLabel
+	 * @param	{String}		tabKey
+	 * @param	{String}		newLabel
 	 */
 	setTabLabel: function(tabKey, newLabel) {
 		$('portal-tab-' + tabKey + '-label').down('span.labeltext').update(newLabel);
@@ -103,8 +103,8 @@ Todoyu.Ext.portal.Tab = {
 	 * Replace the number in the brackets
 	 * @example	'Tasks (43)' => 'Tasks (33)'
 	 *
-	 * @param	String			tabKey
-	 * @param	Integer			numResults
+	 * @param	{String}			tabKey
+	 * @param	{Integer}			numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
 		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
@@ -120,7 +120,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Get key of currently active tab
 	 * 
-	 * @return	String
+	 * @return	{String}
 	 */
 	getActiveTab: function() {
 		return Todoyu.Tabs.getActiveKey('portal-tabs');
