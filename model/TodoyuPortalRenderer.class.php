@@ -46,7 +46,6 @@ class TodoyuPortalRenderer {
 
 
 
-
 	/**
 	 * Render content of a portal tab (call registered render function)
 	 *
@@ -82,7 +81,6 @@ class TodoyuPortalRenderer {
 
 		return $label;
 	}
-
 
 
 

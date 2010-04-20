@@ -55,7 +55,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	/**
 	 * Handler when selection in one of the lists is changed
 	 * 
-	 * @param	{Event}		    event
+	 * @param	{Event}			event
 	 * @param	{String}		type		List type
 	 */
 	onSelectionChange: function(event, type) {

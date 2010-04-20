@@ -18,6 +18,12 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
+/**
+ * Preference action controller for portal extension
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
 class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 	/**
