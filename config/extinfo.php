@@ -22,7 +22,6 @@
  * Various portal extension info data
  */
 
-
 Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 	'title'			=> 'Portal',
 	'description' 	=> 'Portal Area (Quick Overview of Various Aspects of Your Daily Work)',
@@ -42,6 +41,5 @@ Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 		)
 	)
 );
-
 
 ?>

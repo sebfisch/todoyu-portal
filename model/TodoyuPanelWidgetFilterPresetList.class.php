@@ -163,9 +163,9 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 
 
 	/**
-	 * Check if panelwidget is allowed
+	 * Check whether panel widget is allowed
 	 *
-	 * @return	Bool
+	 * @return	Boolean
 	 */
 	public static function isAllowed() {
 		return allowed('portal', 'general:use');

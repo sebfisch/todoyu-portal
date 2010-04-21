@@ -18,6 +18,13 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
+/**
+ * Constants for portal extension
+ *
+ * @package		Todoyu
+ * @subpackage	Portal
+ */
+
 	// Preference constants
 define('PORTAL_PREF_TAB', 	1);
 
