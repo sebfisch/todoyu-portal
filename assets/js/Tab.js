@@ -21,6 +21,8 @@ Todoyu.Ext.portal.Tab = {
 
 	/**
 	 * Ext shortcut
+	 *
+	 * @var	{Object}	ext
 	 */
 	ext:	Todoyu.Ext.portal,
 

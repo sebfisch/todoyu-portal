@@ -24,6 +24,8 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 
 	/**
 	 * Ext shortcut
+	 *
+	 * @var	{Object}	ext
 	 */
 	ext:	Todoyu.Ext.portal,
 

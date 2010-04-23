@@ -37,12 +37,12 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	public function __construct(array $config, array $params = array(), $idArea = 0) {
 
 		parent::__construct(
-			'portal',								// ext key
+			'portal',									// ext key
 			'filterpresetlist',							// panel widget ID
 			'LLL:panelwidget-filterpresetlist.title',	// widget title text
-			$config,								// widget config array
-			$params,								// widget params
-			$idArea									// area ID
+			$config,									// widget config array
+			$params,									// widget parameters
+			$idArea										// area ID
 		);
 
 		$this->addHasIconClass();
