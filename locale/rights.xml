@@ -2,7 +2,7 @@
 <locallang>
 	<labels lang="en_GB">
 		<label index="general">General Settings</label>
-		<label index="general.use">Use portal and see portal area</label>
+		<label index="general.use">Use portal and see the portal area</label>
 	</labels>
 	<labels lang="de_DE">
 		<label index="general">Allgemeine Einstellungen</label>
