@@ -28,6 +28,13 @@
 class TodoyuPortalRenderer {
 
 	/**
+	 * Extension key
+	 */
+	const EXTKEY = 'portal';
+
+
+
+	/**
 	 * Render tab headers for portal
 	 *
 	 * @return	String
@@ -144,9 +151,7 @@ class TodoyuPortalRenderer {
 	 * @return	String
 	 */
 	public static function renderPanelWidgets() {
-		$params	= array();
-
-		return TodoyuPanelWidgetRenderer::renderPanelWidgets('portal', $params);
+		return TodoyuPanelWidgetRenderer::renderPanelWidgets(self::EXTKEY);
 	}
 
 }
