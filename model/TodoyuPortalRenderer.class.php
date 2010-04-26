@@ -94,12 +94,12 @@ class TodoyuPortalRenderer {
 	/**
 	 * Get content of selection tab in portal
 	 *
-	 * Tasklist based on the selected filters in filterpreset list panelwidget
+	 * Task-list based on the selected filters in filterPresetList panelWidget
 	 *
 	 * @return	String
 	 */
 	public static function renderSelectionTabContent(array $params = array()) {
-			// Check if filtersets are available as parameters
+			// Check whether filterSets are available as parameters
 		if( isset($params['filtersets']) ) {
 			$filtersetIDs	= TodoyuArray::intval($params['filtersets'], true, true);
 			TodoyuPortalPreferences::saveSelectionTabFiltersetIDs($filtersetIDs);
