@@ -106,7 +106,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @example	'Tasks (43)' => 'Tasks (33)'
 	 *
 	 * @param	{String}			tabKey
-	 * @param	{Integer}			numResults
+	 * @param	{Number}			numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
 		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');

@@ -35,8 +35,8 @@ Todoyu.Ext.portal = {
 	 * If task is currently displayed in portal area:	jump to it
 	 * If task is currently not displayed in portal area: jump to it in project area
 	 *
-	 * @param	{Integer}	idTask
-	 * @param	{Integer}	idProject
+	 * @param	{Number}	idTask
+	 * @param	{Number}	idProject
 	 */
 	showTask: function(idTask, idProject) {
 		var task	= 'task-' + idTask;
@@ -74,7 +74,7 @@ Todoyu.Ext.portal = {
 	/**
 	 * Open sub task containers of given task
 	 *
-	 * @param	{Integer}	idTask
+	 * @param	{Number}	idTask
 	 */
 	expandSubtaskContainers: function(idTask) {
 		var task		= $('task-' + idTask);
@@ -97,7 +97,7 @@ Todoyu.Ext.portal = {
 	 * Save portal preferences
 	 *
 	 * @param	{String}	action
-	 * @param	{Integer}	idItem
+	 * @param	{Number}	idItem
 	 * @param	{String}	onComplete
 	 */
 	savePref: function(action, value, idItem, onComplete) {

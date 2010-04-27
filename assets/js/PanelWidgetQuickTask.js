@@ -43,8 +43,8 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 	/**
 	 * Handle quicktask having been added
 	 *
-	 * @param	{Integer}		idTask
-	 * @param	{Integer}		idProject
+	 * @param	{Number}		idTask
+	 * @param	{Number}		idProject
 	 * @param	{Boolean}		started
 	 */
 	onAdded: function(idTask, idProject, started) {
