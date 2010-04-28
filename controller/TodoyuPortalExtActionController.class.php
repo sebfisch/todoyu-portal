@@ -42,7 +42,6 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 	public function defaultAction(array $params) {
 		restrict('portal', 'general:use');
 
-
 			// Activate FE tab
 		TodoyuFrontend::setActiveTab('portal');
 
@@ -60,7 +59,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 
 			// Panel widgets
 		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();
-			// Tabheads
+			// Tab-heads
 		$tabHeads		= TodoyuPortalRenderer::renderTabHeads($activeTab);
 			// Render active tab, tab content
 		$activeTabContent	= TodoyuPortalRenderer::renderTabContent($activeTab);
