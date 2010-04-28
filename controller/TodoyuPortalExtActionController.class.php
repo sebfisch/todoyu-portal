@@ -69,6 +69,9 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('tabHeads', $tabHeads);
 		TodoyuPage::set('activeTabContent', $activeTabContent);
 
+
+		Todoyu::log('hallo, wie gehts', TodoyuLogger::LEVEL_NOTICE);
+
 			// Display output
 		return TodoyuPage::render();
 	}

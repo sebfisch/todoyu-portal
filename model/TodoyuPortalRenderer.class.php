@@ -65,7 +65,7 @@ class TodoyuPortalRenderer {
 		if( TodoyuFunction::isFunctionReference($tab['contentFunc']) ) {
 			return TodoyuFunction::callUserFunction($tab['contentFunc'], $params);
 		} else {
-			Todoyu::log('Missing render function for tab "' . $tabKey . '"', LOG_LEVEL_ERROR);
+			Todoyu::log('Missing render function for tab "' . $tabKey . '"', TodoyuLogger::LEVEL_ERROR);
 			return 'Found no render function for this tab';
 		}
 	}
