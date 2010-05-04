@@ -33,15 +33,13 @@ class TodoyuPortalManager {
 	 * @param	String		$labelFunc		Function which renders the label
 	 * @param	String		$contentFunc	Function which renders the content
 	 * @param	Integer		$position		Tab position (left to right)
-	 * @param	Array		$assets			Assets to load. List with format: portal/public, calendar/public, ...
 	 */
-	public static function addTab($key, $labelFunc, $contentFunc, $position = 100, array $assets = array()) {
+	public static function addTab($key, $labelFunc, $contentFunc, $position = 100) {
 		Todoyu::$CONFIG['EXT']['portal']['tabs'][$key] = array(
 			'key'			=> $key,
 			'labelFunc'		=> $labelFunc,
 			'contentFunc'	=> $contentFunc,
-			'position'		=> intval($position),
-			'assets'		=> $assets
+			'position'		=> intval($position)
 		);
 	}
 

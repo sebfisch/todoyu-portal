@@ -25,11 +25,6 @@
  * @subpackage	Admin
  */
 
-	// Add portal tab: 'selection'
-TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10, array('portal/public'));
-
-
-
 	// Register context menu functions
 TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 
