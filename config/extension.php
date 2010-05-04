@@ -29,21 +29,7 @@
 TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 
 
-
-/*
-Todoyu::$CONFIG['EXT']['portal']['typetab']['task']			= 'filtered';
-Todoyu::$CONFIG['EXT']['portal']['typerenderer']['task']	= 'TodoyuPortalRenderer::renderTaskTab';
-Todoyu::$CONFIG['EXT']['portal']['entriescounter']['task']	= 'TodoyuPortalManager::getTasksAmount';
-
-Todoyu::$CONFIG['EXT']['portal']['tabfiltered'] = array(
-	'id'		=> 0,
-	'type'		=> 'task',
-	'id_person'	=> 0,
-	'class'		=> 'filtered',
-	'title'		=> 'LLL:portal.tab.selection',
-	'is_or'		=> 0,
-	'sorting'	=> 0
-);
-*/
+	// Add portal tab: 'selection'
+TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10);
 
 ?>

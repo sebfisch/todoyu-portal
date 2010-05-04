@@ -22,18 +22,6 @@
 if( allowed('portal', 'general:use') ) {
 	TodoyuFrontend::setDefaultTab('portal');
 	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.tab', '?ext=portal', 10);
-
-	$tabsConfig	= TodoyuPortalManager::getTabsConfig();
-	$pos		= 0;
-
-	foreach($tabsConfig as $tabConfig) {
-		$label	= TodoyuFunction::callUserFunction($tabConfig['labelFunc'], false);
-
-		TodoyuFrontend::addSubmenuEntry('portal', $tabConfig['key'], $label, '?ext=portal&tab=' . $tabConfig['key'], $pos++);
-	}
-
-		// Add portal tab: 'selection'
-	TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10);
 }
 
 ?>

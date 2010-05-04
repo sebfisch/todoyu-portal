@@ -44,9 +44,6 @@ class TodoyuPortalRenderer {
 		$jsHandler	= 'Todoyu.Ext.portal.Tab.onSelect.bind(Todoyu.Ext.portal.Tab)';
 		$tabs		= TodoyuPortalManager::getTabs();
 		
-		TodoyuDebug::printInFireBug('renderTabHeads');
-		TodoyuDebug::printInFireBug($tabs, '$tabs');
-
 		if( empty($activeTab) ) {
 			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
 		}

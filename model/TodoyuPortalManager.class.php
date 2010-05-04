@@ -131,15 +131,20 @@ class TodoyuPortalManager {
 
 
 	/**
-	 * Get type of currently selected filtersets
+	 * Hook called before page is rendered completely
+	 * - Add portal submenu entries
 	 *
-	 * @return	String
 	 */
-	public static function getSelectionType() {
-// @todo	check $filtersetIDs needed? method used still?
-		$idFilterset	= 0; //intval($filtersetIDs[0]);
+	public static function hookRenderPage() {
+		$tabsConfig	= self::getTabsConfig();
+		$pos		= 0;
 
-		return TodoyuFiltersetManager::getFiltersetType($idFilterset);
+			// Add all registered tabs
+		foreach($tabsConfig as $tabConfig) {
+			$label	= TodoyuFunction::callUserFunction($tabConfig['labelFunc'], false);
+
+			TodoyuFrontend::addSubmenuEntry('portal', $tabConfig['key'], $label, '?ext=portal&tab=' . $tabConfig['key'], $pos++);
+		}
 	}
 
 }
