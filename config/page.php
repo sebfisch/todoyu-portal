@@ -22,6 +22,10 @@
 if( allowed('portal', 'general:use') ) {
 	TodoyuFrontend::setDefaultTab('portal');
 	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.tab', '?ext=portal', 10);
+
+		// Add portal tab: 'selection'
+	TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10);
+
 }
 
 ?>
