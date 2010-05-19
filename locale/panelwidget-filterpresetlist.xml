@@ -23,5 +23,13 @@
 		<label index="amount">Quantidade</label>
 		<label index="error.noFilters">Nenhum Filtro Criado</label>
 		<label index="error.noTypeFiltersets">Nenhuma Definição de Filtro</label>
-	</labels>	
+	</labels>
+	<labels lang="ru_RU">
+		<label index="title">Мои фильтры</label>
+		<label index="create">Создать фильтры</label>
+		<label index="manage">Управление фильтрами</label>
+		<label index="amount">Колличество</label>
+		<label index="error.noFilters">Пока нет фильтров</label>
+		<label index="error.noTypeFiltersets">Нет фильтров</label>
+	</labels>
 </locallang>

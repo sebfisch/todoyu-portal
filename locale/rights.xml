@@ -12,4 +12,8 @@
 		<label index="general">Configuração</label>
 		<label index="general.use">Utilizar portal e exibir área do portal</label>
 	</labels>
+	<labels lang="ru_RU">
+		<label index="general">Общие</label>
+		<label index="general.use">Использовать портал и показывать область портала</label>
+	</labels>
 </locallang>

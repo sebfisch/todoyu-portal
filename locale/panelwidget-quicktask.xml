@@ -24,4 +24,12 @@
 		<label index="startTracking.label">Iniciar Tracking</label>
 		<label index="workload_chargeable.label">Chargeable</label>
 	</labels>
+	<labels lang="ru_RU">
+		<label index="title">Мастер быстрых задач</label>
+		<label index="popup.title">Создать быструю задачу</label>
+		<label index="addQuicktask">Добавить быструю задачу</label>
+		<label index="workloadTracked.label">Нагрузка</label>
+		<label index="startTracking.label">Начать отслеживание</label>
+		<label index="workload_chargeable.label">Платная</label>
+	</labels>
 </locallang>
