@@ -34,7 +34,7 @@ class TodoyuPortalTabActionController extends TodoyuActionController {
 	 */
 	public function updateAction(array $params) {
 		$tabKey	= $params['tab'];
-		$extra	= isset($params['params']) ? json_decode($params['params'], true) : array();
+		$extra	= isset($params['params']) ? TodoyuArray::assure(json_decode($params['params'], true)) : array();
 
 		TodoyuPortalPreferences::saveActiveTab($tabKey);
 
