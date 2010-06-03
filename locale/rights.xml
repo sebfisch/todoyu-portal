@@ -16,4 +16,8 @@
 		<label index="general">Общие</label>
 		<label index="general.use">Использовать портал и показывать область портала</label>
 	</labels>
+	<labels lang="nl_NL">
+		<label index="general">Algemene instellingen</label>
+		<label index="general.use">Portal gebruiken en portaalgebied bekijken</label>
+	</labels>
 </locallang>

@@ -32,4 +32,12 @@
 		<label index="startTracking.label">Начать отслеживание</label>
 		<label index="workload_chargeable.label">Платная</label>
 	</labels>
+	<labels lang="nl_NL">
+		<label index="title">Sneltaakassistent</label>
+		<label index="popup.title">Sneltaak aanmaken</label>
+		<label index="addQuicktask">Sneltaak toevoegen</label>
+		<label index="workloadTracked.label">Taakpakket</label>
+		<label index="startTracking.label">Registratie starten</label>
+		<label index="workload_chargeable.label">Facturabel</label>
+	</labels>
 </locallang>
