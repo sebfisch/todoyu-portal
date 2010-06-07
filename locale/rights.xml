@@ -20,4 +20,8 @@
 		<label index="general">Algemene instellingen</label>
 		<label index="general.use">Portal gebruiken en portaalgebied bekijken</label>
 	</labels>
+	<labels lang="cs_CZ">
+		<label index="general">Obecné nastavní</label>
+		<label index="general.use">Používat portál a vidět portálovou plochu</label>
+	</labels>
 </locallang>

@@ -40,4 +40,12 @@
 		<label index="startTracking.label">Registratie starten</label>
 		<label index="workload_chargeable.label">Facturabel</label>
 	</labels>
+	<labels lang="cs_CZ">
+		<label index="title">Průvodce rychlým úkolem</label>
+		<label index="popup.title">Vytvořit rychlý úkol</label>
+		<label index="addQuicktask">Přidat rychlý úkol</label>
+		<label index="workloadTracked.label">Odpracovaný čas</label>
+		<label index="startTracking.label">Start Tracking</label>
+		<label index="workload_chargeable.label">Zpoplatněný čas</label>
+	</labels>
 </locallang>
