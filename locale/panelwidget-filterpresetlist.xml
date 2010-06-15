@@ -48,4 +48,12 @@
 		<label index="error.noFilters">Není výtvořen žáden filtr</label>
 		<label index="error.noTypeFiltersets">Není definována žádna skupina filtrů</label>
 	</labels>
+	<labels lang="ja_JP">
+		<label index="title">マイフィルタ</label>
+		<label index="create">フィルタの作成</label>
+		<label index="manage">フィルタの管理</label>
+		<label index="amount">量</label>
+		<label index="error.noFilters">まだフィルタは作成されていません</label>
+		<label index="error.noTypeFiltersets">フィルタは定義されていません</label>
+	</labels>
 </locallang>

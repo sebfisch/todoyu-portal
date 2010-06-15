@@ -24,4 +24,8 @@
 		<label index="general">Obecné nastavní</label>
 		<label index="general.use">Používat portál a vidět portálovou plochu</label>
 	</labels>
+	<labels lang="ja_JP">
+		<label index="general">一般の設定</label>
+		<label index="general.use">ポータルの使用とポータルエリアの表示</label>
+	</labels>
 </locallang>
