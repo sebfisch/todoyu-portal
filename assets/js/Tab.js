@@ -44,7 +44,8 @@ Todoyu.Ext.portal.Tab = {
 	 * Show tab
 	 *
 	 * @param	{String}		tabKey
-	 * @param	{Boolean}		refresh
+	 * @param	{Boolean}		activateTab
+	 * @param	{Array}			extraParams
 	 */
 	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
