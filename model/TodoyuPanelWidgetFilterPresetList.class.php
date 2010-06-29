@@ -126,14 +126,17 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	public function renderContent() {
 		$tmpl	= 'ext/portal/view/panelwidget-filterpresetlist.tmpl';
 
-		$filtersetOptions	= $this->getFiltersetOptions();
+//		$filtersetOptions	= $this->getFiltersetOptions();
 
 		$data	= array(
 			'id'		=> $this->getID(),
 			'types'		=> $this->getFiltersetTypes(),
-			'options'	=> $filtersetOptions,
+//			'options'	=> $filtersetOptions,
 			'selected'	=> array()
 		);
+		
+//		TodoyuDebug::printInFireBug($data['types']);
+//		TodoyuDebug::printInFireBug($filtersetOptions);
 
 		if( TodoyuPortalPreferences::getActiveTab() === 'selection' ) {
 			$data['selected']	= self::getActiveFiltersetIDs();
