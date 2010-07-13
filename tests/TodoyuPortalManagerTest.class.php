@@ -79,7 +79,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 
 
 	/**
-	 *	Test TodoyuPortalManager::addTab
+	 * Test TodoyuPortalManager::addTab
 	 */
 	public function testAddTab() {
 		$tabKey	= $this->array['tabKeys'][0];
