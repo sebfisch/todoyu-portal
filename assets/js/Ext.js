@@ -23,7 +23,6 @@
 
 Todoyu.Ext.portal = {
 
-
 	PanelWidget:	{},
 
 	Headlet:		{},
@@ -49,7 +48,6 @@ Todoyu.Ext.portal = {
 		}
 
 /*
-
 			// Task already within current view (e.g 'portal')
 		if( Todoyu.exists('task-' + idTask) ) {
 
@@ -64,9 +62,6 @@ Todoyu.Ext.portal = {
 			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 		}
 */
-
-
-
 	},
 
 
@@ -97,6 +92,7 @@ Todoyu.Ext.portal = {
 	 * Save portal preferences
 	 *
 	 * @param	{String}	action
+	 * @param	{String}	value
 	 * @param	{Number}	idItem
 	 * @param	{String}	onComplete
 	 */
