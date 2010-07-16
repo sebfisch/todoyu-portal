@@ -42,9 +42,6 @@ Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	),
 	'css' => array(
 		array(
-			'file' 		=> 'ext/portal/assets/css/global.css',
-		),
-		array(
 			'file' 		=> 'ext/portal/assets/css/ext.css',
 			'position'	=> 100
 		),
