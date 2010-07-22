@@ -24,6 +24,10 @@
 		<label index="general">Obecné nastavní</label>
 		<label index="general.use">Používat portál a vidět portálovou plochu</label>
 	</labels>
+	<labels lang="sr_RS">
+		<label index="general">Општа подешавања</label>
+		<label index="general.use">Користи портал и види област портал-а</label>
+	</labels>
 	<labels lang="ja_JP">
 		<label index="general">一般の設定</label>
 		<label index="general.use">ポータルの使用とポータルエリアの表示</label>
