@@ -52,7 +52,7 @@ class TodoyuPortalManager {
 	 */
 	public static function getTabsConfig() {
 		TodoyuExtensions::loadAllPage();
-		
+
 		$tabs	= TodoyuArray::assure(Todoyu::$CONFIG['EXT']['portal']['tabs']);
 
 		return TodoyuArray::sortByLabel($tabs, 'position');

@@ -43,7 +43,7 @@ class TodoyuPortalRenderer {
 		$name		= 'portal';
 		$jsHandler	= 'Todoyu.Ext.portal.Tab.onSelect.bind(Todoyu.Ext.portal.Tab)';
 		$tabs		= TodoyuPortalManager::getTabs();
-		
+
 		if( empty($activeTab) ) {
 			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
 		}

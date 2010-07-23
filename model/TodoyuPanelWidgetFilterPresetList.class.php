@@ -134,7 +134,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 //			'options'	=> $filtersetOptions,
 			'selected'	=> array()
 		);
-		
+
 //		TodoyuDebug::printInFireBug($data['types']);
 //		TodoyuDebug::printInFireBug($filtersetOptions);
 

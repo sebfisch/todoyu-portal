@@ -31,7 +31,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
 	 * List of all select items with filtersets
-	 */	
+	 */
 	lists: {},
 
 
@@ -48,7 +48,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 			var type = list.id.split('-').last();
 			this.lists[type] = list;
 
-			list.observe('change', this.onSelectionChange.bindAsEventListener(this, type));			
+			list.observe('change', this.onSelectionChange.bindAsEventListener(this, type));
 		}.bind(this));
 	},
 
@@ -71,7 +71,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 		};
 
 			// Refresh tab content
-		this.ext.Tab.showTab('selection', true, params);	
+		this.ext.Tab.showTab('selection', true, params);
 	},
 
 
@@ -98,7 +98,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 		$H(this.lists).each(function(type, pair){
 			if( pair.key !== type ) {
 				pair.value.select('option').each(function(option){
-					option.selected = false;	
+					option.selected = false;
 				});
 			}
 		}.bind(this, type));
