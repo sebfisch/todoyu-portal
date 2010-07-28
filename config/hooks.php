@@ -18,7 +18,7 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-	// Hooks adds portal submenu entries in subnavi
+	// Hooks adds portal sub menu entries in sub navigation
 TodoyuHookManager::registerHook('core', 'renderPage', 'TodoyuPortalManager::hookRenderPage');
 
 ?>
