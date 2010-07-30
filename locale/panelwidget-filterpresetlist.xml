@@ -32,6 +32,14 @@
 		<label index="error.noFilters">Пока нет фильтров</label>
 		<label index="error.noTypeFiltersets">Нет фильтров</label>
 	</labels>
+	<labels lang="fr_FR">
+		<label index="title">Mes filtres</label>
+		<label index="create">Créer des filtres</label>
+		<label index="manage">Gérer les filtres</label>
+		<label index="amount">Quantité</label>
+		<label index="error.noFilters">Aucun filtre n'a encore été créé</label>
+		<label index="error.noTypeFiltersets">Aucun filtre défini</label>
+	</labels>
 	<labels lang="nl_NL">
 		<label index="title">Mijn filters</label>
 		<label index="create">Filters aanmaken</label>

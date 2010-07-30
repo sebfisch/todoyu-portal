@@ -16,6 +16,10 @@
 		<label index="general">Общие</label>
 		<label index="general.use">Использовать портал и показывать область портала</label>
 	</labels>
+	<labels lang="fr_FR">
+		<label index="general">Paramètres généraux</label>
+		<label index="general.use">Utiliser et afficher le tableau de bord</label>
+	</labels>
 	<labels lang="nl_NL">
 		<label index="general">Algemene instellingen</label>
 		<label index="general.use">Portal gebruiken en portaalgebied bekijken</label>
