@@ -1,3 +1,15 @@
+/* ----------------------------------------------
+	Extension icon: stand-alone and in heading
+   ---------------------------------------------- */
+span.extIconPortal {
+	background:url('../img/exticon.png') no-repeat 0 0px;
+}
+
+h1.extIconPortal .title {
+	background:url('../img/exticon.png') no-repeat 0 5px;
+}
+
+
 /* -----------------
 	Sub menu
    ----------------- */
@@ -16,14 +28,11 @@
 	background-position:6px -55px;
 }
 
-h1.extIconPortal .title {
-	background:url('../img/exticon.png') no-repeat 0 5px;
-}
+
 
 /* -----------------
 	Tabs
    ----------------- */
-
 #portal-tab-selection span.icon {
 	background:url(../img/icons.png) no-repeat 0 3px;
 }
@@ -37,7 +46,6 @@ h1.extIconPortal .title {
 /* ------------------------
 	Special Task Header
    ------------------------ */
-
 .portalTaskList h1 span.taskDate,
 .portalTaskList .task h3 span.taskDate {
 	width:45px;
