@@ -85,6 +85,8 @@ Todoyu.Ext.portal.Tab = {
 		if( numSelected !== null ) {
 			this.updateNumResults('selection', numSelected);
 		}
+
+		Todoyu.Hook.exec('portal.tab.showed', tabKey);
 	},
 
 
