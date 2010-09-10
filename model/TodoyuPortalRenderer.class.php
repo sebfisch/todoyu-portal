@@ -119,9 +119,14 @@ class TodoyuPortalRenderer {
 		}
 
 
+			// Send items amount header to update filter-tab, render items listing
 		if( sizeof($filtersetIDs) === 0 ) {
+				// No filterset selected
+			TodoyuHeader::sendTodoyuHeader('selection', 0);
+
 			return self::renderNoSelectionMessage();
 		} else {
+				// Get items, send amount header, render listing
 			$resultItemIDs	= TodoyuFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs);
 
 			TodoyuHeader::sendTodoyuHeader('selection', sizeof($resultItemIDs));
