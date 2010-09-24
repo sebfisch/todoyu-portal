@@ -62,7 +62,8 @@
 		<label index="manage">Обрађуј филтере</label>
 		<label index="amount">Количина</label>
 		<label index="error.noFilters">Нема ниједног намештеног филтера досад</label>
-		<label index
+		<label index="error.noTypeFiltersets">Нема дефинисаног филтера</label>
+	</labels>	
 	<labels lang="ja_JP">
 		<label index="title">マイフィルタ</label>
 		<label index="create">フィルタの作成</label>
