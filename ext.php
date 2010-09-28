@@ -30,8 +30,8 @@ define('EXTID_PORTAL',	111);
 define('PATH_EXT_PORTAL', PATH_EXT . '/portal');
 
 	// Register module locales
-TodoyuLanguage::register('portal', PATH_EXT_PORTAL . '/locale/ext.xml');
-TodoyuLanguage::register('panelwidget-filterpresetlist', PATH_EXT_PORTAL . '/locale/panelwidget-filterpresetlist.xml');
+TodoyuLabelManager::register('portal', 'portal', 'ext.xml');
+TodoyuLabelManager::register('panelwidget-filterpresetlist', 'portal', 'panelwidget-filterpresetlist.xml');
 
 	// Request configurations
 	// @notice	Auto-loaded configs if available: admin, assets, create, contextmenu, extinfo, filters, form, page, panelwidgets, rights, search

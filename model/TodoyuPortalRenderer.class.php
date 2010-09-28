@@ -79,7 +79,7 @@ class TodoyuPortalRenderer {
 	 * @return	String
 	 */
 	public static function getSelectionTabLabel($count = true) {
-		$label	= TodoyuLanguage::getLabel('portal.tab.selection');
+		$label	= TodoyuLabelManager::getLabel('portal.tab.selection');
 
 		if( $count ) {
 			$numResults	= TodoyuPortalManager::getSelectionCount();
