@@ -123,8 +123,23 @@ Todoyu.Ext.portal.Tab = {
 
 
 	/**
+	 * Get number of results showed in the tab (parsed from tab label)
+	 *
+	 * @param	{String}	tabKey
+	 */
+	getNumResults: function(tabKey) {
+		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
+		var pattern	= /\((\d+)\)/;
+		var result	= labelEl.innerHTML.match(pattern);
+
+		return result[1];
+	},
+
+
+
+	/**
 	 * Get key of currently active tab
-	 * 
+	 *
 	 * @return	{String}
 	 */
 	getActiveTab: function() {
