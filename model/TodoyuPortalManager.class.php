@@ -101,7 +101,7 @@ class TodoyuPortalManager {
 	 * @return	Array
 	 */
 	public static function getTaskContextMenuItems($idTask, array $items) {
-		$idTask	= intval($idTask);
+//		$idTask	= intval($idTask);
 
 			// Only show it in portal
 		if( AREA === EXTID_PORTAL ) {

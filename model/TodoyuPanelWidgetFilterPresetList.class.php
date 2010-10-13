@@ -92,7 +92,7 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 //				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
 			}
 
-			foreach($typeFiltersets as $index => $typeFilterset) {
+			foreach($typeFiltersets as $typeFilterset) {
 				$resultCount	= TodoyuFiltersetManager::getFiltersetCount($typeFilterset['id']);
 
 				$types[$typeKey]['options'][] = array(
