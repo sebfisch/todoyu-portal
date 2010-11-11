@@ -18,9 +18,15 @@
 *****************************************************************************/
 
 /**
- *	Ext: portal
+ * @module	Portal
  */
 
+/**
+ * Portal main object
+ *
+ * @class		portal
+ * @namespace	Todoyu.Ext
+ */
 Todoyu.Ext.portal = {
 
 	PanelWidget:	{},
