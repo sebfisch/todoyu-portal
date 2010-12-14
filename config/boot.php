@@ -18,6 +18,18 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
+	// Declare ext ID, path
+define('EXTID_PORTAL',	111);
+define('PATH_EXT_PORTAL', PATH_EXT . '/portal');
+
+require_once( PATH_EXT_PORTAL . '/config/constants.php' );
+
+	// Register module locales
+TodoyuLabelManager::register('portal', 'portal', 'ext.xml');
+TodoyuLabelManager::register('panelwidget-filterpresetlist', 'portal', 'panelwidget-filterpresetlist.xml');
+
+	// Register context menu functions
+TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 	// Hooks adds portal sub menu entries in sub navigation
 TodoyuHookManager::registerHook('core', 'renderPage', 'TodoyuPortalManager::hookRenderPage');
 

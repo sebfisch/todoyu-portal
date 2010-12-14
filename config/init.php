@@ -18,14 +18,6 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
-/**
- * General configuration for portal extension
- *
- * @package		Todoyu
- * @subpackage	Admin
- */
 
-	// Register context menu functions
-TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
 
 ?>
