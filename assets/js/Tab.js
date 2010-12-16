@@ -143,7 +143,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @return	{String}
 	 */
 	getActiveTab: function() {
-		return Todoyu.Tabs.getActiveKey('portal-tabs');
+		return Todoyu.Tabs.getActiveKey('portal');
 	},
 
 
