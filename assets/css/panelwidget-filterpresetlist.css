@@ -3,10 +3,6 @@
 	background:url(../../../portal/assets/img/icons.png) no-repeat 5px 5px;
 }
 
-#panelwidget-filterpresetlist button.manageFilters {
-	margin-left:5px;
-}
-
 #panelwidget-filterpresetlist button.manageFilters .icon {
 	width:22px;
 	background:url(../../../search/assets/img/icons.png) no-repeat 0 -476px;
