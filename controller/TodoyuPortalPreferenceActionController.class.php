@@ -27,7 +27,8 @@
 class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 	/**
-	 * @todo	comment
+	 * Save active tab ID preference
+	 *
 	 * @param	Array	$params
 	 */
 	public function tabAction(array $params) {
@@ -39,7 +40,8 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 
 	/**
-	 * @todo	comment
+	 * Save preference: currently selected filtersets for selection tab
+	 *
 	 * @param	Array	$params
 	 */
 	public function filtersetsAction(array $params) {
