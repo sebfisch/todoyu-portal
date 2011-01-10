@@ -36,6 +36,17 @@ Todoyu.Ext.portal = {
 
 
 	/**
+	 * Initialize portal
+	 */
+	init: function() {
+		if( Todoyu.getArea() == 'portal' ) {
+			Todoyu.Hook.add('project.quickTask.saved', this.onQuickTaskSaved.bind(this)); 
+		}
+	},
+
+
+
+	/**
 	 * Show task
 	 * If task is currently displayed in portal area:	jump to it
 	 * If task is currently not displayed in portal area: jump to it in project area
@@ -52,22 +63,6 @@ Todoyu.Ext.portal = {
 		} else {
 			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
 		}
-
-/*
-			// Task already within current view (e.g 'portal')
-		if( Todoyu.exists('task-' + idTask) ) {
-
-				// Scroll to task, open task container
-			this.expandSubtaskContainers( idTask );
-//			location.hash = 'task-' + idTask;
-			Todoyu.Ui.scrollToElement( $('task-3524') );
-			Todoyu.Ui.twinkle( $('task-3524') );
-
-		} else {
-				// task was not in view, jump to 'project' view and show the task
-			Todoyu.Ext.project.goToTaskInProject(idTask, idProject);
-		}
-*/
 	},
 
 
@@ -90,6 +85,24 @@ Todoyu.Ext.portal = {
 
 			container = $('task-' + idCTask).up('.subtasks');
 		}
+	},
+
+
+
+	/**
+	 * Handler when quick task has been saved: Update the current portal task list
+	 *
+	 * @param	{Number}			idTask
+	 * @param	{Number}			idProject
+	 * @param	{Ajax.Response}		response
+	 */
+	onQuickTaskSaved: function(idTask, idProject, response) {
+		var activeTabKey	= this.Tab.getActiveTab();
+
+		if( activeTabKey != 'appointment' ) {
+				// Reload tab content
+			this.Tab.showTab(activeTabKey, false);
+		} 
 	},
 
 

@@ -27,6 +27,11 @@
 class TodoyuPortalExtActionController extends TodoyuActionController {
 
 
+	/**
+	 * Initialize: restrict access
+	 *
+	 * @param	Array	$params
+	 */
 	public function init(array $params) {
 		restrict('portal', 'general:use');
 	}
@@ -67,6 +72,9 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('panelWidgets', $panelWidgets);
 		TodoyuPage::set('tabHeads', $tabHeads);
 		TodoyuPage::set('activeTabContent', $activeTabContent);
+
+			// Add JS onLoad functions 
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.init.bind(Todoyu.Ext.portal)', 100);
 
 			// Display output
 		return TodoyuPage::render();
