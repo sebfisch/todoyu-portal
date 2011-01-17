@@ -31,7 +31,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * onSelect event handler
 	 *
-	 * @param	{Object}	event
+	 * @param	{Event}		event
 	 * @param	{String}	tabKey
 	 */
 	onSelect: function(event, tabKey) {
