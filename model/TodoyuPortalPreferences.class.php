@@ -165,7 +165,7 @@ class TodoyuPortalPreferences {
 		$idTab			= intval($idTab);
 		$filtersetIDs	= TodoyuArray::intExplode(',', $filtersetIDs, true, true);
 
-		if($idTab == 0) {
+		if( $idTab == 0 ) {
 				// 'Selection' tab
 			TodoyuPreferenceManager::deletePreference(EXTID_PORTAL, 'filterset', null, $idTab);
 
