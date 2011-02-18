@@ -45,8 +45,6 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 	 * @return	String
 	 */
 	public function defaultAction(array $params) {
-		restrict('portal', 'general:use');
-
 			// Activate FE tab
 		TodoyuFrontend::setActiveTab('portal');
 

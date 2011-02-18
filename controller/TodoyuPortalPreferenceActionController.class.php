@@ -27,6 +27,17 @@
 class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 
 	/**
+	 * Initialize: restrict access
+	 *
+	 * @param	Array	$params
+	 */
+	public function init(array $params) {
+		restrict('portal', 'general:use');
+	}
+
+
+
+	/**
 	 * Save active tab ID preference
 	 *
 	 * @param	Array	$params

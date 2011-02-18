@@ -27,6 +27,17 @@
 class TodoyuPortalTabActionController extends TodoyuActionController {
 
 	/**
+	 * Initialize: restrict access
+	 *
+	 * @param	Array	$params
+	 */
+	public function init(array $params) {
+		restrict('portal', 'general:use');
+	}
+
+
+
+	/**
 	 * Update tab content
 	 *
 	 * @param	Array		$params
