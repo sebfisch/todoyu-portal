@@ -129,7 +129,7 @@ class TodoyuPortalManager {
 	 */
 	public static function getSelectionCount() {
 		$filtersetIDs	= TodoyuPortalPreferences::getSelectionTabFiltersetIDs();
-		$numResults		= TodoyuFiltersetManager::getFiltersetsCount($filtersetIDs);
+		$numResults		= TodoyuSearchFiltersetManager::getFiltersetsCount($filtersetIDs);
 
 		return $numResults;
 	}

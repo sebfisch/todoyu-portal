@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Portal
  */
-class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
+class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
 
 	/**
 	 * Initialize filter presetlist widget
@@ -57,11 +57,11 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 */
 	private function getFiltersetOptions() {
 		$activeFiltersets	= self::getActiveFiltersetIDs();
-		$filtersets			= TodoyuFiltersetManager::getTypeFiltersets('TASK', 0, false);
+		$filtersets			= TodoyuSearchFiltersetManager::getTypeFiltersets('TASK', 0, false);
 
 		foreach($filtersets as $index => $filterset) {
-			$conditions	= TodoyuFiltersetManager::getFiltersetConditions($filterset['id']);
-			$taskFilter	= new TodoyuTaskFilter($conditions);
+			$conditions	= TodoyuSearchFiltersetManager::getFiltersetConditions($filterset['id']);
+			$taskFilter	= new TodoyuProjectTaskFilter($conditions);
 			$taskIDs	= $taskFilter->getTaskIDs();
 
 				// Update filterset
@@ -81,19 +81,19 @@ class TodoyuPanelWidgetFilterPresetList extends TodoyuPanelWidget implements Tod
 	 * @return	Array
 	 */
 	public function getFiltersetTypes() {
-		$typeKeys	= TodoyuFilterManager::getFilterTypes(true);
+		$typeKeys	= TodoyuSearchFilterManager::getFilterTypes(true);
 		$types		= array();
 
 		foreach($typeKeys as $typeKey) {
-			$typeFiltersets	= TodoyuFiltersetManager::getTypeFiltersets($typeKey);
+			$typeFiltersets	= TodoyuSearchFiltersetManager::getTypeFiltersets($typeKey);
 
 			if( sizeof($typeFiltersets) > 0 ) {
-				$types[$typeKey]['title'] = TodoyuFilterManager::getFilterTypeLabel($typeKey);
+				$types[$typeKey]['title'] = TodoyuSearchFilterManager::getFilterTypeLabel($typeKey);
 //				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
 			}
 
 			foreach($typeFiltersets as $typeFilterset) {
-				$resultCount	= TodoyuFiltersetManager::getFiltersetCount($typeFilterset['id']);
+				$resultCount	= TodoyuSearchFiltersetManager::getFiltersetCount($typeFilterset['id']);
 
 				$types[$typeKey]['options'][] = array(
 					'label'	=> TodoyuString::crop($typeFilterset['title'], 46, '', false) . ' (' . $resultCount . ')',

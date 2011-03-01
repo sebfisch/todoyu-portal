@@ -128,7 +128,7 @@ class TodoyuPortalPreferences {
 			$filtersetIDs = explode(',', $filtersetIDs);
 
 				// Remove references of non-existent filtersets
-			$allFiltersetIDs	= TodoyuFiltersetManager::getFiltersetIDs(personid());
+			$allFiltersetIDs	= TodoyuSearchFiltersetManager::getFiltersetIDs(personid());
 			$allFiltersetIDs	= TodoyuArray::flatten($allFiltersetIDs);
 
 			$filtersetIDs	= array_intersect($allFiltersetIDs, $filtersetIDs);

@@ -110,7 +110,7 @@ class TodoyuPortalRenderer {
 			// Check if type is available as parameter
 		if( ! isset($params['type']) ) {
 			if( sizeof($filtersetIDs) > 0 ) {
-				$type	= TodoyuFiltersetManager::getFiltersetType($filtersetIDs[0]);
+				$type	= TodoyuSearchFiltersetManager::getFiltersetType($filtersetIDs[0]);
 			} else {
 				$type	= 'task';
 			}
@@ -127,7 +127,7 @@ class TodoyuPortalRenderer {
 			return self::renderNoSelectionMessage();
 		} else {
 				// Get items, send amount header, render listing
-			$resultItemIDs	= TodoyuFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs);
+			$resultItemIDs	= TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs);
 
 			TodoyuHeader::sendTodoyuHeader('selection', sizeof($resultItemIDs));
 
