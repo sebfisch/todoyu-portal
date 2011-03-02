@@ -9,7 +9,7 @@
 	</span>
 {else}
 	<div class="notification">
-		{Label panelwidget-filterpresetlist.error.noFilters}
+		{Label portal.panelwidget-filterpresetlist.error.noFilters}
 	</div>
 {/foreach}
 
@@ -18,9 +18,9 @@
 	<br/>
 	{$numFiltersets = count(TodoyuArray::mergeSubArrays(TodoyuArray::getColumn($types, 'options')))}
 	{if $numFiltersets > 0}
-		{Button label="panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+		{Button label="portal.panelwidget-filterpresetlist.manage" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{else}
-		{Button label="panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
+		{Button label="portal.panelwidget-filterpresetlist.create" class="manageFilters" onclick="Todoyu.Ext.portal.PanelWidget.FilterPresetList.manageFiltersets()"}
 	{/if}
 {/restrict}
 </div>
