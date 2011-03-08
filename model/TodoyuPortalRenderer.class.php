@@ -118,7 +118,6 @@ class TodoyuPortalRenderer {
 			$type	= trim($params['type']);
 		}
 
-
 			// Send items amount header to update filter-tab, render items listing
 		if( sizeof($filtersetIDs) === 0 ) {
 				// No filterset selected
