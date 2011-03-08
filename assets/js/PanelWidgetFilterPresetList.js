@@ -38,6 +38,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
 	 * Init
+	 *
+	 * @method	init
 	 */
 	init: function() {
 			// Find all lists
@@ -56,7 +58,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
 	 * Handler when selection in one of the lists is changed
-	 * 
+	 *
+	 * @method	onSelectionChange
 	 * @param	{Event}			event
 	 * @param	{String}		type		List type
 	 */
@@ -78,8 +81,9 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
 	 * Get selected filterset IDs
-	 * 
-	 * @return	Array
+	 *
+	 * @method	getFiltersets
+	 * @return	{Array}
 	 */
 	getFiltersets: function() {
 		return $H(this.lists).collect(function(pair){
@@ -90,8 +94,9 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 
 	/**
-	 * Unselect all options in the other lists, because only one type can be active
-	 * 
+	 * Deselect all options in the other lists, because only one type can be active
+	 *
+	 * @method	unselectOtherTypes
 	 * @param	{String}		type
 	 */
 	unselectOtherTypes: function(type) {
@@ -108,6 +113,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
 	 * Manage filtersets
+	 *
+	 * @method	manageFiltersets
 	 */
 	manageFiltersets: function() {
 		Todoyu.goTo('search', 'ext');

@@ -31,6 +31,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * onSelect event handler
 	 *
+	 * @method	onSelect
 	 * @param	{Event}		event
 	 * @param	{String}	tabKey
 	 */
@@ -43,6 +44,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Show tab
 	 *
+	 * @method	showTab
 	 * @param	{String}		tabKey
 	 * @param	{Boolean}		activateTab
 	 * @param	{Array}			extraParams
@@ -76,6 +78,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Handler when tab is showed and updated
 	 *
+	 * @method	onTabShowed
 	 * @param	{String}				tabKey
 	 * @param	{Ajax.Response}		response
 	 */
@@ -94,6 +97,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Update the label of a tab
 	 *
+	 * @method	setTabLabel
 	 * @param	{String}		tabKey
 	 * @param	{String}		newLabel
 	 */
@@ -108,6 +112,7 @@ Todoyu.Ext.portal.Tab = {
 	 * Replace the number in the brackets
 	 * @example	'Tasks (43)' => 'Tasks (33)'
 	 *
+	 * @method	updateNumResults
 	 * @param	{String}			tabKey
 	 * @param	{Number}			numResults
 	 */
@@ -125,6 +130,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Get number of results showed in the tab (parsed from tab label)
 	 *
+	 * @method	getNumResults
 	 * @param	{String}	tabKey
 	 */
 	getNumResults: function(tabKey) {
@@ -140,6 +146,7 @@ Todoyu.Ext.portal.Tab = {
 	/**
 	 * Get key of currently active tab
 	 *
+	 * @method	getActiveTab
 	 * @return	{String}
 	 */
 	getActiveTab: function() {
@@ -150,6 +157,8 @@ Todoyu.Ext.portal.Tab = {
 
 	/**
 	 * Refresh tabs display
+	 *
+	 * @method	refresh
 	 */
 	refresh: function() {
 		this.showTab(this.getActiveTab());

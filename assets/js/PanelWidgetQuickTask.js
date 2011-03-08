@@ -33,6 +33,8 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 
 	/**
 	 * Open 'add quicktask' popup dialog
+	 *
+	 * @method	add
 	 */
 	add: function() {
 		Todoyu.Ext.project.QuickTask.openPopup(this.onAdded.bind(this));
@@ -43,6 +45,7 @@ Todoyu.Ext.portal.PanelWidget.QuickTask = {
 	/**
 	 * Handle quicktask having been added
 	 *
+	 * @method	onAdded
 	 * @param	{Number}		idTask
 	 * @param	{Number}		idProject
 	 * @param	{Boolean}		started

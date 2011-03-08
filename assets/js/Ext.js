@@ -37,6 +37,8 @@ Todoyu.Ext.portal = {
 
 	/**
 	 * Initialize portal
+	 *
+	 * @method	init
 	 */
 	init: function() {
 		if( Todoyu.getArea() == 'portal' ) {
@@ -51,6 +53,7 @@ Todoyu.Ext.portal = {
 	 * If task is currently displayed in portal area:	jump to it
 	 * If task is currently not displayed in portal area: jump to it in project area
 	 *
+	 * @method	showTask
 	 * @param	{Number}	idTask
 	 * @param	{Number}	idProject
 	 */
@@ -70,6 +73,7 @@ Todoyu.Ext.portal = {
 	/**
 	 * Open sub task containers of given task
 	 *
+	 * @method	expandSubtaskContainers
 	 * @param	{Number}	idTask
 	 */
 	expandSubtaskContainers: function(idTask) {
@@ -92,6 +96,7 @@ Todoyu.Ext.portal = {
 	/**
 	 * Handler when quick task has been saved: Update the current portal task list
 	 *
+	 * @method	onQuickTaskSaved
 	 * @param	{Number}			idTask
 	 * @param	{Number}			idProject
 	 * @param	{Ajax.Response}		response
@@ -110,6 +115,7 @@ Todoyu.Ext.portal = {
 	/**
 	 * Save portal preferences
 	 *
+	 * @method	savePref
 	 * @param	{String}	action
 	 * @param	{String}	value
 	 * @param	{Number}	idItem
