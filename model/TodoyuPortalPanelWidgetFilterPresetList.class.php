@@ -24,7 +24,7 @@
  * @package		Todoyu
  * @subpackage	Portal
  */
-class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget implements TodoyuPanelWidgetIf {
+class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 
 	/**
 	 * Initialize filter presetlist widget
@@ -135,17 +135,11 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget implemen
 			'selected'	=> array()
 		);
 
-//		TodoyuDebug::printInFireBug($data['types']);
-//		TodoyuDebug::printInFireBug($filtersetOptions);
-
 		if( TodoyuPortalPreferences::getActiveTab() === 'selection' ) {
 			$data['selected']	= self::getActiveFiltersetIDs();
 		}
 
-		$content	= render($tmpl, $data);
-		$this->setContent($content);
-
-		return $content;
+		return render($tmpl, $data);
 	}
 
 
@@ -157,8 +151,6 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget implemen
 	 */
 	public function render() {
 		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.PanelWidget.FilterPresetList.init.bind(Todoyu.Ext.portal.PanelWidget.FilterPresetList)', 100);
-
-		$this->renderContent();
 
 		return parent::render();
 	}
