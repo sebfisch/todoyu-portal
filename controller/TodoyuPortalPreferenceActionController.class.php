@@ -67,10 +67,10 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	/**
 	 * Save task being expanded / collapsed.
 	 * $params contains task ID and expand-state.
-	 * 		task id:	$params['item'],
+	 * 		task ID:	$params['item'],
 	 * 		expanded:	$params['value'] === 1
 	 *
-	 * @param array $params
+	 * @param	Array	$params
 	 */
 	public function taskOpenAction(array $params) {
 		$idTask		= intval($params['item']);
