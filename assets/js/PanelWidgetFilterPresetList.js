@@ -23,14 +23,18 @@
 Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 	/**
-	 * Ext shortcut
+	 * Reference to extension
 	 *
-	 * @var	{Object}	ext
+	 * @property	ext
+	 * @type		Object
 	 */
 	ext:	Todoyu.Ext.portal,
 
 	/**
 	 * List of all select items with filtersets
+	 *
+	 * @property	lists
+	 * @type		Object
 	 */
 	lists: {},
 
