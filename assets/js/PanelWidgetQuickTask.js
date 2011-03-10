@@ -18,6 +18,10 @@
 *****************************************************************************/
 
 /**
+ * @module	Portal
+ */
+
+/**
  * Panel widget: Quick task
  */
 Todoyu.Ext.portal.PanelWidget.QuickTask = {

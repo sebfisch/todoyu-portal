@@ -18,6 +18,10 @@
 *****************************************************************************/
 
 /**
+ * @module	Portal
+ */
+
+/**
  * Panel widget: filter preset list
  */
 Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
