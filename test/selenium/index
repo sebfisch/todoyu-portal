@@ -9,7 +9,10 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="../../../loginpage/test/selenium/loginpage_login-to-portal">loginpage > login-to-portal</a></td></tr>
+<tr><td><a href="portal_main-tab-active">portal_main-tab-active</a></td></tr>
 <tr><td><a href="portal_main-tabs-present">portal > main-tabs present</a></td></tr>
+<tr><td><a href="../../../project/test/selenium/portal_subtab-myfilter">portal > tab - my filter</a></td></tr>
+<tr><td><a href="portal_task-expand-collapse">portal > task expand collapse</a></td></tr>
 <tr><td><a href="portal_task-contextmenu">portal > task-contextmenu</a></td></tr>
 <tr><td><a href="portal_panelwidget-filters">portal > panelwidget: filters</a></td></tr>
 <tr><td><a href="../../../loginpage/test/selenium/headlet_logout">loginpage > headlet: logout</a></td></tr>

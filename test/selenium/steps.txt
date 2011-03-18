@@ -2,7 +2,10 @@ todoyu selenium testsuite steps: portal extension
 -------------------------------------------------
 
 * portal area:
+	main-tab activated?
 	presents: main-tabs
+* tasks:
+	expand/collapse works, pref saved?
 * task contextmenu:
 	can be opened/closed, all options and sub menus present
 * filters panelwidget:
