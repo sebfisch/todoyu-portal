@@ -1,0 +1,11 @@
+todoyu selenium testsuite steps: portal extension
+-------------------------------------------------
+
+* portal area:
+	presents: main-tabs
+* task contextmenu:
+	can be opened/closed, all options and sub menus present
+* filters panelwidget:
+	present with all elements
+	test toggle expand/collapse with pref.
+	test "manage filters" option (search area reachable?)

@@ -11,7 +11,6 @@
 <tr><td><a href="../../../loginpage/test/selenium/loginpage_login-to-portal">loginpage > login-to-portal</a></td></tr>
 <tr><td><a href="portal_main-tabs-present">portal > main-tabs present</a></td></tr>
 <tr><td><a href="portal_task-contextmenu">portal > task-contextmenu</a></td></tr>
-<tr><td><a href="portal_headlet-about">portal > headlet: about</a></td></tr>
 <tr><td><a href="portal_panelwidget-filters">portal > panelwidget: filters</a></td></tr>
 <tr><td><a href="../../../loginpage/test/selenium/headlet_logout">loginpage > headlet: logout</a></td></tr>
 </tbody></table>
