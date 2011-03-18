@@ -2,7 +2,7 @@ todoyu selenium testsuite steps: portal extension
 -------------------------------------------------
 
 * portal area:
-	main-tab activated?
+	reachable, main-tab activated, page title set?
 	presents: main-tabs
 * tasks:
 	expand/collapse works, pref saved?
