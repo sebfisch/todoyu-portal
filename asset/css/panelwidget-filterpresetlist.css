@@ -1,11 +1,11 @@
 /* icon */
 #panelwidget-filterpresetlist h1 .title {
-	background:url(../../../portal/assets/img/icons.png) no-repeat 5px 5px;
+	background:url(../../../portal/asset/img/icons.png) no-repeat 5px 5px;
 }
 
 #panelwidget-filterpresetlist button.manageFilters .icon {
 	width:22px;
-	background:url(../../../search/assets/img/icons.png) no-repeat 0 -476px;
+	background:url(../../../search/asset/img/icons.png) no-repeat 0 -476px;
 }
 
 #panelwidget-filterpresetlist select option {

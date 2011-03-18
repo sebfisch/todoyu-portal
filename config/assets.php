@@ -28,25 +28,25 @@
 Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	'js' => array(
 		array(
-			'file' 		=> 'ext/portal/assets/js/Ext.js',
+			'file' 		=> 'ext/portal/asset/js/Ext.js',
 			'position'	=> 100
 		),
 		array(
-			'file' 		=> 'ext/portal/assets/js/Tab.js',
+			'file' 		=> 'ext/portal/asset/js/Tab.js',
 			'position'	=> 102
 		),
 		array(
-			'file' => 'ext/portal/assets/js/PanelWidgetFilterPresetList.js',
+			'file' => 'ext/portal/asset/js/PanelWidgetFilterPresetList.js',
 			'position' => 110
 		)
 	),
 	'css' => array(
 		array(
-			'file' 		=> 'ext/portal/assets/css/ext.css',
+			'file' 		=> 'ext/portal/asset/css/ext.css',
 			'position'	=> 100
 		),
 		array(
-			'file' => 'ext/portal/assets/css/panelwidget-filterpresetlist.css',
+			'file' => 'ext/portal/asset/css/panelwidget-filterpresetlist.css',
 			'position' => 110
 		)
 	)
