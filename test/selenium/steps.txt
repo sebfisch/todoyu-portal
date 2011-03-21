@@ -4,6 +4,7 @@ todoyu selenium testsuite steps: portal extension
 * portal area:
 	reachable, main-tab activated, page title set?
 	presents: main-tabs
+	sub tabs accessible? (filter, todo's, feedback, appointments) 
 * tasks:
 	expand/collapse works, pref saved?
 * task contextmenu:
