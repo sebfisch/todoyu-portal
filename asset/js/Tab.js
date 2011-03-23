@@ -57,11 +57,11 @@ Todoyu.Ext.portal.Tab = {
 	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
 		var options	= {
-			'parameters': {
-				'action':	'update',
+			parameters: {
+				action:	'update',
 				'tab':		tabKey
 			},
-			'onComplete': this.onTabShowed.bind(this, tabKey)
+			onComplete: this.onTabShowed.bind(this, tabKey)
 		};
 
 		var target	= 'content-body';
