@@ -34,7 +34,7 @@ Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 	'version' 		=> '1.1.0',
 	'constraints' 	=> array(
 		'depends' 	=> array(
-			'project' => '1.0.4'
+			'project' => '1.1.0'
 		),
 		'conflicts' => array()
 	)
