@@ -34,6 +34,7 @@ class TodoyuPortalRenderer {
 
 
 
+
 	/**
 	 * Render tab headers for portal
 	 *
@@ -63,7 +64,7 @@ class TodoyuPortalRenderer {
 		$tab	= TodoyuPortalManager::getTabConfig($tabKey);
 
 		if( TodoyuFunction::isFunctionReference($tab['contentFunc']) ) {
-//			TodoyuDebug::printInFirebug($tab['contentFunc']);
+
 			return TodoyuFunction::callUserFunction($tab['contentFunc'], $params);
 		} else {
 			Todoyu::log('Missing render function for tab "' . $tabKey . '"', TodoyuLogger::LEVEL_ERROR);
@@ -127,7 +128,7 @@ class TodoyuPortalRenderer {
 			return self::renderNoSelectionMessage();
 		} else {
 				// Get items, send amount header, render listing
-			$resultItemIDs	= TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs);
+			$resultItemIDs	= array_slice(TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs), 0, 200, true);
 
 			TodoyuHeader::sendTodoyuHeader('selection', sizeof($resultItemIDs));
 
