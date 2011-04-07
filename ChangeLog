@@ -1,7 +1,9 @@
 todoyu portal extension changelog
 
-portal 1.1.0 (requires core >= 2.1) - not released yet
-	* Feature: Cleanup of Rights Management
+portal 1.1.0 - beta release
+	* Changed: Requires core 2.1
+	* Changed: Structure for 2.1
+	* Changed: All classes are prefixed with extension name
 
 portal 1.0.6
   	* Feature: Added changelog
