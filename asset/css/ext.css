@@ -46,6 +46,9 @@ h1.extIconPortal .title {
 /* ------------------------
 	Special Task Header
    ------------------------ */
+.headerLine span.first {
+	margin-left: 5px;
+}
 .portalTaskList h1 span.taskDate,
 .portalTaskList .task h3 span.taskDate {
 	width:45px;
