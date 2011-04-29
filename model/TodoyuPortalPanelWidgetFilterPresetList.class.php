@@ -37,11 +37,11 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 	public function __construct(array $config, array $params = array()) {
 
 		parent::__construct(
-			'portal',									// ext key
-			'filterpresetlist',							// panel widget ID
-			'LLL:portal.panelwidget-filterpresetlist.title',	// widget title text
-			$config,									// widget config array
-			$params									// widget parameters
+			'portal',										// ext key
+			'filterpresetlist',								// panel widget ID
+			'LLL:portal.panelwidget-filterpresetlist.title',// widget title text
+			$config,										// widget config array
+			$params											// widget parameters
 		);
 
 		$this->addHasIconClass();
