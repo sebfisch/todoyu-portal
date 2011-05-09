@@ -81,7 +81,7 @@ class TodoyuPortalRenderer {
 	 * @return	String
 	 */
 	public static function getSelectionTabLabel($count = true) {
-		$label	= Label('portal.ext.tab.selection');
+		$label	= Todoyu::Label('portal.ext.tab.selection');
 
 		if( $count ) {
 			$numResults	= TodoyuPortalManager::getSelectionCount();
@@ -146,7 +146,7 @@ class TodoyuPortalRenderer {
 	private static function renderNoSelectionMessage() {
 		$tmpl	= 'ext/portal/view/selection-nofilterset.tmpl';
 
-		return render($tmpl);
+		return Todoyu::render($tmpl);
 	}
 
 

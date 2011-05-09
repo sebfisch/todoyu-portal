@@ -138,7 +138,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 			$data['selected']	= self::getActiveFiltersetIDs();
 		}
 
-		return render($tmpl, $data);
+		return Todoyu::render($tmpl, $data);
 	}
 
 
@@ -162,7 +162,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 	 * @return	Boolean
 	 */
 	public static function isAllowed() {
-		return allowed('portal', 'general:use');
+		return Todoyu::allowed('portal', 'general:use');
 	}
 
 }

@@ -32,7 +32,7 @@ class TodoyuPortalPreferenceActionController extends TodoyuActionController {
 	 * @param	Array	$params
 	 */
 	public function init(array $params) {
-		restrict('portal', 'general:use');
+		Todoyu::restrict('portal', 'general:use');
 	}
 
 

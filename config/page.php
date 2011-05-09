@@ -19,7 +19,7 @@
 *****************************************************************************/
 
 	// Add menu entries
-if( allowed('portal', 'general:use') ) {
+if( Todoyu::allowed('portal', 'general:use') ) {
 	TodoyuFrontend::setDefaultTab('portal');
 	TodoyuFrontend::addMenuEntry('portal', 'LLL:portal.ext.tab', '?ext=portal', 10);
 
