@@ -88,10 +88,10 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{Ajax.Response}		response
 	 */
 	onTabShowed: function(tabKey, response) {
-		var numSelected	= response.getTodoyuHeader('selection');
+		var numItems	= response.getTodoyuHeader('items');
 
-		if( numSelected !== null ) {
-			this.updateNumResults('selection', numSelected);
+		if( numItems ) {
+			this.updateNumResults(tabKey, numItems);
 		}
 
 		Todoyu.Hook.exec('portal.tab.showed', tabKey);

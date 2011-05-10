@@ -123,14 +123,14 @@ class TodoyuPortalRenderer {
 			// Send items amount header to update filter-tab, render items listing
 		if( sizeof($filtersetIDs) === 0 ) {
 				// No filterset selected
-			TodoyuHeader::sendTodoyuHeader('selection', 0);
+			TodoyuHeader::sendTodoyuHeader('items', 0);
 
 			return self::renderNoSelectionMessage();
 		} else {
 				// Get items, send amount header, render listing
 			$resultItemIDs	= array_slice(TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs), 0, 200, true);
 
-			TodoyuHeader::sendTodoyuHeader('selection', sizeof($resultItemIDs));
+			TodoyuHeader::sendTodoyuHeader('items', sizeof($resultItemIDs));
 
 			return TodoyuSearchRenderer::renderResultsListing($type, $resultItemIDs);
 		}
