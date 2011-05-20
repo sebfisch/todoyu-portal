@@ -19,6 +19,7 @@
 	<label index="tab.feedbacks">Feedbacks</label>
 	<label index="date.start.short">S</label>
 	<label index="selection.noTasksFound">Es gibt keine Aufgaben zu dieser Filterauswahl</label>
+	<label index="selection.noProjectsFound">Es gibt keine Projekte zu dieser Filterauswahl</label>
 	<label index="subMenuEntry.selection">Portal > Auswahl</label>
 	<label index="subMenuEntry.todos">Portal > Aufgaben</label>
 	<label index="subMenuEntry.feedbacks">Portal > Feedbacks</label>
