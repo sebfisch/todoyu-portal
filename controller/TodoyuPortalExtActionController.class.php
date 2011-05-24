@@ -72,7 +72,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		TodoyuPage::set('activeTabContent', $activeTabContent);
 
 			// Add JS onLoad functions
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.init.bind(Todoyu.Ext.portal)', 100);
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.init', 100, true);
 
 			// Display output
 		return TodoyuPage::render();

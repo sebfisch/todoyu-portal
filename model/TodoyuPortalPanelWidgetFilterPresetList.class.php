@@ -149,7 +149,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 	 * @return	String
 	 */
 	public function render() {
-		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.PanelWidget.FilterPresetList.init.bind(Todoyu.Ext.portal.PanelWidget.FilterPresetList)', 100);
+		TodoyuPage::addJsOnloadedFunction('Todoyu.Ext.portal.PanelWidget.FilterPresetList.init', 100);
 
 		return parent::render();
 	}
