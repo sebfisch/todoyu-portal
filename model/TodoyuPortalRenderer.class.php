@@ -38,6 +38,7 @@ class TodoyuPortalRenderer {
 	/**
 	 * Render tab headers for portal
 	 *
+	 * @param	String	$activeTab
 	 * @return	String
 	 */
 	public static function renderTabHeads($activeTab = '') {
@@ -57,7 +58,8 @@ class TodoyuPortalRenderer {
 	/**
 	 * Render content of a portal tab (call registered render function)
 	 *
-	 * @param	Integer		$idTab
+	 * @param	String		$tabKey
+	 * @param	Array		$params
 	 * @return	String
 	 */
 	public static function renderTabContent($tabKey, array $params = array()) {
@@ -95,9 +97,9 @@ class TodoyuPortalRenderer {
 
 	/**
 	 * Get content of selection tab in portal
-	 *
 	 * Task-list based on the selected filters in filterPresetList panelWidget
 	 *
+	 * @param	Array	$params
 	 * @return	String
 	 */
 	public static function renderSelectionTabContent(array $params = array()) {

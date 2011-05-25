@@ -34,6 +34,7 @@ class TodoyuPortalPreferences {
 	 * @param	String		$value
 	 * @param	Integer		$idItem
 	 * @param	Boolean		$unique
+	 * @param	Integer		$idArea
 	 * @param	Integer		$idPerson
 	 */
 	public static function savePref($preference, $value, $idItem = 0, $unique = false, $idArea = 0, $idPerson = 0) {
@@ -47,6 +48,8 @@ class TodoyuPortalPreferences {
 	 *
 	 * @param	String		$preference
 	 * @param	Integer		$idItem
+	 * @param	Integer		$idArea
+	 * @param	Boolean		$unserialize
 	 * @param	Integer		$idPerson
 	 * @return	String
 	 */
@@ -106,7 +109,7 @@ class TodoyuPortalPreferences {
 	/**
 	 * Save active tab of current person
 	 *
-	 * @param	Integer
+	 * @param	String	$tabKey
 	 */
 	public static function saveActiveTab($tabKey) {
 		self::savePref('tab', $tabKey, 0, true);
@@ -159,7 +162,7 @@ class TodoyuPortalPreferences {
 	 * Save filtersets of tab
 	 *
 	 * @param	String	$filtersetIDs
-	 * @param	Integer	$tabID
+	 * @param	Integer	$idTab
 	 */
 	public static function saveTabFiltersets($filtersetIDs, $idTab = 0) {
 		$idTab			= intval($idTab);
