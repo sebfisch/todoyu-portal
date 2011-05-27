@@ -37,7 +37,8 @@ Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 			'project' => '1.1.0'
 		),
 		'conflicts' => array()
-	)
+	),
+	'urlDocumentation'	=> 'http://doc.todoyu.com/?portal'
 );
 
 ?>
