@@ -58,8 +58,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 			var type = list.id.split('-').last();
 			this.lists[type] = list;
 
-			list.observe('change', this.onSelectionChange.bindAsEventListener(this, type));
-		}.bind(this));
+			list.on('change', this.onSelectionChange.bind(this, type));
+		}, this);
 	},
 
 
@@ -68,17 +68,17 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 * Handler when selection in one of the lists is changed
 	 *
 	 * @method	onSelectionChange
-	 * @param	{Event}			event
 	 * @param	{String}		type		List type
+	 * @param	{Event}			event
 	 */
-	onSelectionChange: function(event, type) {
+	onSelectionChange: function(type, event) {
 			// Unselect all other option groups
 		this.unselectOtherTypes(type);
 
 			// Add params for tab refresh
 		var params	= {
-			'filtersets': 	this.getFiltersets(),
-			'type':			type
+			filtersets: this.getFiltersets(),
+			type:		type
 		};
 
 			// Refresh tab content
