@@ -20,10 +20,10 @@
 	<label index="date.start.short">B</label>
 	<label index="selection.noTasksFound">この選択したフィルタに関するタスクは見つかりません</label>
 	<label index="selection.noProjectsFound">この選択したフィルタに関するプロジェクトは見つかりません</label>
-	<label index="subMenuEntry.selection">ポータル > 選択</label>
-	<label index="subMenuEntry.todos">ポータル > ToDo</label>
-	<label index="subMenuEntry.feedbacks">ポータル > フィードバック</label>
-	<label index="subMenuEntry.appointments">ポータル > 予約</label>
+	<label index="subMenuEntry.selection">ポータル &gt; 選択</label>
+	<label index="subMenuEntry.todos">ポータル &gt; ToDo</label>
+	<label index="subMenuEntry.feedbacks">ポータル &gt; フィードバック</label>
+	<label index="subMenuEntry.appointments">ポータル &gt; 予定</label>
 	<label index="contextmenu.showinproject">プロジェクトで表示</label>
 	<label index="selection.noFiltersetsSelected">選択されたフィルタはありません</label>
 </labels>
