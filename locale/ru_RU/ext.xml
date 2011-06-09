@@ -20,10 +20,10 @@
 	<label index="date.start.short">Н</label>
 	<label index="selection.noTasksFound">Фильтр не нашёл ни одной задачи</label>
 	<label index="selection.noProjectsFound">Не найдено проектов для этого фильтра</label>
-	<label index="subMenuEntry.selection">Портал > Выбраное</label>
-	<label index="subMenuEntry.todos">Портал > Сделать</label>
-	<label index="subMenuEntry.feedbacks">Портал > Ответы</label>
-	<label index="subMenuEntry.appointments">Портал > Встречи</label>
+	<label index="subMenuEntry.selection">Портал &gt; Выбраное</label>
+	<label index="subMenuEntry.todos">Портал &gt; Сделать</label>
+	<label index="subMenuEntry.feedbacks">Портал &gt; Ответы</label>
+	<label index="subMenuEntry.appointments">Портал &gt; Встречи</label>
 	<label index="contextmenu.showinproject">Показать в проекте</label>
 	<label index="selection.noFiltersetsSelected">Наборы фильтров не выбраны!</label>
 </labels>
