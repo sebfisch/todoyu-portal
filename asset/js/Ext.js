@@ -29,8 +29,16 @@
  */
 Todoyu.Ext.portal = {
 
+	/**
+	 * @property	PanelWidget
+	 * @type		Object
+	 */
 	PanelWidget:	{},
 
+	/**
+	 * @property	Headlet
+	 * @type		Object
+	 */
 	Headlet:		{},
 
 
