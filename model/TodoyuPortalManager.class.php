@@ -139,7 +139,6 @@ class TodoyuPortalManager {
 	/**
 	 * Hook called before page is rendered completely
 	 * - Add portal sub menu entries
-	 *
 	 */
 	public static function hookRenderPage() {
 		$tabsConfig	= self::getTabsConfig();
