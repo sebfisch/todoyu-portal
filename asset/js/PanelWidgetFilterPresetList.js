@@ -73,7 +73,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 */
 	onSelectionChange: function(type, event) {
 			// Unselect all other option groups
-		this.unselectOtherTypes(type);
+		this.deselectOtherTypes(type);
 
 			// Add params for tab refresh
 		var params	= {
@@ -104,10 +104,10 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	/**
 	 * Deselect all options in the other lists, because only one type can be active
 	 *
-	 * @method	unselectOtherTypes
+	 * @method	deselectOtherTypes
 	 * @param	{String}		type
 	 */
-	unselectOtherTypes: function(type) {
+	deselectOtherTypes: function(type) {
 		$H(this.lists).each(function(type, pair){
 			if( pair.key !== type ) {
 				pair.value.select('option').each(function(option){
