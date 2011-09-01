@@ -28,7 +28,9 @@
 class TodoyuPortalRenderer {
 
 	/**
-	 * @var	String		Extension key
+	 * Extension key
+	 *
+	 * @var	String
 	 */
 	const EXTKEY = 'portal';
 
