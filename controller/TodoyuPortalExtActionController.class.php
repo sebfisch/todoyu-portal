@@ -50,7 +50,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 
 			// Setup page to be rendered
 		TodoyuPage::init('ext/portal/view/ext.tmpl');
-		TodoyuPage::setTitle('LLL:portal.ext.page.title');
+		TodoyuPage::setTitle('portal.ext.page.title');
 
 			// Get active tab
 		$activeTab	= isset( $params['tab'] ) ? $params['tab'] : NULL;

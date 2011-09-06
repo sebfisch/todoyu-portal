@@ -37,7 +37,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 		parent::__construct(
 			'portal',										// ext key
 			'filterpresetlist',								// panel widget ID
-			'LLL:portal.panelwidget-filterpresetlist.title',// widget title text
+			'portal.panelwidget-filterpresetlist.title',// widget title text
 			$config,										// widget config array
 			$params											// widget parameters
 		);
@@ -86,7 +86,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 
 			if( sizeof($typeFiltersets) > 0 ) {
 				$types[$typeKey]['title'] = TodoyuSearchFilterManager::getFilterTypeLabel($typeKey);
-//				$types[$typeKey]['title']	.= ' (' . Label('LLL:panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
+//				$types[$typeKey]['title']	.= ' (' . Label('panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
 			}
 
 			foreach($typeFiltersets as $typeFilterset) {
