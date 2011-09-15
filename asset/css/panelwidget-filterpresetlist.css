@@ -4,8 +4,8 @@
 }
 
 #panelwidget-filterpresetlist button.manageFilters .icon {
-	width:22px;
-	background:url(../../../search/asset/img/icons.png) no-repeat 0 -476px;
+	background:url(../../../search/asset/img/icons.png) no-repeat 3px -476px;
+	width:28px;
 }
 
 #panelwidget-filterpresetlist select option {
