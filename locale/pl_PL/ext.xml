@@ -3,7 +3,7 @@
 	<label index="ext.title">Portal</label>
 	<label index="page.title">Portal</label>
 	<label index="tab">Portal</label>
-	<label index="tab.selectionMoje filtry</label>
+	<label index="tab.selection">Moje filtry</label>
 	<label index="tasktree.header.date">Data</label>
 	<label index="tasktree.header.customer">Klient</label>
 	<label index="tasktree.header.number">Nr</label>
