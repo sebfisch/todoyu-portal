@@ -48,6 +48,11 @@ Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 		array(
 			'file' => 'ext/portal/asset/css/panelwidget-filterpresetlist.css',
 			'position' => 110
+		),
+		array(
+			'file' => 'ext/portal/asset/css/print.css',
+			'media' => 'print',
+			'position' => 120
 		)
 	)
 );
