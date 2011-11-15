@@ -101,10 +101,10 @@ class TodoyuPortalManager {
 	 * @return	Array
 	 */
 	public static function getTaskContextMenuItems($idTask, array $items) {
-//		$idTask	= intval($idTask);
+		$idTask	= intval($idTask);
 
-			// Only show it in portal
-		if( AREA === EXTID_PORTAL ) {
+			// Only show it in portal and if the task is not deleted
+		if( AREA === EXTID_PORTAL && ! TodoyuProjectTaskManager::isDeleted($idTask) ) {
 				// Add special portal items
 			$ownItems	= Todoyu::$CONFIG['EXT']['portal']['ContextMenu']['Task'];
 			$items		= array_merge_recursive($items, $ownItems);

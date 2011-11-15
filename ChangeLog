@@ -1,6 +1,7 @@
 todoyu portal extension changelog
 
 portal 1.1.2 - not released yet
+	* Changed: Portal does not add anymore contextmenu items to deleted tasks
 	* Translation: Polish
 
 portal 1.1.1 - 2011-09-15
