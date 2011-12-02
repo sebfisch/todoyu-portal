@@ -98,6 +98,18 @@ Todoyu.Ext.portal.Tab = {
 	},
 
 
+	/**
+	 * Get label element of given tab
+	 *
+	 * @method  getTabLabelElement
+	 * @param   String  tabKey
+	 * @return  String
+	 */
+	getLabelElement: function(tabKey) {
+		return $('portal-tab-' + tabKey + '-label').down('span.labeltext');
+	},
+
+
 
 	/**
 	 * Update the label of a tab
@@ -122,7 +134,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{Number}			numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
-		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
+		var labelEl	= this.getLabelElement(tabKey);
 		var label	= labelEl.innerHTML;
 		var pattern	= /\(\d+\)/;
 		var replace	= '(' + numResults + ')';
@@ -139,7 +151,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{String}	tabKey
 	 */
 	getNumResults: function(tabKey) {
-		var labelEl	= $('portal-tab-' + tabKey + '-label').down('span.labeltext');
+		var labelEl	= this.getLabelElement(tabKey);
 		var pattern	= /\((\d+)\)/;
 		var result	= labelEl.innerHTML.match(pattern);
 
