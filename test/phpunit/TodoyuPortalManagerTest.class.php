@@ -151,7 +151,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 
 		$items	= TodoyuPortalManager::getTaskContextMenuItems(0, $items);
 
-		$this->assertType('array', $items);
+		$this->assertInternalType('array', $items);
 		$this->assertEquals(0, sizeof($items));
 	}
 
@@ -165,7 +165,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 	public function testGetSelectionCount() {
 		$count	= TodoyuPortalManager::getSelectionCount();
 
-		$this->assertType('int', $count);
+		$this->assertInternalType('int', $count);
 	}
 
 }
