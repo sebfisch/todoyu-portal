@@ -98,12 +98,13 @@ Todoyu.Ext.portal.Tab = {
 	},
 
 
+
 	/**
 	 * Get label element of given tab
 	 *
-	 * @method  getTabLabelElement
-	 * @param   String  tabKey
-	 * @return  String
+	 * @method	getTabLabelElement
+	 * @param	{String}	tabKey
+	 * @return	{String}
 	 */
 	getLabelElement: function(tabKey) {
 		return $('portal-tab-' + tabKey + '-label').down('span.labeltext');
