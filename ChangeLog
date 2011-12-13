@@ -1,6 +1,7 @@
 todoyu portal extension changelog
 
 portal 1.1.3 - 2011-12-13
+	* Bugfix: Show real amount of result when only one filterset is selected
 	* Changed: Code cleanup
 	* Changed: Support phpUnit 3.6
 

@@ -131,9 +131,16 @@ class TodoyuPortalRenderer {
 			return self::renderNoSelectionMessage();
 		} else {
 				// Get items, send amount header, render listing
-			$resultItemIDs	= array_slice(TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs), 0, 200, true);
+			$resultItemIDs	= TodoyuSearchFiltersetManager::getFiltersetsResultItemIDs($filtersetIDs, 200);
 
-			TodoyuHeader::sendTodoyuHeader('items', sizeof($resultItemIDs));
+				// If only one filterset, get real count
+			if( sizeof($filtersetIDs) === 1 ) {
+				$totalCount	= TodoyuSearchFiltersetManager::getFiltersetCount($filtersetIDs[0]);
+			} else {
+				$totalCount	= sizeof($resultItemIDs);
+			}
+
+			TodoyuHeader::sendTodoyuHeader('items', $totalCount);
 
 			return TodoyuSearchRenderer::renderResultsListing($type, $resultItemIDs);
 		}
