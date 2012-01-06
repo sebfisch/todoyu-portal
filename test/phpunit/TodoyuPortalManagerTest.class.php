@@ -50,7 +50,7 @@ class TodoyuPortalManagerTest extends PHPUnit_Framework_TestCase {
 //		$this->object = new TodoyuPortalManager;
 //
 //			// Get ID of a task
-//		$where	= 'deleted = 0 AND type = ' . TASK_TYPE_TASK;
+//		$where	= 'deleted = 0 AND `type` = ' . TASK_TYPE_TASK;
 //		$idTask	= Todoyu::db()->getFieldValue('id', 'ext_project_task', $where, '', '', '0,1', 'id');
 //
 //		$this->array	= array(
