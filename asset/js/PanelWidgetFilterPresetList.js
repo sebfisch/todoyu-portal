@@ -72,7 +72,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 * @param	{Event}			event
 	 */
 	onSelectionChange: function(type, event) {
-			// Unselect all other option groups
+			// Deselect all other option groups
 		this.deselectOtherTypes(type);
 
 			// Add params for tab refresh

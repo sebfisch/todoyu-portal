@@ -47,7 +47,7 @@ Todoyu.Ext.portal.Tab = {
 
 
 	/**
-	 * Show tab
+	 * Load given tab
 	 *
 	 * @method	showTab
 	 * @param	{String}		tabKey
@@ -93,6 +93,8 @@ Todoyu.Ext.portal.Tab = {
 		if( numItems ) {
 			this.updateNumResults(tabKey, numItems);
 		}
+
+		Todoyu.Ui.scrollToTop();
 
 		Todoyu.Hook.exec('portal.tab.showed', tabKey);
 	},
