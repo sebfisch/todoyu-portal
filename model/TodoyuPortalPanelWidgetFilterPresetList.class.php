@@ -86,15 +86,23 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 
 			if( sizeof($typeFiltersets) > 0 ) {
 				$types[$typeKey]['title'] = TodoyuSearchFilterManager::getFilterTypeLabel($typeKey);
-//				$types[$typeKey]['title']	.= ' (' . Label('panelwidget-filterpresetlist.error.noTypeFiltersets') . ')';
 			}
 
 			foreach($typeFiltersets as $typeFilterset) {
-				$resultCount	= TodoyuSearchFiltersetManager::getFiltersetCount($typeFilterset['id']);
+				$isSeparator	= $typeFilterset['is_separator'] === '1';
+
+				$label	= TodoyuString::crop($typeFilterset['title'], $isSeparator ? 50 : 46, '', false);
+
+				if( ! $isSeparator ) {
+					$resultCount	= TodoyuSearchFiltersetManager::getFiltersetCount($typeFilterset['id']);
+					$label	.= ' (' . $resultCount . ')';
+				}
 
 				$types[$typeKey]['options'][] = array(
-					'label'	=> TodoyuString::crop($typeFilterset['title'], 46, '', false) . ' (' . $resultCount . ')',
-					'value'	=> $typeFilterset['id']
+					'label'		=> $label,
+					'value'		=> $typeFilterset['id'],
+					'class'		=> $isSeparator ? 'separator' : '',
+					'disabled'	=> $isSeparator ? '1' : '0'
 				);
 			}
 		}
