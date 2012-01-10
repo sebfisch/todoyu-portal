@@ -21,7 +21,7 @@
 /**
  * Portal preferences
  *
- * @name 		Portal preferences
+ * @name		Portal preferences
  * @package		Todoyu
  * @subpackage	Portal
  */

@@ -28,11 +28,11 @@
 Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	'js' => array(
 		array(
-			'file' 		=> 'ext/portal/asset/js/Ext.js',
+			'file'		=> 'ext/portal/asset/js/Ext.js',
 			'position'	=> 100
 		),
 		array(
-			'file' 		=> 'ext/portal/asset/js/Tab.js',
+			'file'		=> 'ext/portal/asset/js/Tab.js',
 			'position'	=> 102
 		),
 		array(
@@ -42,7 +42,7 @@ Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	),
 	'css' => array(
 		array(
-			'file' 		=> 'ext/portal/asset/css/ext.css',
+			'file'		=> 'ext/portal/asset/css/ext.css',
 			'position'	=> 100
 		),
 		array(

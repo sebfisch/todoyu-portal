@@ -61,7 +61,7 @@ class TodoyuPortalExtActionController extends TodoyuActionController {
 		}
 
 			// Panel widgets
-		$panelWidgets 	= TodoyuPortalRenderer::renderPanelWidgets();
+		$panelWidgets	= TodoyuPortalRenderer::renderPanelWidgets();
 			// Tab-heads
 		$tabHeads		= TodoyuPortalRenderer::renderTabHeads($activeTab);
 			// Render active tab, tab content

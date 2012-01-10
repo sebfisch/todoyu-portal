@@ -21,7 +21,7 @@
 /**
  * Portal renderer
  *
- * @name 		Portal renderer
+ * @name		Portal renderer
  * @package		Todoyu
  * @subpackage	Portal
  */
@@ -49,7 +49,7 @@ class TodoyuPortalRenderer {
 		$tabs		= TodoyuPortalManager::getTabs();
 
 		if( empty($activeTab) ) {
-			$activeTab 	= TodoyuPortalPreferences::getActiveTab();
+			$activeTab	= TodoyuPortalPreferences::getActiveTab();
 		}
 
 		return TodoyuTabheadRenderer::renderTabs($name, $tabs, $jsHandler, $activeTab);

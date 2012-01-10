@@ -26,7 +26,7 @@
  */
 
 	// Preference constants
-define('PORTAL_PREF_TAB', 	1);
+define('PORTAL_PREF_TAB',	1);
 
 define('PORTAL_TABID_SELECTION', 0);
 define('PORTAL_TABID_TODOS', 1);
