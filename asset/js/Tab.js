@@ -59,7 +59,7 @@ Todoyu.Ext.portal.Tab = {
 		var options	= {
 			parameters: {
 				action:	'update',
-				'tab':		tabKey
+				tab:	tabKey
 			},
 			onComplete: this.onTabShowed.bind(this, tabKey)
 		};
