@@ -97,7 +97,7 @@ class TodoyuPortalPreferences {
 	public static function getActiveTab() {
 		$tab = self::getPref('tab');
 
-		if( $tab === false ) {
+		if( !$tab ) {
 			$tab = 'selection';
 		}
 
@@ -125,9 +125,7 @@ class TodoyuPortalPreferences {
 	public static function getSelectionTabFiltersetIDs() {
 		$filtersetIDs	= self::getPref('filtersets');
 
-		if( $filtersetIDs === false || $filtersetIDs === '' ) {
-			$filtersetIDs = array();
-		} else {
+		if( $filtersetIDs ) {
 			$filtersetIDs = explode(',', $filtersetIDs);
 
 				// Remove references of non-existent filtersets
@@ -135,6 +133,8 @@ class TodoyuPortalPreferences {
 			$allFiltersetIDs	= TodoyuArray::flatten($allFiltersetIDs);
 
 			$filtersetIDs	= array_intersect($allFiltersetIDs, $filtersetIDs);
+		} else {
+			$filtersetIDs	= array();
 		}
 
 		$filtersetIDs	= array_values($filtersetIDs);
@@ -191,7 +191,7 @@ class TodoyuPortalPreferences {
 	public static function getExpandedTasks() {
 		$taskIDs = self::getPrefs('task-exp');
 
-		if( $taskIDs === false ) {
+		if( !$taskIDs ) {
 			$taskIDs = array();
 		}
 
