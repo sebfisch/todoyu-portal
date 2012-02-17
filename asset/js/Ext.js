@@ -49,9 +49,21 @@ Todoyu.Ext.portal = {
 	 * @method	init
 	 */
 	init: function() {
-		if( Todoyu.getArea() == 'portal' ) {
+		if( Todoyu.isInArea('portal') ) {
 			Todoyu.Hook.add('project.quickTask.saved', this.onQuickTaskSaved.bind(this)); 
 		}
+	},
+
+
+
+	/**
+	 * Check whether current area is portal
+	 *
+	 * @method	isInPortalArea
+	 * @return	{Boolean}
+	 */
+	isInPortalArea: function() {
+		return Todoyu.isInArea('portal');
 	},
 
 
