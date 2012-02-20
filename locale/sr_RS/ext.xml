@@ -19,10 +19,11 @@
 	<label index="tab.feedbacks">Повратне информације</label>
 	<label index="date.start.short">П</label>
 	<label index="selection.noTasksFound">Не постоји задатак у овом избору филтера</label>
-	<label index="subMenuEntry.selection">Портал > Избор</label>
-	<label index="subMenuEntry.todos">Портал > Задаци</label>
-	<label index="subMenuEntry.feedbacks">Портал > Повратне информације</label>
-	<label index="subMenuEntry.appointments">Портал > Термини</label>
+	<label index="selection.noProjectsFound">Нема пројектa за траженu филтер селекцију</label>
+	<label index="subMenuEntry.selection">Портал &gt; Избор</label>
+	<label index="subMenuEntry.todos">Портал &gt; Задаци</label>
+	<label index="subMenuEntry.feedbacks">Портал &gt; Повратне информације</label>
+	<label index="subMenuEntry.appointments">Портал &gt; Термини</label>
 	<label index="contextmenu.showinproject">Покажи у пројекту</label>
 	<label index="selection.noFiltersetsSelected">Није изабран ниједан филтер!</label>
 </labels>
