@@ -25,7 +25,6 @@ if( Todoyu::allowed('portal', 'general:use') ) {
 
 		// Add portal tab: 'selection'
 	TodoyuPortalManager::addTab('selection', 'TodoyuPortalRenderer::getSelectionTabLabel', 'TodoyuPortalRenderer::renderSelectionTabContent', 10);
-
 }
 
 ?>
