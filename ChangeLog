@@ -1,8 +1,6 @@
 todoyu portal extension changelog
 
-portal 1.2.1 - Not released yet
-
-portal 1.2.0 - 2012-02-22
+portal 1.2.0 - Not released yet
 	* Changed: Dependency search 1.2.0
 	* Added: Filter listing now can include separators
 	* Added: Selecting a filter from the filter widget scrolls to top
