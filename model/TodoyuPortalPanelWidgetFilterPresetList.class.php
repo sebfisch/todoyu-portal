@@ -131,12 +131,10 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 	public function renderContent() {
 		$tmpl	= 'ext/portal/view/panelwidget-filterpresetlist.tmpl';
 
-//		$filtersetOptions	= $this->getFiltersetOptions();
-
 		$data	= array(
 			'id'		=> $this->getID(),
 			'types'		=> $this->getFiltersetTypes(),
-//			'options'	=> $filtersetOptions,
+//			'options'	=> $this->getFiltersetOptions(),
 			'selected'	=> array()
 		);
 
