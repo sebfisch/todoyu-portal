@@ -91,7 +91,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 	 * Get selected filterset IDs
 	 *
 	 * @method	getFiltersets
-	 * @return	{Array}
+	 * @return	{String[]}
 	 */
 	getFiltersets: function() {
 		return $H(this.lists).collect(function(pair){
