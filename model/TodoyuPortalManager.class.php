@@ -148,7 +148,7 @@ class TodoyuPortalManager {
 		foreach($tabsConfig as $tabConfig) {
 			$label	= TodoyuFunction::callUserFunction($tabConfig['labelFunc'], false);
 
-			TodoyuFrontend::addSubmenuEntry('portal', $tabConfig['key'], $label, '?ext=portal&tab=' . $tabConfig['key'], $pos++);
+			TodoyuFrontend::addSubmenuEntry('portal', $tabConfig['key'], $label, 'index.php?ext=portal&tab=' . $tabConfig['key'], $pos++);
 		}
 	}
 
