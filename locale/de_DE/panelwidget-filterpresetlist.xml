@@ -4,6 +4,6 @@
 	<label index="create">Filter anlegen</label>
 	<label index="manage">Filter bearbeiten</label>
 	<label index="amount">Menge</label>
-	<label index="error.noFilters">Es wurden noch keine Filter erstellt</label>
+	<label index="error.noFilters">Es wurden noch keine Filter erstellt.</label>
 	<label index="error.noTypeFiltersets">Keine Filter definiert</label>
 </labels>
