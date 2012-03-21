@@ -59,6 +59,13 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 			this.lists[type] = list;
 
 			list.on('change', this.onSelectionChange.bind(this, type));
+
+				// Fix height of selects in webkit/chrome
+			if( Prototype.Browser.WebKit ) {
+				list.setStyle({
+					height: list.select('option').size()*15 + 'px'
+				});
+			}
 		}, this);
 	},
 
