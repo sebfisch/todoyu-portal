@@ -25,5 +25,5 @@
 	<label index="subMenuEntry.feedbacks">Portal > Feedback</label>
 	<label index="subMenuEntry.appointments">Portal > Appointments</label>
 	<label index="contextmenu.showinproject">Show In Project</label>
-	<label index="selection.noFiltersetsSelected">No filter sets selected!</label>
+	<label index="selection.noFiltersetsSelected">No Filter Selected.</label>
 </labels>
