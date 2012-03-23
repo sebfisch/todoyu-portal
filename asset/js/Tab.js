@@ -88,11 +88,9 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{Ajax.Response}		response
 	 */
 	onTabShowed: function(tabKey, response) {
-		var numItems	= response.getTodoyuHeader('items');
+		var numItems	= response.getTodoyuHeader('items') || 0;
 
-		if( numItems ) {
-			this.updateNumResults(tabKey, numItems);
-		}
+		this.updateNumResults(tabKey, numItems);
 
 		Todoyu.Ui.scrollToTop();
 
