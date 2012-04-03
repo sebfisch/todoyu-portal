@@ -15,7 +15,7 @@
 #panelwidget-filterpresetlist select option.separator {
 	margin-top:-1px;
 	cursor:default;
-	background:#d6d9db url(../img/panelwidget-filterpresetlist.png) repeat-x 5px 0px !important;
+	background:#d6d9db url(../img/panelwidget-filterpresetlist.png) repeat-x 5px 0 !important;
 	border-top:0 !important;
 	border-bottom:0 !important;
 	text-transform:uppercase;
