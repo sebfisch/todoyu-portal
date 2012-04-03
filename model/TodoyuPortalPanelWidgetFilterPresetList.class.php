@@ -33,7 +33,6 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 	 * @param	Array		$params
 	 */
 	public function __construct(array $config, array $params = array()) {
-
 		parent::__construct(
 			'portal',									// ext key
 			'filterpresetlist',							// panel widget ID
@@ -48,31 +47,6 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 
 
 	/**
-	 * Get filtersets of current person (includes public filtersets)
-	 *
-	 * @return	Array
-	 */
-	private function getFiltersetOptions() {
-		$activeFiltersets	= self::getActiveFiltersetIDs();
-		$filtersets			= TodoyuSearchFiltersetManager::getTypeFiltersets('TASK', 0, false);
-
-		foreach($filtersets as $index => $filterset) {
-			$conditions	= TodoyuSearchFiltersetManager::getFiltersetConditions($filterset['id']);
-			$taskFilter	= new TodoyuProjectTaskFilter($conditions);
-			$taskIDs	= $taskFilter->getTaskIDs();
-
-				// Update filterset
-			$filtersets[$index]['label']	= TodoyuString::crop($filtersets[$index]['title'], 46, '', false) . ' (' . sizeof($taskIDs) . ')';
-			$filtersets[$index]['selected']	= in_array($filterset['id'], $activeFiltersets);
-			$filtersets[$index]['value']	= $filterset['id'];
-		}
-
-		return $filtersets;
-	}
-
-
-
-	/**
 	 * Get array of types of filtersets (record types with dedicated filtersets)
 	 *
 	 * @return	Array
@@ -82,7 +56,7 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 		$types		= array();
 
 		foreach($typeKeys as $typeKey) {
-			$typeFiltersets	= TodoyuSearchFiltersetManager::getTypeFiltersets($typeKey);
+			$typeFiltersets	= TodoyuSearchFiltersetManager::getTypeFiltersets($typeKey, 0, false, true);
 
 			if( sizeof($typeFiltersets) > 0 ) {
 				$types[$typeKey]['title'] = TodoyuSearchFilterManager::getFilterTypeLabel($typeKey);
@@ -134,7 +108,6 @@ class TodoyuPortalPanelWidgetFilterPresetList extends TodoyuPanelWidget {
 		$data	= array(
 			'id'		=> $this->getID(),
 			'types'		=> $this->getFiltersetTypes(),
-//			'options'	=> $this->getFiltersetOptions(),
 			'selected'	=> array()
 		);
 
