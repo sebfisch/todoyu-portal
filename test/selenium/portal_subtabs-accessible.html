@@ -13,7 +13,7 @@
 <!------ portal > sub tabs accessible - filter, todos, feedback, appointments-->
 <tr>
 	<td>assertElementPresent</td>
-	<td>//p[@id='portal-tab-selection-label']/span[3]</td>
+	<td>//p[@id=&quot;portal-tab-selection-label&quot;]/span[2][@class=&quot;labeltext&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -23,18 +23,18 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//p[@id='portal-tab-feedback-label']/span[3]</td>
+	<td>//p[@id='portal-tab-feedback-label']/span[2][@class=&quot;labeltext&quot;]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>//p[@id='portal-tab-appointment-label']/span[3]</td>
+	<td>//p[@id='portal-tab-appointment-label']/span[2][@class=&quot;labeltext&quot;]</td>
 	<td></td>
 </tr>
 <!--activate filters tab-->
 <tr>
 	<td>click</td>
-	<td>//p[@id='portal-tab-selection-label']/span[3]</td>
+	<td>//p[@id='portal-tab-selection-label']/span[2][@class=&quot;labeltext&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -70,7 +70,7 @@
 <!--activate todos tab-->
 <tr>
 	<td>click</td>
-	<td>//p[@id='portal-tab-todo-label']/span[2]</td>
+	<td>//p[@id='portal-tab-todo-label']/span[2][@class=&quot;labeltext&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -175,7 +175,6 @@
 	<td>css=div#content-tabs ul#portal-tabs.tabs li#portal-tab-selection.active</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
