@@ -18,11 +18,12 @@
 	<label index="tab.todos">To Do's</label>
 	<label index="tab.feedbacks">Odpovědi</label>
 	<label index="date.start.short">Z</label>
+	<label index="selection.noTasksFound">Pro váš filtr nebyly nalezeny žádné úkoly</label>
 	<label index="selection.noProjectsFound">Pro váš filtr nebyly nalezeny žádné projekty</label>
 	<label index="subMenuEntry.selection">Portál > Výběr</label>
 	<label index="subMenuEntry.todos">Portál > To Do's</label>
 	<label index="subMenuEntry.feedbacks">Portál > Odpovědi</label>
 	<label index="subMenuEntry.appointments">Portál > Schůzky</label>
 	<label index="contextmenu.showinproject">Zobrazit v projektu</label>
-	<label index="selection.noFiltersetsSelected">Není vybrána žádna skupina filtrů</label>
+	<label index="selection.noFiltersetsSelected">Není vybrána žádná skupina filtrů</label>
 </labels>

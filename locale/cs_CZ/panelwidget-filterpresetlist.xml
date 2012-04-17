@@ -2,8 +2,8 @@
 <labels>
 	<label index="title">Moje filtry</label>
 	<label index="create">Vytvořit filtr</label>
-	<label index="manage">Spravovat filtr</label>
+	<label index="manage">Spravovat filtry</label>
 	<label index="amount">Počet</label>
-	<label index="error.noFilters">Není výtvořen žáden filtr</label>
-	<label index="error.noTypeFiltersets">Není definována žádna skupina filtrů</label>
+	<label index="error.noFilters">Není vytvořen žádný filtr</label>
+	<label index="error.noTypeFiltersets">Není definována žádná skupina filtrů</label>
 </labels>
