@@ -20,10 +20,10 @@
 	<label index="date.start.short">Z</label>
 	<label index="selection.noTasksFound">Pro váš filtr nebyly nalezeny žádné úkoly</label>
 	<label index="selection.noProjectsFound">Pro váš filtr nebyly nalezeny žádné projekty</label>
-	<label index="subMenuEntry.selection">Portál > Výběr</label>
-	<label index="subMenuEntry.todos">Portál > To Do's</label>
-	<label index="subMenuEntry.feedbacks">Portál > Odpovědi</label>
-	<label index="subMenuEntry.appointments">Portál > Schůzky</label>
+	<label index="subMenuEntry.selection">Portál &gt; Výběr</label>
+	<label index="subMenuEntry.todos">Portál &gt; To Do's</label>
+	<label index="subMenuEntry.feedbacks">Portál &gt; Odpovědi</label>
+	<label index="subMenuEntry.appointments">Portál &gt; Schůzky</label>
 	<label index="contextmenu.showinproject">Zobrazit v projektu</label>
 	<label index="selection.noFiltersetsSelected">Není vybrána žádná skupina filtrů</label>
 </labels>
