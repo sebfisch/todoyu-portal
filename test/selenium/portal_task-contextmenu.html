@@ -120,6 +120,11 @@
 	<td>css=ul#contextmenu-add-submenu.context-submenu li#contextmenu-add-comment.add-comment a.task-add-comment</td>
 	<td></td>
 </tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=ul#contextmenu-add-submenu.context-submenu li#contextmenu-add-asset.add-asset a.task-add-asset</td>
+	<td></td>
+</tr>
 <!--sub menu: change status-->
 <tr>
 	<td>mouseOver</td>
@@ -153,6 +158,16 @@
 </tr>
 <tr>
 	<td>assertVisible</td>
+	<td>css=ul#contextmenu-status-submenu.context-submenu li#contextmenu-status-waiting.status-waiting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=ul#contextmenu-status-submenu.context-submenu li#contextmenu-status-rejected.status-rejected</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
 	<td>css=ul#contextmenu-status-submenu.context-submenu li#contextmenu-status-confirm.status-confirm</td>
 	<td></td>
 </tr>
@@ -168,24 +183,54 @@
 </tr>
 <tr>
 	<td>assertVisible</td>
-	<td>css=ul#contextmenu-status-submenu.context-submenu li#contextmenu-status-rejected.status-rejected</td>
-	<td></td>
-</tr>
-<tr>
-	<td>assertVisible</td>
 	<td>css=ul#contextmenu-status-submenu.context-submenu li#contextmenu-status-cleared.status-cleared</td>
 	<td></td>
 </tr>
 <!--close contextmenu-->
 <tr>
 	<td>click</td>
-	<td>css=div#contentBox div#main div#panel.panel div.panelHeader</td>
+	<td>css=div#contentBox div#main div#panel.panel</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForCondition</td>
 	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
 	<td>10000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#task-33 h3 span.headLabel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#task-33.expanded h3#task-33-header.contextmenutask</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;expanded&quot;)]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>css=#contextmenu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>css=#contextmenu-status-submenu</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

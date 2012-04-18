@@ -17,14 +17,43 @@
 	<td>//div[@id=&quot;content-body&quot;]/div[contains(@class,&quot;portalTaskList&quot;)]/div[contains(@class,&quot;task&quot;)]</td>
 	<td></td>
 </tr>
+<!--task 33 has "not seen"-star?-->
 <tr>
-	<td>assertElementNotPresent</td>
-	<td>css=div#task-33.expanded h3#task-33-header.contextmenutask</td>
+	<td>assertElementPresent</td>
+	<td>//span[@id=&quot;task-33-notacknowledged&quot;]</td>
 	<td></td>
 </tr>
 <tr>
+	<td>assertVisible</td>
+	<td>//span[@id=&quot;task-33-notacknowledged&quot;]</td>
+	<td></td>
+</tr>
+<!--click "not seen"-star-->
+<tr>
 	<td>click</td>
-	<td>css=div#task-33.task h3#task-33-header.contextmenutask</td>
+	<td>//span[@id=&quot;task-33-notacknowledged&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<!--task 33 is not expanded?-->
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;expanded&quot;)]</td>
+	<td></td>
+</tr>
+<!--expand it-->
+<tr>
+	<td>click</td>
+	<td>css=div#task-33 h3 span.headLabel</td>
 	<td></td>
 </tr>
 <tr>
@@ -39,40 +68,10 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#task-33.expanded h3#task-33-header.contextmenutask</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;expanded&quot;)]</td>
 	<td></td>
 </tr>
-<tr>
-	<td>click</td>
-	<td>css=div#task-33.task h3#task-33-header.contextmenutask</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>100</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForCondition</td>
-	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
-	<td>10000</td>
-</tr>
-<!--task 33: expand, go to portal & return, check expand-state, re-collapse-->
-<tr>
-	<td>click</td>
-	<td>css=div#task-33.task h3#task-33-header.contextmenutask</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>100</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForCondition</td>
-	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
-	<td>10000</td>
-</tr>
+<!--go to project area & return, check expand-state-->
 <tr>
 	<td>clickAndWait</td>
 	<td>link=Projects</td>
@@ -85,12 +84,13 @@
 </tr>
 <tr>
 	<td>assertElementPresent</td>
-	<td>css=div#task-33.expanded h3#task-33-header.contextmenutask</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;expanded&quot;)]</td>
 	<td></td>
 </tr>
+<!--re-collapse task 33-->
 <tr>
 	<td>click</td>
-	<td>css=div#task-33.task h3#task-33-header.contextmenutask</td>
+	<td>css=div#task-33 h3 span.headLabel</td>
 	<td></td>
 </tr>
 <tr>
@@ -102,6 +102,11 @@
 	<td>waitForCondition</td>
 	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
 	<td>10000</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//div[@id=&quot;task-33&quot;][contains(@class,&quot;expanded&quot;)]</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

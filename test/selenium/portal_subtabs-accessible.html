@@ -175,6 +175,22 @@
 	<td>css=div#content-tabs ul#portal-tabs.tabs li#portal-tab-selection.active</td>
 	<td></td>
 </tr>
+<!--activate todos tab-->
+<tr>
+	<td>click</td>
+	<td>//p[@id='portal-tab-todo-label']/span[2][@class=&quot;labeltext&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
 </tbody></table>
 </body>
 </html>
