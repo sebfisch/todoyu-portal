@@ -60,8 +60,8 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 			list.on('change', this.onSelectionChange.bind(this, type));
 
-				// Fix height of selects in webkit/chrome
-			if( Prototype.Browser.WebKit ) {
+				// Fix height of selects in webkit/chrome (but not on mobile phones/iPhones)
+			if( Prototype.Browser.WebKit && !Prototype.Browser.MobileSafari ) {
 				list.setStyle({
 					height: list.select('option').size()*15 + 'px'
 				});
@@ -104,6 +104,36 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 		return $H(this.lists).collect(function(pair){
 			return $F(pair.value);
 		}).flatten();
+	},
+
+
+
+	/**
+	 * Get amount of selected filtersets
+	 *
+	 * @return {Number}
+	 */
+	getAmountSelectedFiltersets: function() {
+		return this.getFiltersets().size();
+	},
+
+
+	updateNumResultsForFilterset: function(idFilterset, numResults) {
+		var filtersetElement = this.getFiltersetOptionElement(idFilterset);
+
+		if( filtersetElement ) {
+
+		}
+	},
+
+
+	getActiveFiltersetOptionElements: function() {
+		return $('panelwidget-filterpresetlist-content').select('option[selected]');
+	},
+
+
+	getFiltersetOptionElement: function(idFilterset) {
+		return $('panelwidget-filterpresetlist-content').down('option[value=' + idFilterset + ']');
 	},
 
 

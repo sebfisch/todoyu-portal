@@ -135,12 +135,46 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{Number}			numResults
 	 */
 	updateNumResults: function(tabKey, numResults) {
+		this.updateNumResultsInPortalTab(tabKey, numResults);
+
+		if( tabKey === 'selection' ) {
+			this.updateNumResultsInFilterSetList(numResults);
+		}
+	},
+
+
+
+	/**
+	 * Update amount of result items in portal tab
+	 *
+	 * @param	{String}	tabKey
+	 * @param	{Number}	numResults
+	 */
+	updateNumResultsInPortalTab: function(tabKey, numResults) {
 		var labelEl	= this.getLabelElement(tabKey);
 		var label	= labelEl.innerHTML;
 		var pattern	= /\(\d+\)/;
 		var replace	= '(' + numResults + ')';
 
 		labelEl.update(label.replace(pattern, replace));
+	},
+
+
+
+	/**
+	 * Update amount of result items in filter set list
+	 * Only update if only one filterset is selected
+	 *
+	 * @param	{Number}	numResults
+	 */
+	updateNumResultsInFilterSetList: function(numResults) {
+		var isOnlyOneSelected = this.ext.PanelWidget.FilterPresetList.getAmountSelectedFiltersets() === 1;
+
+		if( isOnlyOneSelected ) {
+
+
+		}
+
 	},
 
 
@@ -169,6 +203,17 @@ Todoyu.Ext.portal.Tab = {
 	 */
 	getActiveTab: function() {
 		return Todoyu.Tabs.getActiveKey('portal');
+	},
+
+
+
+	/**
+	 * Check whether selection tab
+	 *
+	 * @return {Boolean}
+	 */
+	isSelectionTabActive: function() {
+		return this.getActiveTab() === 'selection';
 	},
 
 
