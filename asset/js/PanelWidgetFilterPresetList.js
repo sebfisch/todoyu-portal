@@ -109,29 +109,29 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 
 
 	/**
-	 * Get amount of selected filtersets
+	 * Update result counter for filterset in list
 	 *
-	 * @return {Number}
+	 * @param	{Number}	idFilterset
+	 * @param	{Number}	numResults
 	 */
-	getAmountSelectedFiltersets: function() {
-		return this.getFiltersets().size();
-	},
-
-
-	updateNumResultsForFilterset: function(idFilterset, numResults) {
+	updateFiltersetResultCounter: function(idFilterset, numResults) {
 		var filtersetElement = this.getFiltersetOptionElement(idFilterset);
 
 		if( filtersetElement ) {
+			var label	= Todoyu.String.replaceCounter(filtersetElement.innerHTML, numResults);
 
+			filtersetElement.update(label);
 		}
 	},
 
 
-	getActiveFiltersetOptionElements: function() {
-		return $('panelwidget-filterpresetlist-content').select('option[selected]');
-	},
 
-
+	/**
+	 * Get option element in list for filterset
+	 *
+	 * @param	{Number}	idFilterset
+	 * @return	{String}
+	 */
 	getFiltersetOptionElement: function(idFilterset) {
 		return $('panelwidget-filterpresetlist-content').down('option[value=' + idFilterset + ']');
 	},

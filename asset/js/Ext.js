@@ -143,6 +143,24 @@ Todoyu.Ext.portal = {
 	 */
 	savePref: function(action, value, idItem, onComplete) {
 		Todoyu.Pref.save('portal', action, value, idItem, onComplete);
+	},
+
+
+
+	/**
+	 * Update amount of result items in filter set list
+	 * Only update if only one filterset is selected
+	 *
+	 * @param	{Number}	numResults
+	 */
+	updateResultConterOfActiveFiltersetInList: function(numResults) {
+		var activeFilterSetIDs	= this.PanelWidget.FilterPresetList.getFiltersets();
+
+		if( activeFilterSetIDs.size() === 1 ) {
+			var idFilterset	= activeFilterSetIDs.first();
+
+			this.PanelWidget.FilterPresetList.updateFiltersetResultCounter(idFilterset, numResults);
+		}
 	}
 
 };
