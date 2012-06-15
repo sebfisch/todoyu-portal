@@ -42,11 +42,11 @@ Todoyu::$CONFIG['EXT']['portal']['assets'] = array(
 	),
 	'css' => array(
 		array(
-			'file'		=> 'ext/portal/asset/css/ext.css',
+			'file'		=> 'ext/portal/asset/css/ext.scss',
 			'position'	=> 100
 		),
 		array(
-			'file' => 'ext/portal/asset/css/panelwidget-filterpresetlist.css',
+			'file' => 'ext/portal/asset/css/panelwidget-filterpresetlist.scss',
 			'position' => 110
 		)
 	)
