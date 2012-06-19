@@ -1,11 +1,13 @@
-#panelwidget-quicktask h1 .title {
-	background:transparent url('../img/icons.png') no-repeat 4px -85px;
-}
+#panelwidget-quicktask {
+	.content {
+		padding:5px;
+	}
 
-#panelwidget-quicktask .content {
-	padding:5px;
-}
+	button.addQuicktask .icon {
+		background:url('../img/icons.png') no-repeat 0 -88px;
+	}
 
-#panelwidget-quicktask button.addQuicktask .icon {
-	background:url('../img/icons.png') no-repeat 0 -88px;
+	h1 .title {
+		background:transparent url('../img/icons.png') no-repeat 4px -85px;
+	}
 }
