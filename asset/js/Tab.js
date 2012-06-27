@@ -100,19 +100,6 @@ Todoyu.Ext.portal.Tab = {
 
 
 	/**
-	 * Get label element of given tab
-	 *
-	 * @method	getTabLabelElement
-	 * @param	{String}	tabKey
-	 * @return	{String}
-	 */
-	getLabelElement: function(tabKey) {
-		return $('portal-tab-' + tabKey + '-label').down('span.labeltext');
-	},
-
-
-
-	/**
 	 * Update the label of a tab
 	 *
 	 * @method	setTabLabel
@@ -151,10 +138,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @param	{Number}	numResults
 	 */
 	updateNumResultsInPortalTab: function(tabKey, numResults) {
-		var labelEl	= this.getLabelElement(tabKey);
-		var newLabel= Todoyu.String.replaceCounter(labelEl.innerHTML, numResults);
-
-		labelEl.update(newLabel);
+		Todoyu.Tabs.updateTabCounter('portal', tabKey, numResults);
 	},
 
 
@@ -164,13 +148,10 @@ Todoyu.Ext.portal.Tab = {
 	 *
 	 * @method	getNumResults
 	 * @param	{String}	tabKey
+	 * @return	{Number}
 	 */
 	getNumResults: function(tabKey) {
-		var labelEl	= this.getLabelElement(tabKey);
-		var pattern	= /\((\d+)\)/;
-		var result	= labelEl.innerHTML.match(pattern);
-
-		return result[1];
+		return Todoyu.Tabs.getTabCounter('portal', tabKey);
 	},
 
 
