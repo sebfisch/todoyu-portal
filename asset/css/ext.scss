@@ -5,8 +5,10 @@ span.extIconPortal {
 	background:url('../img/exticon.png') no-repeat 0 0;
 }
 
-h1.extIconPortal .title {
-	background:url('../img/exticon.png') no-repeat 0 5px;
+h1.extIconPortal {
+	.title {
+		background:url('../img/exticon.png') no-repeat 0 5px;
+	}
 }
 
 
@@ -47,23 +49,30 @@ h1.extIconPortal .title {
 }
 
 
-.portalTaskList h1 .taskDate,
-.portalTaskList .task h3 .taskDate {
-	width:49px;
-}
-
 .portalTaskList h1 .customer,
 .portalTaskList .task h3 .customer {
 	width:100px;
 }
 
-.portalTaskList h1 .projectName,
-.portalTaskList .task h3 .projectName {
-	width:340px;
-}
+.portalTaskList {
+	h1 .projectName,
+	.task h3 .projectName {
+		width:500px;
+		max-width: 500px;
+	}
 
-.portalTaskList .task h3 .customer,
-.portalTaskList .task h3 .projectName,
-.portalTaskList .task h3 .taskNumber {
-	margin:0 0 0 5px;
+	h1 .taskDate,
+	.task h3 .taskDate {
+		width:49px;
+	}
+
+	.task {
+		h3 {
+			.customer,
+			.projectName,
+			.taskNumber {
+				margin:0 0 0 5px;
+			}
+		}
+	}
 }
