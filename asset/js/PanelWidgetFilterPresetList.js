@@ -63,7 +63,7 @@ Todoyu.Ext.portal.PanelWidget.FilterPresetList = {
 				// Fix height of selects in webkit/chrome (but not on mobile phones/iPhones)
 			if( Prototype.Browser.WebKit && !Prototype.Browser.MobileSafari ) {
 				list.setStyle({
-					height: list.select('option').size()*15 + 'px'
+					height: list.select('option').size() * 15 + 'px'
 				});
 			}
 		}, this);
