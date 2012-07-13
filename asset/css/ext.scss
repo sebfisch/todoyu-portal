@@ -47,32 +47,3 @@ h1.extIconPortal {
 #portal-tab-todo span.icon {
 	background:url(../img/icons.png) no-repeat 0 -55px;
 }
-
-
-.portalTaskList h1 .customer,
-.portalTaskList .task h3 .customer {
-	width:100px;
-}
-
-.portalTaskList {
-	h1 .projectName,
-	.task h3 .projectName {
-		width:500px;
-		max-width: 500px;
-	}
-
-	h1 .taskDate,
-	.task h3 .taskDate {
-		width:49px;
-	}
-
-	.task {
-		h3 {
-			.customer,
-			.projectName,
-			.taskNumber {
-				margin:0 0 0 5px;
-			}
-		}
-	}
-}
