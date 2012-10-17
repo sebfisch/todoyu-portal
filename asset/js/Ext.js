@@ -151,16 +151,11 @@ Todoyu.Ext.portal = {
 	 * Update amount of result items in filter set list
 	 * Only update if only one filterset is selected
 	 *
+	 * @param	{Number}	idFilterset
 	 * @param	{Number}	numResults
 	 */
-	updateResultConterOfActiveFiltersetInList: function(numResults) {
-		var activeFilterSetIDs	= this.PanelWidget.FilterPresetList.getFiltersets();
-
-		if( activeFilterSetIDs.size() === 1 ) {
-			var idFilterset	= activeFilterSetIDs.first();
-
-			this.PanelWidget.FilterPresetList.updateFiltersetResultCounter(idFilterset, numResults);
-		}
+	updateResultCounterOfActiveFiltersetInList: function(idFilterset, numResults) {
+		this.PanelWidget.FilterPresetList.updateFiltersetResultCounter(idFilterset, numResults);
 	}
 
 };

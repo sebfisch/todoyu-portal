@@ -52,7 +52,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @method	showTab
 	 * @param	{String}		tabKey
 	 * @param	{Boolean}		activateTab
-	 * @param	{Array}			extraParams
+	 * @param	{Object}		extraParams
 	 */
 	showTab: function(tabKey, activateTab, extraParams) {
 		var url		= Todoyu.getUrl('portal', 'tab');
@@ -61,13 +61,12 @@ Todoyu.Ext.portal.Tab = {
 				action:	'update',
 				tab:	tabKey
 			},
-			onComplete: this.onTabShowed.bind(this, tabKey)
+			onComplete: this.onTabShowed.bind(this, tabKey, extraParams)
 		};
-
 		var target	= 'content-body';
 
 			// Add extra params
-		if( typeof(extraParams) === 'object' ) {
+		if( extraParams ) {
 			options.parameters.params = Object.toJSON(extraParams);
 		}
 
@@ -84,13 +83,15 @@ Todoyu.Ext.portal.Tab = {
 	 * Handler when tab is showed and updated
 	 *
 	 * @method	onTabShowed
-	 * @param	{String}				tabKey
+	 * @param	{String}			tabKey
+	 * @param	{Object}			extraParams
 	 * @param	{Ajax.Response}		response
 	 */
-	onTabShowed: function(tabKey, response) {
+	onTabShowed: function(tabKey, extraParams, response) {
 		var numItems	= response.getTodoyuHeader('items') || 0;
+		var filtersets	= extraParams.filtersets || [];
 
-		this.updateNumResults(tabKey, numItems);
+		this.updateNumResults(tabKey, numItems, filtersets);
 
 		Todoyu.Ui.scrollToTop();
 
@@ -120,12 +121,14 @@ Todoyu.Ext.portal.Tab = {
 	 * @method	updateNumResults
 	 * @param	{String}			tabKey
 	 * @param	{Number}			numResults
+	 * @param	{Array}				filtersets
 	 */
-	updateNumResults: function(tabKey, numResults) {
+	updateNumResults: function(tabKey, numResults, filtersets) {
+		filtersets	= filtersets || [];
 		this.updateNumResultsInPortalTab(tabKey, numResults);
 
-		if( tabKey === 'selection' ) {
-			this.ext.updateResultConterOfActiveFiltersetInList(numResults);
+		if( tabKey === 'selection' && filtersets.size() === 1 ) {
+			this.ext.updateResultCounterOfActiveFiltersetInList(filtersets.first(), numResults);
 		}
 	},
 
