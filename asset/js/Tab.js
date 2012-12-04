@@ -89,7 +89,7 @@ Todoyu.Ext.portal.Tab = {
 	 */
 	onTabShowed: function(tabKey, extraParams, response) {
 		var numItems	= response.getTodoyuHeader('items') || 0;
-		var filtersets	= extraParams.filtersets || [];
+		var filtersets	= extraParams ? extraParams.filtersets || [] : [];
 
 		this.updateNumResults(tabKey, numItems, filtersets);
 

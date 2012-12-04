@@ -1,6 +1,8 @@
 todoyu portal extension changelog
 
+
 portal 1.4.0 - not released yet
+	* Bugfix: Empty parameter caused JS-Error on feedback tab
 	* Require: core 2.3.0
 	* Changed: Moved tab counter update methods to core
 	* Changed: Made update of filterset counter in filterset list more robust (bound filterset directly to request handler)
