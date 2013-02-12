@@ -18,4 +18,8 @@
 * This copyright notice MUST APPEAR in all copies of the script.
 *****************************************************************************/
 
+	// Register context menu functions
+TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
+	// Hooks adds portal sub menu entries in sub navigation
+TodoyuHookManager::registerHook('core', 'renderPage', 'TodoyuPortalManager::hookRenderPage');
 ?>

@@ -23,10 +23,4 @@ define('EXTID_PORTAL',	111);
 define('PATH_EXT_PORTAL', PATH_EXT . '/portal');
 
 require_once( PATH_EXT_PORTAL . '/config/constants.php' );
-
-	// Register context menu functions
-TodoyuContextMenuManager::addFunction('Task', 'TodoyuPortalManager::getTaskContextMenuItems', 110);
-	// Hooks adds portal sub menu entries in sub navigation
-TodoyuHookManager::registerHook('core', 'renderPage', 'TodoyuPortalManager::hookRenderPage');
-
 ?>
