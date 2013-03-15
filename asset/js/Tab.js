@@ -84,8 +84,8 @@ Todoyu.Ext.portal.Tab = {
 	 *
 	 * @method	onTabShowed
 	 * @param	{String}			tabKey
-	 * @param	{Object}			extraParams
-	 * @param	{Ajax.Response}		response
+	 * @param	{Object}			[extraParams]
+	 * @param	{Ajax.Response}		[response]
 	 */
 	onTabShowed: function(tabKey, extraParams, response) {
 		var numItems	= response.getTodoyuHeader('items') || 0;
@@ -121,7 +121,7 @@ Todoyu.Ext.portal.Tab = {
 	 * @method	updateNumResults
 	 * @param	{String}			tabKey
 	 * @param	{Number}			numResults
-	 * @param	{Array}				filtersets
+	 * @param	{Array}				[filtersets]
 	 */
 	updateNumResults: function(tabKey, numResults, filtersets) {
 		filtersets	= filtersets || [];
