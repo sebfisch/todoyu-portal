@@ -33,10 +33,10 @@ Todoyu::$CONFIG['EXT']['portal']['info'] = array(
 	'state'			=> 'stable',
 	'version'		=> '1.4.1',
 	'constraints'	=> array(
-		'core'		=> '2.3.0',
+		'core'		=> '2.3.1',
 		'depends'	=> array(
-			'project'	=> '1.5.0',
-			'search'	=> '1.5.0'
+			'project'	=> '1.5.1',
+			'search'	=> '1.5.1'
 		)
 	),
 	'urlDocumentation'	=> 'http://doc.todoyu.com/?portal'
