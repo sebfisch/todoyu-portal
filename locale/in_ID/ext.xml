@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="ext.title">Portal</label>
+	<label index="page.title">Portal</label>
+	<label index="tab">Portal</label>
+	<label index="tab.selection">Filter Saya</label>
+	<label index="tasktree.header.date">Tanggal</label>
+	<label index="tasktree.header.customer">Klien</label>
+	<label index="tasktree.header.number">No.</label>
+	<label index="tasktree.header.tasknumber">Nomor</label>
+	<label index="task.title.deadline">Batas waktu</label>
+	<label index="task.title.deadline_short">D</label>
+	<label index="task.title.begin">Mulai</label>
+	<label index="task.title.begin_short">B</label>
+	<label index="task.title.customer">Klien</label>
+	<label index="task.title.jump">Lompat</label>
+	<label index="task.title.tasknumber">No Tugas</label>
+	<label index="tab.todos">Untuk Lakukan</label>
+	<label index="tab.feedbacks">Tanggapan</label>
+	<label index="date.start.short">B</label>
+	<label index="selection.noTasksFound">Tidak ada tugas yang ditemukan untuk pemilihan filter ini</label>
+	<label index="selection.noProjectsFound">Tidak ada proyek yang ditemukan untuk pemilihan filter ini</label>
+	<label index="subMenuEntry.selection">Portal > Seleksi</label>
+	<label index="subMenuEntry.todos">Portal > Untuk Lakukan</label>
+	<label index="subMenuEntry.feedbacks">Portal > Tanggapan</label>
+	<label index="subMenuEntry.appointments">Portal > Penunjukan</label>
+	<label index="contextmenu.showinproject">Tampilkan dalam proyek</label>
+	<label index="selection.noFiltersetsSelected">Tidak ada Filter Terpilih.</label>
+</labels>

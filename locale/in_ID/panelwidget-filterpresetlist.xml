@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labels>
+	<label index="title">Filter Saya</label>
+	<label index="create">Buat Filter</label>
+	<label index="manage">Atur Filter</label>
+	<label index="amount">Jumlah</label>
+	<label index="error.noFilters">Tidak ada satupun filter dibuat</label>
+	<label index="error.noTypeFiltersets">Tidak ada Filter Ditetapkan</label>
+</labels>
